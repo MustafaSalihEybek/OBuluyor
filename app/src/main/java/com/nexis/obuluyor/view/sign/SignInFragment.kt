@@ -6,12 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.nexis.obuluyor.R
+import com.nexis.obuluyor.util.show
 
 class SignInFragment : Fragment() {
     private lateinit var v: View
 
     private fun init(){
-
+        "msg".show(v, "sadsad")
     }
 
     override fun onCreateView(
