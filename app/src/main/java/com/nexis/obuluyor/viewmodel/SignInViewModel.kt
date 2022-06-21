@@ -1,4 +1,4 @@
-package com.nexis.obuluyor.view
+package com.nexis.obuluyor.viewmodel
 
 import android.app.Application
 import com.nexis.obuluyor.viewmodel.base.BaseViewModel
