@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="statusBarBackgroundColor">#E87115</color>
+    <color name="toolBarBackgroundColor">#F77E21</color>
+
+    <color name="editBorderColor">#FAC213</color>
+    <color name="editTxtColor">#FAC213</color>
+    <color name="editBackgroundColor">#FFFFFF</color>
+
+    <color name="generalCardBackgroundColor">#FFFFFF</color>
+    <color name="generalAppBackgroundColor">#EEEEEE</color>
+
+    <color name="itemTitleTxtColor">#000000</color>
+    <color name="itemSubTitleTxtColor">#CCCCCC</color>
+
+    <color name="stickColor">#E2E2E2</color>
+</resources>
