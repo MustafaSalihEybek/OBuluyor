@@ -9,8 +9,8 @@ data class User(
     val parola: String?,
     val telefon: String?,
     val gsm: String?,
-    val il: String?,
-    val ilce: String?,
+    val il: Int = 0,
+    val ilce: Int = 0,
     val kayit_tarihi: String?,
     val aktivasyon: Int = 0,
     val aktivasyonkodu: String?
