@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.nexis.obuluyor.R
 import com.nexis.obuluyor.adapter.SignPagerAdapter
+import com.nexis.obuluyor.util.Singleton
 import kotlinx.android.synthetic.main.fragment_sign.*
 
 class SignFragment : Fragment() {
@@ -21,6 +22,7 @@ class SignFragment : Fragment() {
         signPagerAdapter.addFragment(SignUpFragment())
 
         sign_fragment_viewPager.adapter = signPagerAdapter
+        Singleton.mViewPager = sign_fragment_viewPager
     }
 
     override fun onCreateView(
