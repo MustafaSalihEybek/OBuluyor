@@ -1,16 +1,405 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:scrollbars="none"
     tools:context=".view.sign.SignUpFragment">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:text="Sign Up"
-        android:textSize="21sp"
-        android:layout_centerInParent="true"
-        android:textColor="@android:color/black"
-        android:layout_height="wrap_content"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
 
-</RelativeLayout>
+        <ImageView
+            android:layout_width="150dp"
+            android:scaleType="fitXY"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginStart="25dp"
+            android:src="@drawable/sign_up_title"
+            android:layout_height="43dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_marginTop="25dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="25dp"
+            android:layout_gravity="center_vertical"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:layout_marginEnd="15dp"
+                android:background="@drawable/edit_background_bg"
+                android:gravity="center"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="26dp"
+                    android:src="@drawable/person_yellow_icon"
+                    android:layout_marginStart="15dp"
+                    android:layout_height="26dp"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:paddingStart="15dp"
+                    android:paddingEnd="15dp"
+                    android:inputType="textPersonName"
+                    android:id="@+id/sign_up_fragment_editUserName"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginEnd="3dp"
+                    android:layout_marginBottom="3dp"
+                    android:textSize="17sp"
+                    android:textColor="@color/editTxtColor"
+                    android:textColorHint="@color/editTxtColor"
+                    android:hint="Ad"
+                    android:background="@color/editBackgroundColor"
+                    android:layout_height="50dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:layout_marginStart="15dp"
+                android:background="@drawable/edit_background_bg"
+                android:gravity="center"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="26dp"
+                    android:src="@drawable/person_yellow_icon"
+                    android:layout_marginStart="15dp"
+                    android:layout_height="26dp"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:paddingStart="15dp"
+                    android:paddingEnd="15dp"
+                    android:inputType="textPersonName"
+                    android:id="@+id/sign_up_fragment_editUserSurname"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginEnd="3dp"
+                    android:layout_marginBottom="3dp"
+                    android:textSize="17sp"
+                    android:textColor="@color/editTxtColor"
+                    android:textColorHint="@color/editTxtColor"
+                    android:hint="Soyad"
+                    android:background="@color/editBackgroundColor"
+                    android:layout_height="50dp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginTop="25dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="25dp"
+            android:background="@drawable/edit_background_bg"
+            android:gravity="center"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="26dp"
+                android:src="@drawable/birthday_icon"
+                android:layout_marginStart="15dp"
+                android:layout_height="26dp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"
+                android:focusableInTouchMode="false"
+                android:inputType="text"
+                android:id="@+id/sign_up_fragment_editUserBirthday"
+                android:layout_marginTop="3dp"
+                android:layout_marginEnd="3dp"
+                android:layout_marginBottom="3dp"
+                android:textSize="17sp"
+                android:textColor="@color/editTxtColor"
+                android:textColorHint="@color/editTxtColor"
+                android:hint="Doğum Tarihi"
+                android:background="@color/editBackgroundColor"
+                android:layout_height="50dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginTop="25dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="25dp"
+            android:background="@drawable/edit_background_bg"
+            android:gravity="center"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="26dp"
+                android:src="@drawable/gender_icon"
+                android:layout_marginStart="15dp"
+                android:layout_height="26dp"/>
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:paddingStart="15dp"
+                android:background="@color/editBackgroundColor"
+                android:paddingEnd="15dp"
+                android:id="@+id/sign_up_fragment_spinnerUserGender"
+                android:layout_marginTop="3dp"
+                android:layout_marginEnd="3dp"
+                android:layout_marginBottom="3dp"
+                android:layout_height="50dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginTop="25dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="25dp"
+            android:background="@drawable/edit_background_bg"
+            android:gravity="center"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="26dp"
+                android:src="@drawable/email_icon"
+                android:layout_marginStart="15dp"
+                android:layout_height="26dp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"
+                android:inputType="textEmailAddress"
+                android:id="@+id/sign_up_fragment_editUserEmail"
+                android:layout_marginTop="3dp"
+                android:layout_marginEnd="3dp"
+                android:layout_marginBottom="3dp"
+                android:textSize="17sp"
+                android:textColor="@color/editTxtColor"
+                android:textColorHint="@color/editTxtColor"
+                android:hint="E-posta Adresi"
+                android:background="@color/editBackgroundColor"
+                android:layout_height="50dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginTop="25dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="25dp"
+            android:background="@drawable/edit_background_bg"
+            android:gravity="center"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="26dp"
+                android:src="@drawable/lock_icon"
+                android:layout_marginStart="15dp"
+                android:layout_height="26dp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"
+                android:inputType="textPassword"
+                android:id="@+id/sign_up_fragment_editUserPassword"
+                android:layout_marginTop="3dp"
+                android:layout_marginEnd="3dp"
+                android:layout_marginBottom="3dp"
+                android:textSize="17sp"
+                android:textColor="@color/editTxtColor"
+                android:textColorHint="@color/editTxtColor"
+                android:hint="Şifre"
+                android:background="@color/editBackgroundColor"
+                android:layout_height="50dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_marginTop="25dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="25dp"
+            android:layout_gravity="center_vertical"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:layout_marginEnd="15dp"
+                android:background="@drawable/edit_background_bg"
+                android:gravity="center"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="26dp"
+                    android:src="@drawable/phone_icon"
+                    android:layout_marginStart="15dp"
+                    android:layout_height="26dp"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:paddingStart="15dp"
+                    android:paddingEnd="15dp"
+                    android:inputType="phone"
+                    android:id="@+id/sign_up_fragment_editUserPhone"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginEnd="3dp"
+                    android:layout_marginBottom="3dp"
+                    android:textSize="17sp"
+                    android:textColor="@color/editTxtColor"
+                    android:textColorHint="@color/editTxtColor"
+                    android:hint="Telefon"
+                    android:background="@color/editBackgroundColor"
+                    android:layout_height="50dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:layout_marginStart="15dp"
+                android:background="@drawable/edit_background_bg"
+                android:gravity="center"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="26dp"
+                    android:src="@drawable/phone_icon"
+                    android:layout_marginStart="15dp"
+                    android:layout_height="26dp"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:paddingStart="15dp"
+                    android:paddingEnd="15dp"
+                    android:inputType="phone"
+                    android:id="@+id/sign_up_fragment_editUserGsm"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginEnd="3dp"
+                    android:layout_marginBottom="3dp"
+                    android:textSize="17sp"
+                    android:textColor="@color/editTxtColor"
+                    android:textColorHint="@color/editTxtColor"
+                    android:hint="Gsm"
+                    android:background="@color/editBackgroundColor"
+                    android:layout_height="50dp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_marginTop="25dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="25dp"
+            android:layout_gravity="center_vertical"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:layout_marginEnd="15dp"
+                android:background="@drawable/edit_background_bg"
+                android:gravity="center"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="26dp"
+                    android:src="@drawable/country_icon"
+                    android:layout_marginStart="15dp"
+                    android:layout_height="26dp"/>
+
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:paddingStart="15dp"
+                    android:background="@color/editBackgroundColor"
+                    android:paddingEnd="15dp"
+                    android:spinnerMode="dialog"
+                    android:id="@+id/sign_up_fragment_spinnerUserCountry"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginEnd="3dp"
+                    android:layout_marginBottom="3dp"
+                    android:layout_height="50dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:layout_marginStart="15dp"
+                android:background="@drawable/edit_background_bg"
+                android:gravity="center"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="26dp"
+                    android:src="@drawable/country_icon"
+                    android:layout_marginStart="15dp"
+                    android:layout_height="26dp"/>
+
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:paddingStart="15dp"
+                    android:background="@color/editBackgroundColor"
+                    android:paddingEnd="15dp"
+                    android:spinnerMode="dialog"
+                    android:id="@+id/sign_up_fragment_spinnerUserCity"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginEnd="3dp"
+                    android:layout_marginBottom="3dp"
+                    android:layout_height="50dp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_marginEnd="25dp"
+            android:layout_marginTop="45dp"
+            android:id="@+id/sign_up_fragment_btnSignUp"
+            android:layout_marginStart="25dp"
+            android:background="@drawable/create_account_btn"
+            android:layout_height="55dp"
+            app:backgroundTint="@null"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_marginEnd="25dp"
+            android:layout_marginTop="15dp"
+            android:id="@+id/sign_up_fragment_btnSignIn"
+            android:layout_marginStart="25dp"
+            android:background="@drawable/login_btn"
+            android:layout_marginBottom="25dp"
+            android:layout_height="53dp"
+            app:backgroundTint="@null"/>
+
+    </LinearLayout>
+
+</ScrollView>
