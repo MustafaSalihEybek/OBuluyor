@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.nexis.obuluyor.R
 import com.nexis.obuluyor.adapter.CategoriesAdapter
 import com.nexis.obuluyor.model.Category
+import com.nexis.obuluyor.util.show
 import com.nexis.obuluyor.viewmodel.MainViewModel
 import kotlinx.android.synthetic.main.fragment_main.*
 
