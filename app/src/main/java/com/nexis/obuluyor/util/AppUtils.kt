@@ -2,16 +2,29 @@ package com.nexis.obuluyor.util
 
 import com.nexis.obuluyor.R
 import com.nexis.obuluyor.api.AppAPI
+import com.nexis.obuluyor.model.User
+import com.nexis.obuluyor.repository.CitiesRepository
+import com.nexis.obuluyor.repository.CountriesRepository
+import com.nexis.obuluyor.repository.SignInRepository
+import com.nexis.obuluyor.repository.SignUpRepository
 import io.reactivex.disposables.CompositeDisposable
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
+import java.util.concurrent.TimeUnit
 
 object AppUtils {
+    lateinit var countriesRepository: CountriesRepository
+    lateinit var citiesRepository: CitiesRepository
+    lateinit var signUpRepository: SignUpRepository
+    lateinit var signInRepository: SignInRepository
+
     lateinit var disposable: CompositeDisposable
     lateinit var categoryImageMap: HashMap<String, Int>
+
+    lateinit var mUser: User
 
     fun getCategoryMap() : HashMap<String, Int> {
         categoryImageMap = HashMap()
@@ -37,7 +50,10 @@ object AppUtils {
             .addInterceptor(BasicAuthInterceptor(
                 Singleton.clientUsername,
                 Singleton.clientPassword
-            )).build()
+            ))
+            .connectTimeout(100, TimeUnit.SECONDS)
+            .writeTimeout(100, TimeUnit.SECONDS)
+            .readTimeout(100, TimeUnit.SECONDS).build()
 
         return Retrofit.Builder()
             .baseUrl(Singleton.BASE_URL)
