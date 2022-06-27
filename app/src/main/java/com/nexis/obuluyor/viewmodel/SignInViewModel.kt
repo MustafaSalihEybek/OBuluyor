@@ -15,6 +15,7 @@ import io.reactivex.schedulers.Schedulers
 class SignInViewModel(application: Application) : BaseViewModel(application) {
     val successMessage = MutableLiveData<String>()
     val errorMessage = MutableLiveData<String>()
+    val userData = MutableLiveData<User>()
 
     fun signInUser(email: String, password: String){
         AppUtils.signInRepository = SignInRepository()
@@ -29,8 +30,10 @@ class SignInViewModel(application: Application) : BaseViewModel(application) {
                         if (t.result.message != null)
                             errorMessage.value = t.result.message
 
-                        if (t.user.ad_soyad != null)
+                        if (t.user.ad_soyad != null){
                             successMessage.value = "Başarıyla giriş yaptınız"
+                            userData.value = t.user
+                        }
                     }
 
                     override fun onError(e: Throwable) {

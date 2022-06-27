@@ -5,7 +5,11 @@
       <map>
         <entry key="..\:/Users/Nexis/AndroidStudioProjects/OBuluyor/app/src/main/res/drawable/edit_background_bg.xml" value="0.17222222222222222" />
         <entry key="..\:/Users/Nexis/AndroidStudioProjects/OBuluyor/app/src/main/res/layout/activity_main.xml" value="0.24010416666666667" />
+        <entry key="..\:/Users/Nexis/AndroidStudioProjects/OBuluyor/app/src/main/res/layout/advert_category_item.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Nexis/AndroidStudioProjects/OBuluyor/app/src/main/res/layout/advert_sub_category_item.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Nexis/AndroidStudioProjects/OBuluyor/app/src/main/res/layout/custom_advert_toolbar.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Nexis/AndroidStudioProjects/OBuluyor/app/src/main/res/layout/custom_toolbar.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Nexis/AndroidStudioProjects/OBuluyor/app/src/main/res/layout/fragment_add_advert_sub_categories.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Nexis/AndroidStudioProjects/OBuluyor/app/src/main/res/layout/fragment_advert_categories.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Nexis/AndroidStudioProjects/OBuluyor/app/src/main/res/layout/fragment_main.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Nexis/AndroidStudioProjects/OBuluyor/app/src/main/res/layout/fragment_sign.xml" value="0.25416666666666665" />

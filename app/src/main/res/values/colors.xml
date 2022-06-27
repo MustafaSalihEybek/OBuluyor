@@ -8,6 +8,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
+    <color name="appBgColor">#FFFFFF</color>
     <color name="statusBarBackgroundColor">#E87115</color>
     <color name="toolBarBackgroundColor">#F77E21</color>
 
@@ -22,4 +23,13 @@
     <color name="itemSubTitleTxtColor">#CCCCCC</color>
 
     <color name="stickColor">#E2E2E2</color>
+
+    <color name="advertTitleTxtColor">#F77E21</color>
+    <color name="advertTxtColor">#FAC213</color>
+    <color name="advertCategoryTxtColor">#000000</color>
+    <color name="advertStickColor">#FAC213</color>
+
+    <color name="advertCategoryItemBgColor">#FFFFFF</color>
+    <color name="advertCategoryItemTxtColor">#000000</color>
+    <color name="advertCategoryItemStickColor">#E2E2E2</color>
 </resources>

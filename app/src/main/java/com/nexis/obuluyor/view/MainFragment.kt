@@ -25,17 +25,23 @@ class MainFragment : Fragment(), View.OnClickListener {
     private lateinit var categoryList: List<Category>
     private lateinit var categoriesAdapter: CategoriesAdapter
 
+    private var userId: Int = -1
+
     private fun init(){
-        main_fragment_recyclerView.setHasFixedSize(true)
-        main_fragment_recyclerView.layoutManager = LinearLayoutManager(v.context, LinearLayoutManager.VERTICAL, false)
-        categoriesAdapter = CategoriesAdapter(arrayListOf(), v.context)
-        main_fragment_recyclerView.adapter = categoriesAdapter
+        arguments?.let {
+            userId = MainFragmentArgs.fromBundle(it).userId
 
-        mainViewModel = ViewModelProvider(this).get(MainViewModel::class.java)
-        observeLiveData()
-        mainViewModel.getCategories()
+            main_fragment_recyclerView.setHasFixedSize(true)
+            main_fragment_recyclerView.layoutManager = LinearLayoutManager(v.context, LinearLayoutManager.VERTICAL, false)
+            categoriesAdapter = CategoriesAdapter(arrayListOf(), v.context)
+            main_fragment_recyclerView.adapter = categoriesAdapter
 
-        main_fragment_imgAddAdvert.setOnClickListener(this)
+            mainViewModel = ViewModelProvider(this).get(MainViewModel::class.java)
+            observeLiveData()
+            mainViewModel.getCategories()
+
+            main_fragment_imgAddAdvert.setOnClickListener(this)
+        }
     }
 
     override fun onCreateView(
@@ -70,13 +76,17 @@ class MainFragment : Fragment(), View.OnClickListener {
     override fun onClick(p0: View?) {
         p0?.let {
             when (it.id){
-                R.id.main_fragment_imgAddAdvert -> addNewAdvert()
+                R.id.main_fragment_imgAddAdvert -> addNewAdvert(userId)
             }
         }
     }
 
-    private fun addNewAdvert(){
-        navDirections = MainFragmentDirections.actionMainFragmentToSignFragment()
+    private fun addNewAdvert(userId: Int){
+        if (userId == -1)
+            navDirections = MainFragmentDirections.actionMainFragmentToSignFragment()
+        else
+            navDirections = MainFragmentDirections.actionMainFragmentToAdvertCategoriesFragment(userId)
+
         Navigation.findNavController(v).navigate(navDirections)
     }
 }

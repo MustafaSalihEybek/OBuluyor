@@ -8,6 +8,10 @@ interface AppAPI {
     @POST("ana_kategori.php")
     fun getCategories() : Single<List<Category>>
 
+    @POST("alt_kategori.php")
+    @FormUrlEncoded
+    fun getSubCategories(@Field("ana_kategori") categoryId: Int) : Single<List<SubCategory>>
+
     @POST("iller.php")
     fun getCountries() : Single<List<Country>>
 

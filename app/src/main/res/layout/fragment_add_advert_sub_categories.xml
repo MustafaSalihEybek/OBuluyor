@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <variable
+            name="category"
+            type="com.nexis.obuluyor.model.Category" />
+    </data>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/appBgColor"
+    tools:context=".view.AddAdvertSubCategoriesFragment">
+
+    <include
+        android:id="@+id/custom_advert_toolbar"
+        layout="@layout/custom_advert_toolbar"/>
+
+    <TextView
+        android:id="@+id/add_advert_sub_categories_fragment_txtTitle1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/custom_advert_toolbar"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/poppins_bold"
+        android:setAdvertCategory="@{category.kategori_adi}"
+        android:textColor="@color/advertTitleTxtColor"
+        android:textSize="18sp" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:id="@+id/add_advert_sub_categories_fragment_imgStick"
+        android:layout_below="@+id/add_advert_sub_categories_fragment_txtTitle1"
+        android:background="@color/advertStickColor" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/add_advert_sub_categories_fragment_recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/add_advert_sub_categories_fragment_imgStick"
+        android:scrollbars="none" />
+
+</RelativeLayout>
+
+</layout>

@@ -56,7 +56,12 @@ class SignInFragment : Fragment(), View.OnClickListener {
         signInViewModel.successMessage.observe(viewLifecycleOwner, Observer {
             it?.let {
                 it.show(v, it)
-                goToMainPage()
+            }
+        })
+
+        signInViewModel.userData.observe(viewLifecycleOwner, Observer {
+            it?.let {
+                goToMainPage(it.Id)
             }
         })
     }
@@ -83,8 +88,8 @@ class SignInFragment : Fragment(), View.OnClickListener {
             txtUserEmail.show(v, "Lütfen email adresinizi giriniz")
     }
 
-    private fun goToMainPage(){
-        navDirections = SignFragmentDirections.actionSignFragmentToMainFragment()
+    private fun goToMainPage(userId: Int){
+        navDirections = SignFragmentDirections.actionSignFragmentToMainFragment(userId)
         Navigation.findNavController(v).navigate(navDirections)
     }
 }
