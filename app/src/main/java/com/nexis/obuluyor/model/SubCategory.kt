@@ -1,5 +1,9 @@
 package com.nexis.obuluyor.model
 
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
+
+@Parcelize
 data class SubCategory(
     val Id: Int = 0,
     val kategori_adi: String = "",
@@ -16,4 +20,4 @@ data class SubCategory(
     val fiyat2: String?,
     val fiyat3: String?,
     val tip: Int = 0
-)
+) : Parcelable

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="category"
+            type="com.nexis.obuluyor.model.Category" />
+    </data>
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:paddingTop="10dp"
+    android:layout_marginStart="15dp"
+    android:background="@color/generalCardBackgroundColor"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/nav_category_item_imgIcon"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_centerVertical="true"
+        android:setCategoryImage="@{category.kategori_adi}" />
+
+    <LinearLayout
+        android:id="@+id/nav_category_item_linearTitles"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_toStartOf="@+id/item_imgArrow"
+        android:layout_toEndOf="@+id/nav_category_item_imgIcon"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_regular"
+            android:text="@{category.kategori_adi}"
+            android:textColor="@color/itemTitleTxtColor"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:fontFamily="@font/poppins_regular"
+            android:lines="1"
+            android:text="@{category.description}"
+            android:textColor="@color/itemSubTitleTxtColor"
+            android:textSize="13sp" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/item_imgArrow"
+        android:layout_width="26dp"
+        android:layout_height="26dp"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:paddingEnd="15dp"
+        android:src="@drawable/right_arrow" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_marginTop="5dp"
+        android:layout_alignStart="@+id/nav_category_item_linearTitles"
+        android:layout_below="@id/nav_category_item_linearTitles"
+        android:background="@color/stickColor"
+        android:layout_height="2dp"/>
+
+</RelativeLayout>
+
+</layout>

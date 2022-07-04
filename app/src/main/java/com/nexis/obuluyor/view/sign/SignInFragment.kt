@@ -10,6 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavDirections
 import androidx.navigation.Navigation
 import com.nexis.obuluyor.R
+import com.nexis.obuluyor.util.SharedPreferences
 import com.nexis.obuluyor.util.Singleton
 import com.nexis.obuluyor.util.show
 import com.nexis.obuluyor.viewmodel.SignInViewModel
@@ -23,10 +24,13 @@ class SignInFragment : Fragment(), View.OnClickListener {
 
     private lateinit var txtUserEmail: String
     private lateinit var txtUserPassword: String
+    private lateinit var sharedPreferences: SharedPreferences
 
     private fun init(){
         signInViewModel = ViewModelProvider(this).get(SignInViewModel::class.java)
         observeLiveData()
+
+        sharedPreferences = SharedPreferences(v.context)
 
         sign_in_fragment_btnSignIn.setOnClickListener(this)
         sign_in_fragment_btnSignUp.setOnClickListener(this)
@@ -61,6 +65,7 @@ class SignInFragment : Fragment(), View.OnClickListener {
 
         signInViewModel.userData.observe(viewLifecycleOwner, Observer {
             it?.let {
+                sharedPreferences.saveUserId(it.Id)
                 goToMainPage(it.Id)
             }
         })

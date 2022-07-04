@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:padding="20dp"
+    android:id="@+id/custom_nav_header_linearHeader"
+    android:background="@color/navHeaderBgColor"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/custom_nav_header_imgItem1"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/person_icon" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_toStartOf="@id/custom_nav_header_imgArrow1"
+            android:layout_toEndOf="@+id/custom_nav_header_imgItem1"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Ana sayfa"
+            android:textColor="@color/navHeaderTxtColor"
+            android:textSize="19sp" />
+
+        <ImageView
+            android:id="@+id/custom_nav_header_imgArrow1"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/right_icon_white" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="15dp"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/custom_nav_header_imgItem2"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/person_icon" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_toStartOf="@id/custom_nav_header_imgArrow2"
+            android:layout_toEndOf="@+id/custom_nav_header_imgItem2"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Bana Özel"
+            android:textColor="@color/navHeaderTxtColor"
+            android:textSize="19sp" />
+
+        <ImageView
+            android:id="@+id/custom_nav_header_imgArrow2"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/right_icon_white" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="15dp"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/custom_nav_header_imgItem3"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/add_icon_white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_toStartOf="@id/custom_nav_header_imgArrow3"
+            android:layout_toEndOf="@+id/custom_nav_header_imgItem3"
+            android:fontFamily="@font/poppins_medium"
+            android:text="İlan Ver"
+            android:textColor="@color/navHeaderTxtColor"
+            android:textSize="19sp" />
+
+        <ImageView
+            android:id="@+id/custom_nav_header_imgArrow3"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/right_icon_white" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="15dp"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/custom_nav_header_imgItem4"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/person_icon" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_toStartOf="@id/custom_nav_header_imgArrow4"
+            android:layout_toEndOf="@+id/custom_nav_header_imgItem4"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Servisler"
+            android:textColor="@color/navHeaderTxtColor"
+            android:textSize="19sp" />
+
+        <ImageView
+            android:id="@+id/custom_nav_header_imgArrow4"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/right_icon_white" />
+
+    </RelativeLayout>
+
+</LinearLayout>

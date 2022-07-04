@@ -2,6 +2,7 @@ package com.nexis.obuluyor.api
 
 import com.nexis.obuluyor.model.*
 import io.reactivex.Single
+import okhttp3.ResponseBody
 import retrofit2.http.*
 
 interface AppAPI {
@@ -36,4 +37,12 @@ interface AppAPI {
     @POST("kullanici_girisi.php")
     @FormUrlEncoded
     fun signInUser(@Field("eposta") email: String, @Field("sifre") password: String) : Single<Sign>
+
+    @POST("ilanlar.php")
+    @FormUrlEncoded
+    fun getAdverts(@Field("confirm") confirm: Int, @Field("aktifilanlar") activeAdverts: Int) : Single<List<Advert>>
+
+    @POST("uye_bilgisi.php")
+    @FormUrlEncoded
+    fun getUserData(@Field("uyeid") userId: Int) : Single<Sign>
 }

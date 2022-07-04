@@ -76,8 +76,8 @@ class SignUpViewModel(application: Application) : BaseViewModel(application) {
                 userData.parola!!,
                 userData.telefon!!,
                 userData.gsm!!,
-                userData.il,
-                userData.ilce
+                userData.il!!,
+                userData.ilce!!
             )
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())

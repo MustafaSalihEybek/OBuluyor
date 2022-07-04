@@ -1,5 +1,10 @@
 package com.nexis.obuluyor.model
 
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
+import kotlinx.android.parcel.RawValue
+
+@Parcelize
 data class Advert(
     val Id: Int = 0,
     val uyeId: Int = 0,
@@ -53,5 +58,6 @@ data class Advert(
     val fadres: String?,
     val gosterim: Int = 0,
     val fiyatdustu: String?,
-    val uyebilgisi: User?
-)
+    val images: @RawValue List<Image>,
+    val uyebilgisi: @RawValue User
+) : Parcelable

@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.nexis.obuluyor.R
 import com.nexis.obuluyor.adapter.AddAdvertCategoriesAdapter
 import com.nexis.obuluyor.model.Category
+import com.nexis.obuluyor.util.Singleton
 import com.nexis.obuluyor.util.show
 import com.nexis.obuluyor.viewmodel.AddAdvertCategoriesViewModel
 import kotlinx.android.synthetic.main.custom_advert_toolbar.*
@@ -82,14 +83,9 @@ class AddAdvertCategoriesFragment : Fragment(), View.OnClickListener {
     override fun onClick(p0: View?) {
         p0?.let {
             when (it.id){
-                R.id.custom_advert_toolbar_imgClose -> backToMainPage(userId)
+                R.id.custom_advert_toolbar_imgClose -> Singleton.showExitTheAddAdvertDialog(v, userId)
             }
         }
-    }
-
-    private fun backToMainPage(userId: Int){
-        navDirections = AddAdvertCategoriesFragmentDirections.actionAdvertCategoriesFragmentToMainFragment(userId)
-        Navigation.findNavController(v).navigate(navDirections)
     }
 
     private fun goToAddAdvertSubCategoriesFragmentPage(category: Category, userId: Int){

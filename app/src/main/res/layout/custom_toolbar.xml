@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/toolBarBackgroundColor"
     android:id="@+id/custom_toolbar_mainToolbar"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    app:layout_collapseMode="pin">
 
     <ImageView
         android:layout_width="200dp"
@@ -13,20 +15,20 @@
 
     <ImageView
         android:layout_width="21dp"
-        android:src="@drawable/person_icon"
-        android:layout_gravity="end"
-        android:visibility="gone"
-        android:id="@+id/custom_toolbar_imgPerson"
-        android:layout_marginEnd="15dp"
-        android:layout_height="21dp"/>
-
-    <ImageView
-        android:layout_width="21dp"
         android:visibility="gone"
         android:id="@+id/custom_toolbar_imgClose"
         android:layout_marginEnd="15dp"
         android:layout_gravity="end"
         android:src="@drawable/close_icon"
+        android:layout_height="21dp"/>
+
+    <ImageView
+        android:layout_width="21dp"
+        android:src="@drawable/person_icon"
+        android:layout_gravity="end"
+        android:visibility="gone"
+        android:id="@+id/custom_toolbar_imgPerson"
+        android:layout_marginEnd="15dp"
         android:layout_height="21dp"/>
 
 </androidx.appcompat.widget.Toolbar>

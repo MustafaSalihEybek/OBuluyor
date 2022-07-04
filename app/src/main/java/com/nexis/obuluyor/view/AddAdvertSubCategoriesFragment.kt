@@ -29,7 +29,7 @@ class AddAdvertSubCategoriesFragment : Fragment(), View.OnClickListener {
 
     private lateinit var categoryData: Category
     private lateinit var subCategoryList: List<SubCategory>
-    private lateinit var categoriesAdapter: AddAdvertSubCategoriesAdapter
+    private lateinit var subCategoriesAdapter: AddAdvertSubCategoriesAdapter
     private var userId: Int = -1
 
     private fun init(){
@@ -40,8 +40,8 @@ class AddAdvertSubCategoriesFragment : Fragment(), View.OnClickListener {
 
             add_advert_sub_categories_fragment_recyclerView.setHasFixedSize(true)
             add_advert_sub_categories_fragment_recyclerView.layoutManager = LinearLayoutManager(v.context, LinearLayoutManager.VERTICAL, false)
-            categoriesAdapter = AddAdvertSubCategoriesAdapter(arrayListOf())
-            add_advert_sub_categories_fragment_recyclerView.adapter = categoriesAdapter
+            subCategoriesAdapter = AddAdvertSubCategoriesAdapter(arrayListOf())
+            add_advert_sub_categories_fragment_recyclerView.adapter = subCategoriesAdapter
 
             addAdvertSubCategoriesViewModel = ViewModelProvider(this).get(AddAdvertSubCategoriesViewModel::class.java)
             observeLiveData()
@@ -79,7 +79,12 @@ class AddAdvertSubCategoriesFragment : Fragment(), View.OnClickListener {
                 if (add_advert_sub_categories_fragment_recyclerView.itemDecorationCount > 0)
                     add_advert_sub_categories_fragment_recyclerView.removeItemDecorationAt(0)
 
-                categoriesAdapter.loadData(it)
+                subCategoriesAdapter.loadData(it)
+                subCategoriesAdapter.setAdvertSubCategoryOnItemClickListener(object : AddAdvertSubCategoriesAdapter.AdvertSubCategoryOnItemClickListener{
+                    override fun onItemClick(subCategory: SubCategory) {
+                        goToAdvertDetailsPage(userId, categoryData, subCategory)
+                    }
+                })
             }
         })
     }
@@ -94,6 +99,11 @@ class AddAdvertSubCategoriesFragment : Fragment(), View.OnClickListener {
 
     private fun backToPage(userId: Int){
         navDirections = AddAdvertSubCategoriesFragmentDirections.actionAddAdvertSubCategoriesFragmentToAdvertCategoriesFragment(userId)
+        Navigation.findNavController(v).navigate(navDirections)
+    }
+
+    private fun goToAdvertDetailsPage(userId: Int, category: Category, subCategory: SubCategory){
+        navDirections = AddAdvertSubCategoriesFragmentDirections.actionAddAdvertSubCategoriesFragmentToAddAdvertDetailsFragment(userId, category, subCategory)
         Navigation.findNavController(v).navigate(navDirections)
     }
 }

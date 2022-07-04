@@ -1,78 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-<RelativeLayout
+<androidx.drawerlayout.widget.DrawerLayout
     android:layout_width="match_parent"
-    android:background="@color/generalAppBackgroundColor"
     android:layout_height="match_parent"
-    android:focusable="true"
-    android:focusableInTouchMode="true"
-    android:clickable="true"
+    style="@style/CustomDrawerMenu"
+    android:id="@+id/main_fragment_drawerLayout"
     tools:context=".view.MainFragment">
-
-    <include
-        layout="@layout/custom_toolbar"
-        android:id="@+id/custom_toolbar_mainToolbar"/>
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:padding="20dp"
-        android:layout_below="@id/custom_toolbar_mainToolbar"
-        android:id="@+id/main_fragment_relativeSearch"
-        android:background="@color/generalCardBackgroundColor"
-        android:layout_height="wrap_content">
+        android:background="@color/generalAppBackgroundColor"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:clickable="true"
+        android:layout_height="match_parent">
 
-        <LinearLayout
+        <include
+            layout="@layout/custom_toolbar"
+            android:id="@+id/custom_toolbar_mainToolbar"/>
+
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:orientation="horizontal"
-            android:background="@drawable/edit_background_bg"
-            android:gravity="center"
+            android:padding="20dp"
+            android:layout_below="@id/custom_toolbar_mainToolbar"
+            android:id="@+id/main_fragment_relativeSearch"
+            android:background="@color/generalCardBackgroundColor"
             android:layout_height="wrap_content">
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:src="@drawable/search_icon"
-                android:layout_marginStart="15dp"
-                android:layout_height="wrap_content"/>
-
-            <EditText
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:paddingStart="15dp"
-                android:paddingEnd="15dp"
-                android:id="@+id/main_fragment_editSearchValue"
-                android:layout_marginTop="3dp"
-                android:layout_marginEnd="3dp"
-                android:layout_marginBottom="3dp"
-                android:textSize="17sp"
-                android:textColor="@color/editTxtColor"
-                android:textColorHint="@color/editTxtColor"
-                android:hint="Kelime veya ilan no ile ara"
-                android:background="@color/editBackgroundColor"
-                android:layout_height="50dp"/>
+                android:orientation="horizontal"
+                android:background="@drawable/edit_background_bg"
+                android:gravity="center"
+                android:layout_height="wrap_content">
 
-        </LinearLayout>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:src="@drawable/search_icon"
+                    android:layout_marginStart="15dp"
+                    android:layout_height="wrap_content"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:paddingStart="15dp"
+                    android:paddingEnd="15dp"
+                    android:id="@+id/main_fragment_editSearchValue"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginEnd="3dp"
+                    android:layout_marginBottom="3dp"
+                    android:textSize="17sp"
+                    android:textColor="@color/editTxtColor"
+                    android:textColorHint="@color/editTxtColor"
+                    android:hint="Kelime veya ilan no ile ara"
+                    android:background="@color/editBackgroundColor"
+                    android:layout_height="50dp"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/main_fragment_recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/main_fragment_relativeSearch"
+            android:layout_marginTop="25dp"
+            android:scrollbars="none" />
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginEnd="15dp"
+            android:id="@+id/main_fragment_imgAddAdvert"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:src="@drawable/add_icon"
+            android:layout_height="60dp"/>
 
     </RelativeLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/main_fragment_recyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/main_fragment_relativeSearch"
-        android:layout_marginTop="25dp"
-        android:scrollbars="none" />
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="wrap_content"
+        android:layout_gravity="start"
+        android:id="@+id/main_fragment_navigationView"
+        android:layout_height="match_parent">
 
-    <ImageView
-        android:layout_width="60dp"
-        android:layout_marginBottom="15dp"
-        android:layout_marginEnd="15dp"
-        android:id="@+id/main_fragment_imgAddAdvert"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:src="@drawable/add_icon"
-        android:layout_height="60dp"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:background="@color/navBgColor"
+            android:layout_height="match_parent">
 
-</RelativeLayout>
+            <include
+                android:id="@+id/custom_nav_header_linearHeader"
+                layout="@layout/custom_nav_header"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:scrollbars="none"
+                android:layout_below="@+id/custom_nav_header_linearHeader"
+                android:id="@+id/main_fragment_navigation_recyclerView"
+                android:layout_height="wrap_content"/>
+
+        </RelativeLayout>
+
+    </com.google.android.material.navigation.NavigationView>
+
+</androidx.drawerlayout.widget.DrawerLayout>
 
 </layout>

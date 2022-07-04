@@ -18,6 +18,12 @@
         <action
             android:id="@+id/action_mainFragment_to_advertCategoriesFragment"
             app:destination="@id/advertCategoriesFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_advertsFragment"
+            app:destination="@id/advertsFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
     </fragment>
     <fragment
         android:id="@+id/signFragment"
@@ -26,6 +32,10 @@
         <action
             android:id="@+id/action_signFragment_to_mainFragment"
             app:destination="@id/mainFragment" />
+        <argument
+            android:name="userId"
+            app:argType="integer"
+            android:defaultValue="-1" />
     </fragment>
     <fragment
         android:id="@+id/advertCategoriesFragment"
@@ -56,5 +66,77 @@
         <argument
             android:name="categoryData"
             app:argType="com.nexis.obuluyor.model.Category" />
+        <action
+            android:id="@+id/action_addAdvertSubCategoriesFragment_to_addAdvertDetailsFragment"
+            app:destination="@id/addAdvertDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addAdvertDetailsFragment"
+        android:name="com.nexis.obuluyor.view.AddAdvertDetailsFragment"
+        android:label="AddAdvertDetailsFragment" >
+        <argument
+            android:name="userId"
+            app:argType="integer"
+            android:defaultValue="-1" />
+        <argument
+            android:name="categoryData"
+            app:argType="com.nexis.obuluyor.model.Category" />
+        <argument
+            android:name="subCategoryData"
+            app:argType="com.nexis.obuluyor.model.SubCategory" />
+        <action
+            android:id="@+id/action_addAdvertDetailsFragment_to_addAdvertSubCategoriesFragment"
+            app:destination="@id/addAdvertSubCategoriesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/advertsFragment"
+        android:name="com.nexis.obuluyor.view.AdvertsFragment"
+        android:label="AdvertsFragment" >
+        <argument
+            android:name="userId"
+            app:argType="integer"
+            android:defaultValue="-1" />
+        <action
+            android:id="@+id/action_advertsFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+        <action
+            android:id="@+id/action_advertsFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <argument
+            android:name="categoryData"
+            app:argType="com.nexis.obuluyor.model.Category" />
+        <action
+            android:id="@+id/action_advertsFragment_to_advertDetailsFragment"
+            app:destination="@id/advertDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.nexis.obuluyor.view.ProfileFragment"
+        android:label="ProfileFragment" >
+        <argument
+            android:name="userId"
+            app:argType="integer"
+            android:defaultValue="-1" />
+        <action
+            android:id="@+id/action_profileFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/advertDetailsFragment"
+        android:name="com.nexis.obuluyor.view.AdvertDetailsFragment"
+        android:label="AdvertDetailsFragment" >
+        <argument
+            android:name="categoryData"
+            app:argType="com.nexis.obuluyor.model.Category" />
+        <argument
+            android:name="userId"
+            app:argType="integer"
+            android:defaultValue="-1" />
+        <action
+            android:id="@+id/action_advertDetailsFragment_to_advertsFragment"
+            app:destination="@id/advertsFragment" />
+        <argument
+            android:name="advertData"
+            app:argType="com.nexis.obuluyor.model.Advert" />
     </fragment>
 </navigation>

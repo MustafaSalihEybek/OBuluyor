@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="advertdetail"
+            type="com.nexis.obuluyor.model.AdvertDetail" />
+    </data>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_marginStart="10dp"
+    android:layout_marginEnd="10dp"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:padding="5dp"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_bold"
+            android:text="@{advertdetail.detailTitle}"
+            android:textColor="@color/advertDetailsPageTxtTitleColor"
+            android:textSize="15sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:textSize="15sp"
+            android:textColor="@color/advertDetailsPageTxtColor"
+            android:layout_alignParentEnd="true"
+            android:text="@{advertdetail.detailContent}"
+            android:fontFamily="@font/poppins_medium"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:background="@color/advertDetailsPageStickColor"
+        android:layout_height="2dp"/>
+
+</LinearLayout>
+
+</layout>

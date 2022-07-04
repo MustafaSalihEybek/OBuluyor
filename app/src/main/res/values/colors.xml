@@ -32,4 +32,45 @@
     <color name="advertCategoryItemBgColor">#FFFFFF</color>
     <color name="advertCategoryItemTxtColor">#000000</color>
     <color name="advertCategoryItemStickColor">#E2E2E2</color>
+
+    <color name="advertDetailsTitleTxtColor">#F77E21</color>
+    <color name="advertDetailsTxtColor">#FAC213</color>
+
+    <color name="dialogTopBgColor">#F77E21</color>
+    <color name="dialogTopTxtColor">#FFFFFF</color>
+    <color name="dialogTxtColor">#F77E21</color>
+    
+    <color name="yellowBtnBgColor">#FFFFFF</color>
+    <color name="yellowBtnBorderColor">#FAC213</color>
+    <color name="yellowBtnTxtColor">#FAC213</color>
+    
+    <color name="orangeBtnBgColor">#F77E21</color>
+    <color name="orangeBtnTxtColor">#FFFFFF</color>
+
+    <color name="navHeaderBgColor">#EA711F</color>
+    <color name="navHeaderTxtColor">#FFFFFF</color>
+    <color name="navBgColor">#F7F7F7</color>
+
+    <color name="advertTitleColor">#4A4A4A</color>
+    <color name="advertPriceTxtColor">#1F7DC8</color>
+
+    <color name="profileItemBgColor">#FFFFFF</color>
+    <color name="profileItemShadowColor">#CFCFCF</color>
+    <color name="profileItemTitleTxtColor">#EA711F</color>
+    <color name="profileItemTxtColor">#606060</color>
+    <color name="profileItemPointsColor">#AAAAAA</color>
+
+    <color name="indicatorColor">#FF8D41</color>
+    <color name="indicatorCurrentColor">#E87115</color>
+
+    <color name="advertDetailsPageTxtTitleColor">#303030</color>
+    <color name="advertDetailsPageTxtColor">#808080</color>
+    <color name="advertDetailsPageStickColor">#C1C1C1</color>
+    <color name="advertDetailsSelectedBtnBgColor">#E87115</color>
+    <color name="advertDetailsSelectedBtnTxtColor">#FFFFFF</color>
+    <color name="advertDetailsBtnBgColor">#E87115</color>
+    <color name="advertDetailsBtnTxtColor">#303030</color>
+    <color name="advertDetailsButtonsStickColor">#E87115</color>
+    <color name="advertDetailsPageTitleBgColor">#FFFFFF</color>
+    <color name="advertDetailsPageTitleShadowColor">#C1C1C1</color>
 </resources>

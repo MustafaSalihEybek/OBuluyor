@@ -10,6 +10,8 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
+import java.text.DecimalFormat
+import java.text.NumberFormat
 import java.util.concurrent.TimeUnit
 
 object AppUtils {
@@ -19,6 +21,8 @@ object AppUtils {
     lateinit var signInRepository: SignInRepository
     lateinit var subCategoriesRepository: SubCategoriesRepository
     lateinit var categoriesRepository: CategoriesRepository
+    lateinit var advertsRepository: AdvertsRepository
+    lateinit var userDataRepository: UserDataRepository
 
     lateinit var disposable: CompositeDisposable
     lateinit var categoryImageMap: HashMap<String, Int>
@@ -61,5 +65,12 @@ object AppUtils {
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .build()
             .create(AppAPI::class.java)
+    }
+
+    fun getFormattedPrice(price: Float) : String{
+        val formatter: NumberFormat = DecimalFormat("#,###")
+        val formattedNumber = formatter.format(price)
+
+        return formattedNumber
     }
 }

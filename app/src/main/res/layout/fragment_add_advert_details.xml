@@ -1,0 +1,595 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.AddAdvertDetailsFragment">
+
+    <include
+        android:id="@+id/custom_advert_toolbar"
+        layout="@layout/custom_advert_toolbar"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:scrollbars="none"
+        android:layout_below="@+id/custom_advert_toolbar"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_marginEnd="25dp"
+                    android:id="@+id/add_advert_details_fragment_linearDetails1"
+                    android:orientation="vertical"
+                    android:layout_alignParentStart="true"
+                    android:layout_toStartOf="@+id/add_advert_details_fragment_imgThreePoints1"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:text="İlan Başlığı *"
+                        android:id="@+id/add_advert_details_fragment_txtTitle1"
+                        android:textSize="18sp"
+                        android:textColor="@color/advertDetailsTitleTxtColor"
+                        android:fontFamily="@font/poppins_bold"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:text="Başlık"
+                        android:id="@+id/add_advert_details_fragment_txtSubTitle1"
+                        android:textSize="15sp"
+                        android:textColor="@color/advertDetailsTxtColor"
+                        android:fontFamily="@font/poppins_bold"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:id="@+id/add_advert_details_fragment_imgThreePoints1"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/three_points_icon"
+                    android:layout_height="24dp"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_marginEnd="25dp"
+                    android:orientation="vertical"
+                    android:id="@+id/add_advert_details_fragment_linearDetails2"
+                    android:layout_alignParentStart="true"
+                    android:layout_toStartOf="@+id/add_advert_details_fragment_imgThreePoints2"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:text="Açıklama *"
+                        android:textSize="18sp"
+                        android:id="@+id/add_advert_details_fragment_txtTitle2"
+                        android:textColor="@color/advertDetailsTitleTxtColor"
+                        android:fontFamily="@font/poppins_bold"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:text="Açıklama"
+                        android:id="@+id/add_advert_details_fragment_txtSubTitle2"
+                        android:textSize="15sp"
+                        android:textColor="@color/advertDetailsTxtColor"
+                        android:fontFamily="@font/poppins_bold"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:id="@+id/add_advert_details_fragment_imgThreePoints2"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/three_points_icon"
+                    android:layout_height="24dp"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_marginEnd="25dp"
+                    android:id="@+id/add_advert_details_fragment_linearDetails3"
+                    android:orientation="vertical"
+                    android:layout_alignParentStart="true"
+                    android:layout_toStartOf="@+id/add_advert_details_fragment_imgThreePoints3"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:text="Fiyat *"
+                        android:id="@+id/add_advert_details_fragment_txtTitle3"
+                        android:textSize="18sp"
+                        android:textColor="@color/advertDetailsTitleTxtColor"
+                        android:fontFamily="@font/poppins_bold"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:text="Fiyat"
+                        android:id="@+id/add_advert_details_fragment_txtSubTitle3"
+                        android:textSize="15sp"
+                        android:textColor="@color/advertDetailsTxtColor"
+                        android:fontFamily="@font/poppins_bold"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:id="@+id/add_advert_details_fragment_imgThreePoints3"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/three_points_icon"
+                    android:layout_height="24dp"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_marginEnd="25dp"
+                    android:orientation="vertical"
+                    android:id="@+id/add_advert_details_fragment_linearDetails4"
+                    android:layout_alignParentStart="true"
+                    android:layout_toStartOf="@+id/add_advert_details_fragment_imgThreePoints4"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:text="m2 (Brüt) *"
+                        android:textSize="18sp"
+                        android:id="@+id/add_advert_details_fragment_txtTitle4"
+                        android:textColor="@color/advertDetailsTitleTxtColor"
+                        android:fontFamily="@font/poppins_bold"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:text="Brüt"
+                        android:id="@+id/add_advert_details_fragment_txtSubTitle4"
+                        android:textSize="15sp"
+                        android:textColor="@color/advertDetailsTxtColor"
+                        android:fontFamily="@font/poppins_bold"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:id="@+id/add_advert_details_fragment_imgThreePoints4"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/three_points_icon"
+                    android:layout_height="24dp"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_marginEnd="25dp"
+                    android:id="@+id/add_advert_details_fragment_linearDetails5"
+                    android:orientation="vertical"
+                    android:layout_alignParentStart="true"
+                    android:layout_toStartOf="@+id/add_advert_details_fragment_imgThreePoints5"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:text="m2 (Net) *"
+                        android:id="@+id/add_advert_details_fragment_txtTitle5"
+                        android:textSize="18sp"
+                        android:textColor="@color/advertDetailsTitleTxtColor"
+                        android:fontFamily="@font/poppins_bold"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:text="Brüt toplam"
+                        android:id="@+id/add_advert_details_fragment_txtSubTitle5"
+                        android:textSize="15sp"
+                        android:textColor="@color/advertDetailsTxtColor"
+                        android:fontFamily="@font/poppins_bold"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:id="@+id/add_advert_details_fragment_imgThreePoints5"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/three_points_icon"
+                    android:layout_height="24dp"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_marginEnd="25dp"
+                    android:orientation="vertical"
+                    android:id="@+id/add_advert_details_fragment_linearDetails6"
+                    android:layout_alignParentStart="true"
+                    android:layout_toStartOf="@+id/add_advert_details_fragment_imgThreePoints6"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:text="Oda Sayısı *"
+                        android:textSize="18sp"
+                        android:id="@+id/add_advert_details_fragment_txtTitle6"
+                        android:textColor="@color/advertDetailsTitleTxtColor"
+                        android:fontFamily="@font/poppins_bold"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:text="Oda Sayısı"
+                        android:id="@+id/add_advert_details_fragment_txtSubTitle6"
+                        android:textSize="15sp"
+                        android:textColor="@color/advertDetailsTxtColor"
+                        android:fontFamily="@font/poppins_bold"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:id="@+id/add_advert_details_fragment_imgThreePoints6"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/three_points_icon"
+                    android:layout_height="24dp"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_marginEnd="25dp"
+                    android:id="@+id/add_advert_details_fragment_linearDetails7"
+                    android:orientation="vertical"
+                    android:layout_alignParentStart="true"
+                    android:layout_toStartOf="@+id/add_advert_details_fragment_imgThreePoints7"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:text="Bina Yaşı *"
+                        android:id="@+id/add_advert_details_fragment_txtTitle7"
+                        android:textSize="18sp"
+                        android:textColor="@color/advertDetailsTitleTxtColor"
+                        android:fontFamily="@font/poppins_bold"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:text="Yaş"
+                        android:id="@+id/add_advert_details_fragment_txtSubTitle7"
+                        android:textSize="15sp"
+                        android:textColor="@color/advertDetailsTxtColor"
+                        android:fontFamily="@font/poppins_bold"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:id="@+id/add_advert_details_fragment_imgThreePoints7"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/three_points_icon"
+                    android:layout_height="24dp"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_marginEnd="25dp"
+                    android:orientation="vertical"
+                    android:id="@+id/add_advert_details_fragment_linearDetails8"
+                    android:layout_alignParentStart="true"
+                    android:layout_toStartOf="@+id/add_advert_details_fragment_imgThreePoints8"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:text="Bulunduğu Kat *"
+                        android:textSize="18sp"
+                        android:id="@+id/add_advert_details_fragment_txtTitle8"
+                        android:textColor="@color/advertDetailsTitleTxtColor"
+                        android:fontFamily="@font/poppins_bold"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:text="Kat"
+                        android:id="@+id/add_advert_details_fragment_txtSubTitle8"
+                        android:textSize="15sp"
+                        android:textColor="@color/advertDetailsTxtColor"
+                        android:fontFamily="@font/poppins_bold"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:id="@+id/add_advert_details_fragment_imgThreePoints8"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/three_points_icon"
+                    android:layout_height="24dp"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_marginEnd="25dp"
+                    android:orientation="vertical"
+                    android:id="@+id/add_advert_details_fragment_linearDetails9"
+                    android:layout_alignParentStart="true"
+                    android:layout_toStartOf="@+id/add_advert_details_fragment_imgThreePoints9"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:text="Kat Sayısı *"
+                        android:textSize="18sp"
+                        android:id="@+id/add_advert_details_fragment_txtTitle9"
+                        android:textColor="@color/advertDetailsTitleTxtColor"
+                        android:fontFamily="@font/poppins_bold"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:text="Kat"
+                        android:id="@+id/add_advert_details_fragment_txtSubTitle9"
+                        android:textSize="15sp"
+                        android:textColor="@color/advertDetailsTxtColor"
+                        android:fontFamily="@font/poppins_bold"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:id="@+id/add_advert_details_fragment_imgThreePoints9"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/three_points_icon"
+                    android:layout_height="24dp"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_marginEnd="25dp"
+                    android:orientation="vertical"
+                    android:id="@+id/add_advert_details_fragment_linearDetails10"
+                    android:layout_alignParentStart="true"
+                    android:layout_toStartOf="@+id/add_advert_details_fragment_imgThreePoints10"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:text="Isıtma *"
+                        android:textSize="18sp"
+                        android:id="@+id/add_advert_details_fragment_txtTitle10"
+                        android:textColor="@color/advertDetailsTitleTxtColor"
+                        android:fontFamily="@font/poppins_bold"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:text="Isıtma"
+                        android:id="@+id/add_advert_details_fragment_txtSubTitle10"
+                        android:textSize="15sp"
+                        android:textColor="@color/advertDetailsTxtColor"
+                        android:fontFamily="@font/poppins_bold"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:id="@+id/add_advert_details_fragment_imgThreePoints10"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/three_points_icon"
+                    android:layout_height="24dp"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_marginEnd="25dp"
+                    android:orientation="vertical"
+                    android:id="@+id/add_advert_details_fragment_linearDetails11"
+                    android:layout_alignParentStart="true"
+                    android:layout_toStartOf="@+id/add_advert_details_fragment_imgThreePoints11"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:text="Banyo Sayısı *"
+                        android:textSize="18sp"
+                        android:id="@+id/add_advert_details_fragment_txtTitle11"
+                        android:textColor="@color/advertDetailsTitleTxtColor"
+                        android:fontFamily="@font/poppins_bold"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:text="Banyo"
+                        android:id="@+id/add_advert_details_fragment_txtSubTitle11"
+                        android:textSize="15sp"
+                        android:textColor="@color/advertDetailsTxtColor"
+                        android:fontFamily="@font/poppins_bold"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:id="@+id/add_advert_details_fragment_imgThreePoints11"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/three_points_icon"
+                    android:layout_height="24dp"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_marginEnd="25dp"
+                    android:orientation="vertical"
+                    android:id="@+id/add_advert_details_fragment_linearDetails12"
+                    android:layout_alignParentStart="true"
+                    android:layout_toStartOf="@+id/add_advert_details_fragment_imgThreePoints12"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:text="Balkon *"
+                        android:textSize="18sp"
+                        android:id="@+id/add_advert_details_fragment_txtTitle12"
+                        android:textColor="@color/advertDetailsTitleTxtColor"
+                        android:fontFamily="@font/poppins_bold"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:text="Balkon"
+                        android:id="@+id/add_advert_details_fragment_txtSubTitle12"
+                        android:textSize="15sp"
+                        android:textColor="@color/advertDetailsTxtColor"
+                        android:fontFamily="@font/poppins_bold"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:id="@+id/add_advert_details_fragment_imgThreePoints12"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/three_points_icon"
+                    android:layout_height="24dp"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
+
+</layout>

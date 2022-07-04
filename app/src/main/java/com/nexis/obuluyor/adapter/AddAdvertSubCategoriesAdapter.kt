@@ -11,6 +11,8 @@ import com.nexis.obuluyor.model.SubCategory
 
 class AddAdvertSubCategoriesAdapter(var subCategoryList: List<SubCategory>) : RecyclerView.Adapter<AddAdvertSubCategoriesAdapter.AddAdvertSubCategoriesHolder>() {
     private lateinit var v: AdvertSubCategoryItemBinding
+    private lateinit var listener: AdvertSubCategoryOnItemClickListener
+    private var aPos: Int = 0
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -22,6 +24,13 @@ class AddAdvertSubCategoriesAdapter(var subCategoryList: List<SubCategory>) : Re
 
     override fun onBindViewHolder(holder: AddAdvertSubCategoriesHolder, position: Int) {
         holder.cV.subcategory = subCategoryList.get(position)
+
+        holder.itemView.setOnClickListener {
+            aPos = holder.adapterPosition
+
+            if (aPos != RecyclerView.NO_POSITION)
+                listener.onItemClick(subCategoryList.get(aPos))
+        }
     }
 
     override fun getItemCount() = subCategoryList.size
@@ -31,5 +40,13 @@ class AddAdvertSubCategoriesAdapter(var subCategoryList: List<SubCategory>) : Re
     fun loadData(subCategories: List<SubCategory>){
         subCategoryList = subCategories
         notifyDataSetChanged()
+    }
+
+    interface AdvertSubCategoryOnItemClickListener{
+        fun onItemClick(subCategory: SubCategory)
+    }
+
+    fun setAdvertSubCategoryOnItemClickListener(listener: AdvertSubCategoryOnItemClickListener){
+        this.listener = listener
     }
 }
