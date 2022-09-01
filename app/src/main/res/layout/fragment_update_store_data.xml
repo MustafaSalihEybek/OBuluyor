@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="store"
+            type="com.nexis.obuluyor.model.Store" />
+    </data>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:background="?attr/appBgColor"
+    tools:context=".view.UpdateStoreDataFragment">
+
+    <include
+        android:id="@+id/custom_toolbar_mainToolbar"
+        layout="@layout/custom_toolbar"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:weightSum="2"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_marginEnd="5dp"
+            android:layout_weight="0.65"
+            android:id="@+id/add_store_fragment_relativeLogo"
+            android:layout_height="120dp">
+
+            <ImageView
+                android:id="@+id/update_store_data_fragment_imgLogo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="?attr/addStoreImageBgColor" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Logo Seç"
+                android:textColor="?attr/addStoreImageTxtColor"
+                android:textSize="18sp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_marginStart="5dp"
+            android:layout_weight="1.35"
+            android:id="@+id/add_store_fragment_relativeSlider"
+            android:layout_height="120dp">
+
+            <ImageView
+                android:id="@+id/update_store_data_fragment_imgSlider"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="?attr/addStoreImageBgColor" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Slider Seç"
+                android:textColor="?attr/addStoreImageTxtColor"
+                android:textSize="18sp" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_marginTop="15dp"
+        android:hint="@{store.magazaadi}"
+        android:layout_marginEnd="15dp"
+        android:id="@+id/update_store_data_fragment_editStoreName"
+        android:layout_marginStart="15dp"
+        android:fontFamily="@font/poppins_bold"
+        android:textSize="16sp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:textColorHint="?attr/editTxtColor"
+        android:textColor="?attr/editTxtColor"
+        android:background="@drawable/edit_background_bg"
+        android:layout_height="50dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_marginTop="15dp"
+        android:hint="@{store.aciklama}"
+        android:layout_marginEnd="15dp"
+        android:id="@+id/update_store_data_fragment_editStoreDescription"
+        android:layout_marginStart="15dp"
+        android:fontFamily="@font/poppins_bold"
+        android:textSize="16sp"
+        android:padding="10dp"
+        android:gravity="top|start"
+        android:inputType="textMultiLine"
+        android:textColorHint="?attr/editTxtColor"
+        android:textColor="?attr/editTxtColor"
+        android:background="@drawable/edit_background_bg"
+        android:layout_height="150dp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="35dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginStart="15dp"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/update_store_data_fragment_btnClose"
+            android:layout_width="135dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:background="@drawable/yellow_btn_bg"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Kapat"
+            android:textAllCaps="false"
+            android:textColor="?attr/yellowBtnTxtColor"
+            android:textSize="17sp"
+            app:backgroundTint="@null" />
+
+        <Button
+            android:id="@+id/update_store_data_fragment_btnUpdate"
+            android:layout_width="135dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/orange_btn_bg"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Güncelle"
+            android:textAllCaps="false"
+            android:textColor="?attr/orangeBtnTxtColor"
+            android:textSize="17sp"
+            app:backgroundTint="@null" />
+
+    </RelativeLayout>
+
+</LinearLayout>
+
+</layout>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <variable
+            name="category"
+            type="com.nexis.obuluyor.model.Category" />
+    </data>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none"
+    android:background="?attr/appBgColor"
+    tools:context=".view.AdvertsSubCategoriesFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:id="@+id/adverts_sub_categories_fragment_linearBar"
+            android:layout_alignParentTop="true"
+            android:layout_height="wrap_content">
+
+            <include
+                android:id="@+id/custom_toolbar_mainToolbar"
+                layout="@layout/custom_toolbar"/>
+
+            <include
+                android:id="@+id/custom_advert_toolbar"
+                layout="@layout/custom_advert_toolbar" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/adverts_sub_categories_fragment_txtTitle1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/poppins_bold"
+            android:setAdvertCategory="@{category.kategori_adi}"
+            android:textColor="?attr/advertTitleTxtColor"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:id="@+id/adverts_sub_categories_fragment_imgStick"
+            android:background="?attr/advertStickColor" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/adverts_sub_categories_fragment_recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none" />
+
+        <TextView
+            android:id="@+id/adverts_sub_categories_fragment_txtTitle2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Bu Kategorilerle İlgili İlanlar"
+            android:textColor="?attr/advertTitleTxtColor"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:id="@+id/adverts_sub_categories_fragment_imgStick2"
+            android:background="?attr/advertStickColor" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:fontFamily="@font/poppins_bold"
+            android:textSize="17sp"
+            android:visibility="gone"
+            android:id="@+id/adverts_sub_categories_fragment_txtNoData"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center_horizontal"
+            android:textColor="?attr/advertNoDataColor"
+            android:text="Bu Kategorilerle İlgili Bir İlan Bulunamadı"
+            android:layout_height="wrap_content"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:visibility="gone"
+            android:id="@+id/adverts_sub_categories_fragment_recyclerViewAdverts"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none" />
+
+    </LinearLayout>
+
+</ScrollView>
+
+</layout>

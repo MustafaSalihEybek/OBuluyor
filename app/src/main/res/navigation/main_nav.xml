@@ -19,11 +19,23 @@
             android:id="@+id/action_mainFragment_to_advertCategoriesFragment"
             app:destination="@id/advertCategoriesFragment" />
         <action
-            android:id="@+id/action_mainFragment_to_advertsFragment"
-            app:destination="@id/advertsFragment" />
-        <action
             android:id="@+id/action_mainFragment_to_profileFragment"
             app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_advertsSubCategoriesFragment"
+            app:destination="@id/advertsSubCategoriesFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_advertsBySearchResultFragment"
+            app:destination="@id/advertsBySearchResultFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_otherAdvertsFragment"
+            app:destination="@id/otherAdvertsFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_advertDetailsFragment"
+            app:destination="@id/advertDetailsFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_userStoreFragment"
+            app:destination="@id/userStoreFragment" />
     </fragment>
     <fragment
         android:id="@+id/signFragment"
@@ -39,7 +51,7 @@
     </fragment>
     <fragment
         android:id="@+id/advertCategoriesFragment"
-        android:name="com.nexis.obuluyor.view.AddAdvertCategoriesFragment"
+        android:name="com.nexis.obuluyor.view.addadvert.AddAdvertCategoriesFragment"
         android:label="AdvertCategoriesFragment" >
         <argument
             android:name="userId"
@@ -54,7 +66,7 @@
     </fragment>
     <fragment
         android:id="@+id/addAdvertSubCategoriesFragment"
-        android:name="com.nexis.obuluyor.view.AddAdvertSubCategoriesFragment"
+        android:name="com.nexis.obuluyor.view.addadvert.AddAdvertSubCategoriesFragment"
         android:label="AddAdvertSubCategoriesFragment" >
         <argument
             android:name="userId"
@@ -67,12 +79,15 @@
             android:name="categoryData"
             app:argType="com.nexis.obuluyor.model.Category" />
         <action
-            android:id="@+id/action_addAdvertSubCategoriesFragment_to_addAdvertDetailsFragment"
-            app:destination="@id/addAdvertDetailsFragment" />
+            android:id="@+id/action_addAdvertSubCategoriesFragment_to_addAdvertSelectSubCategoriesFragment"
+            app:destination="@id/addAdvertSelectSubCategoriesFragment" />
+        <action
+            android:id="@+id/action_addAdvertSubCategoriesFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
     </fragment>
     <fragment
         android:id="@+id/addAdvertDetailsFragment"
-        android:name="com.nexis.obuluyor.view.AddAdvertDetailsFragment"
+        android:name="com.nexis.obuluyor.view.addadvert.AddAdvertDetailsFragment"
         android:label="AddAdvertDetailsFragment" >
         <argument
             android:name="userId"
@@ -82,11 +97,14 @@
             android:name="categoryData"
             app:argType="com.nexis.obuluyor.model.Category" />
         <argument
-            android:name="subCategoryData"
-            app:argType="com.nexis.obuluyor.model.SubCategory" />
+            android:name="subCategoryList"
+            app:argType="com.nexis.obuluyor.model.SubCategory[]" />
         <action
-            android:id="@+id/action_addAdvertDetailsFragment_to_addAdvertSubCategoriesFragment"
-            app:destination="@id/addAdvertSubCategoriesFragment" />
+            android:id="@+id/action_addAdvertDetailsFragment_to_addAdvertSelectSubCategoriesFragment"
+            app:destination="@id/addAdvertSelectSubCategoriesFragment" />
+        <action
+            android:id="@+id/action_addAdvertDetailsFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
     </fragment>
     <fragment
         android:id="@+id/advertsFragment"
@@ -97,9 +115,6 @@
             app:argType="integer"
             android:defaultValue="-1" />
         <action
-            android:id="@+id/action_advertsFragment_to_mainFragment"
-            app:destination="@id/mainFragment" />
-        <action
             android:id="@+id/action_advertsFragment_to_profileFragment"
             app:destination="@id/profileFragment" />
         <argument
@@ -108,6 +123,12 @@
         <action
             android:id="@+id/action_advertsFragment_to_advertDetailsFragment"
             app:destination="@id/advertDetailsFragment" />
+        <argument
+            android:name="subCategoryList"
+            app:argType="com.nexis.obuluyor.model.SubCategory[]" />
+        <action
+            android:id="@+id/action_advertsFragment_to_advertsSubCategoriesFragment"
+            app:destination="@id/advertsSubCategoriesFragment" />
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
@@ -120,6 +141,21 @@
         <action
             android:id="@+id/action_profileFragment_to_mainFragment"
             app:destination="@id/mainFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_favoritesFragment"
+            app:destination="@id/favoritesFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_messagesFragment"
+            app:destination="@id/messagesFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_addStoreFragment"
+            app:destination="@id/addStoreFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_updateStoreDataFragment"
+            app:destination="@id/updateStoreDataFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_userAdvertsFragment"
+            app:destination="@id/userAdvertsFragment" />
     </fragment>
     <fragment
         android:id="@+id/advertDetailsFragment"
@@ -127,7 +163,8 @@
         android:label="AdvertDetailsFragment" >
         <argument
             android:name="categoryData"
-            app:argType="com.nexis.obuluyor.model.Category" />
+            app:argType="com.nexis.obuluyor.model.Category"
+            app:nullable="true"/>
         <argument
             android:name="userId"
             app:argType="integer"
@@ -138,5 +175,192 @@
         <argument
             android:name="advertData"
             app:argType="com.nexis.obuluyor.model.Advert" />
+        <argument
+            android:name="subCategoryList"
+            app:nullable="true"
+            app:argType="com.nexis.obuluyor.model.SubCategory[]" />
+        <action
+            android:id="@+id/action_advertDetailsFragment_to_advertsBySearchResultFragment"
+            app:destination="@id/advertsBySearchResultFragment" />
+        <argument
+            android:name="isComeBySearch"
+            app:argType="boolean"
+            android:defaultValue="false" />
+        <argument
+            android:name="advertList"
+            app:argType="com.nexis.obuluyor.model.Advert[]"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_advertDetailsFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addAdvertSelectSubCategoriesFragment"
+        android:name="com.nexis.obuluyor.view.addadvert.AddAdvertSelectSubCategoriesFragment"
+        android:label="AddAdvertSelectSubCategoriesFragment" >
+        <argument
+            android:name="userId"
+            app:argType="integer"
+            android:defaultValue="-1" />
+        <argument
+            android:name="subCategoryList"
+            app:argType="com.nexis.obuluyor.model.SubCategory[]" />
+        <argument
+            android:name="categoryData"
+            app:argType="com.nexis.obuluyor.model.Category" />
+        <action
+            android:id="@+id/action_addAdvertSelectSubCategoriesFragment_self"
+            app:destination="@id/addAdvertSelectSubCategoriesFragment" />
+        <action
+            android:id="@+id/action_addAdvertSelectSubCategoriesFragment_to_addAdvertDetailsFragment"
+            app:destination="@id/addAdvertDetailsFragment" />
+        <action
+            android:id="@+id/action_addAdvertSelectSubCategoriesFragment_to_addAdvertSubCategoriesFragment"
+            app:destination="@id/addAdvertSubCategoriesFragment" />
+        <action
+            android:id="@+id/action_addAdvertSelectSubCategoriesFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/advertsSubCategoriesFragment"
+        android:name="com.nexis.obuluyor.view.AdvertsSubCategoriesFragment"
+        android:label="AdvertsSubCategoriesFragment" >
+        <argument
+            android:name="userId"
+            app:argType="integer"
+            android:defaultValue="-1" />
+        <argument
+            android:name="categoryData"
+            app:argType="com.nexis.obuluyor.model.Category" />
+        <action
+            android:id="@+id/action_advertsSubCategoriesFragment_to_advertsFragment"
+            app:destination="@id/advertsFragment" />
+        <argument
+            android:name="subCategoryList"
+            app:argType="com.nexis.obuluyor.model.SubCategory[]" />
+        <action
+            android:id="@+id/action_advertsSubCategoriesFragment_self"
+            app:destination="@id/advertsSubCategoriesFragment" />
+        <action
+            android:id="@+id/action_advertsSubCategoriesFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+        <action
+            android:id="@+id/action_advertsSubCategoriesFragment_to_advertDetailsFragment"
+            app:destination="@id/advertDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/favoritesFragment"
+        android:name="com.nexis.obuluyor.view.FavoritesFragment"
+        android:label="FavoritesFragment" >
+        <argument
+            android:name="userId"
+            app:argType="integer"
+            android:defaultValue="-1" />
+        <action
+            android:id="@+id/action_favoritesFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/messagesFragment"
+        android:name="com.nexis.obuluyor.view.message.MessagesFragment"
+        android:label="MessagesFragment" >
+        <argument
+            android:name="userId"
+            app:argType="integer"
+            android:defaultValue="-1" />
+        <action
+            android:id="@+id/action_messagesFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addStoreFragment"
+        android:name="com.nexis.obuluyor.view.AddStoreFragment"
+        android:label="AddStoreFragment" >
+        <argument
+            android:name="userId"
+            app:argType="integer"
+            android:defaultValue="-1" />
+        <action
+            android:id="@+id/action_addStoreFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/advertsBySearchResultFragment"
+        android:name="com.nexis.obuluyor.view.AdvertsBySearchResultFragment"
+        android:label="AdvertsBySearchResultFragment" >
+        <argument
+            android:name="advertList"
+            app:argType="com.nexis.obuluyor.model.Advert[]" />
+        <argument
+            android:name="userId"
+            app:argType="integer"
+            android:defaultValue="-1" />
+        <action
+            android:id="@+id/action_advertsBySearchResultFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+        <action
+            android:id="@+id/action_advertsBySearchResultFragment_to_advertDetailsFragment"
+            app:destination="@id/advertDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/otherAdvertsFragment"
+        android:name="com.nexis.obuluyor.view.OtherAdvertsFragment"
+        android:label="OtherAdvertsFragment" >
+        <argument
+            android:name="advertType"
+            app:argType="string" />
+        <argument
+            android:name="userId"
+            app:argType="integer"
+            android:defaultValue="-1" />
+        <action
+            android:id="@+id/action_otherAdvertsFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateStoreDataFragment"
+        android:name="com.nexis.obuluyor.view.UpdateStoreDataFragment"
+        android:label="UpdateStoreDataFragment" >
+        <argument
+            android:name="userId"
+            app:argType="integer"
+            android:defaultValue="-1" />
+        <action
+            android:id="@+id/action_updateStoreDataFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <argument
+            android:name="userStoreData"
+            app:argType="com.nexis.obuluyor.model.Store" />
+    </fragment>
+    <fragment
+        android:id="@+id/userStoreFragment"
+        android:name="com.nexis.obuluyor.view.UserStoreFragment"
+        android:label="UserStoreFragment" >
+        <argument
+            android:name="userId"
+            app:argType="integer"
+            android:defaultValue="-1" />
+        <argument
+            android:name="storeData"
+            app:argType="com.nexis.obuluyor.model.Store" />
+        <action
+            android:id="@+id/action_userStoreFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userAdvertsFragment"
+        android:name="com.nexis.obuluyor.view.UserAdvertsFragment"
+        android:label="UserAdvertsFragment" >
+        <argument
+            android:name="userId"
+            app:argType="integer"
+            android:defaultValue="-1" />
+        <argument
+            android:name="confirm"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <action
+            android:id="@+id/action_userAdvertsFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
     </fragment>
 </navigation>

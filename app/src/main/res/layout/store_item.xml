@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <variable
+            name="store"
+            type="com.nexis.obuluyor.model.Store" />
+    </data>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:background="?attr/storeBackgroundColor"
+    android:layout_width="wrap_content"
+    android:gravity="center_horizontal"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:layout_width="110dp"
+        android:scaleType="centerCrop"
+        android:downloadImg="@{store.logoUrl}"
+        android:layout_height="110dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:textSize="15sp"
+        android:textColor="?attr/mainTxtColor"
+        android:fontFamily="@font/poppins_bold"
+        android:layout_marginTop="5dp"
+        android:text="@{store.magazaadi}"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>
+
+</layout>

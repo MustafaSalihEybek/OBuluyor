@@ -1,27 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/appBgColor"
+    android:background="?attr/appBgColor"
     android:layout_height="match_parent"
-    tools:context=".view.AddAdvertCategoriesFragment">
+    tools:context=".view.addadvert.AddAdvertCategoriesFragment">
 
-    <include
-        android:id="@+id/custom_advert_toolbar"
-        layout="@layout/custom_advert_toolbar" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/advert_categories_fragment_linearBar"
+        android:layout_alignParentTop="true"
+        android:layout_height="wrap_content">
+
+        <include
+            android:id="@+id/custom_toolbar_mainToolbar"
+            layout="@layout/custom_toolbar"/>
+
+        <include
+            android:id="@+id/custom_advert_toolbar"
+            layout="@layout/custom_advert_toolbar" />
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/advert_categories_fragment_txtTitle1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/custom_advert_toolbar"
+        android:layout_below="@+id/advert_categories_fragment_linearBar"
         android:layout_marginStart="10dp"
         android:layout_marginTop="15dp"
         android:fontFamily="@font/poppins_bold"
         android:text="KELİME İLE KATEGORİ SEÇİMİ"
-        android:textColor="@color/advertTitleTxtColor"
+        android:textColor="?attr/advertTitleTxtColor"
         android:textSize="18sp" />
 
     <ImageView
@@ -29,7 +42,7 @@
         android:layout_height="5dp"
         android:id="@+id/advert_categories_fragment_imgStick1"
         android:layout_below="@+id/advert_categories_fragment_txtTitle1"
-        android:background="@color/advertStickColor" />
+        android:background="?attr/advertStickColor" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -47,21 +60,22 @@
             android:layout_width="wrap_content"
             android:src="@drawable/search_icon"
             android:layout_marginStart="15dp"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            app:tint="?attr/editBorderColor"/>
 
         <EditText
             android:layout_width="match_parent"
             android:paddingStart="15dp"
             android:paddingEnd="15dp"
-            android:id="@+id/main_fragment_editSearchValue"
+            android:id="@+id/advert_categories_fragment_editSearch"
             android:layout_marginTop="3dp"
             android:layout_marginEnd="3dp"
             android:layout_marginBottom="3dp"
             android:textSize="17sp"
-            android:textColor="@color/editTxtColor"
-            android:textColorHint="@color/editTxtColor"
+            android:textColor="?attr/editTxtColor"
+            android:textColorHint="?attr/editTxtColor"
             android:hint="Kelime veya ilan no ile ara"
-            android:background="@color/editBackgroundColor"
+            android:background="?attr/editBackgroundColor"
             android:layout_height="50dp"/>
 
     </LinearLayout>
@@ -75,7 +89,7 @@
         android:layout_marginTop="25dp"
         android:fontFamily="@font/poppins_bold"
         android:text="ADIM ADIM KATEGORİ SEÇİMİ"
-        android:textColor="@color/advertTitleTxtColor"
+        android:textColor="?attr/advertTitleTxtColor"
         android:textSize="18sp" />
 
     <ImageView
@@ -83,14 +97,14 @@
         android:layout_height="5dp"
         android:id="@+id/advert_categories_fragment_imgStick2"
         android:layout_below="@+id/advert_categories_fragment_txtTitle2"
-        android:background="@color/advertStickColor" />
+        android:background="?attr/advertStickColor" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:scrollbars="none"
-        android:layout_below="@+id/advert_categories_fragment_imgStick2"
         android:id="@+id/advert_categories_fragment_recyclerView"
-        android:layout_height="match_parent"/>
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/advert_categories_fragment_imgStick2"
+        android:scrollbars="none" />
 
 </RelativeLayout>
 

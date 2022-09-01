@@ -1,5 +1,9 @@
 package com.nexis.obuluyor.model
 
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
+
+@Parcelize
 data class User(
     val Id: Int = 0,
     val ad_soyad: String?,
@@ -13,5 +17,6 @@ data class User(
     val ilce: Int?,
     val kayit_tarihi: String?,
     val aktivasyon: Int?,
-    val aktivasyonkodu: String?
-)
+    val aktivasyonkodu: String?,
+    val store: Store?
+) : Parcelable

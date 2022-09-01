@@ -1,7 +1,11 @@
 package com.nexis.obuluyor.util
 
+import android.content.Context
+import android.util.TypedValue
 import com.nexis.obuluyor.R
 import com.nexis.obuluyor.api.AppAPI
+import com.nexis.obuluyor.model.ModuleContent
+import com.nexis.obuluyor.model.Prop
 import com.nexis.obuluyor.model.User
 import com.nexis.obuluyor.repository.*
 import io.reactivex.disposables.CompositeDisposable
@@ -23,11 +27,35 @@ object AppUtils {
     lateinit var categoriesRepository: CategoriesRepository
     lateinit var advertsRepository: AdvertsRepository
     lateinit var userDataRepository: UserDataRepository
+    lateinit var storeListRepository: StoreListRepository
+    lateinit var updateUserDataRepository: UpdateUserDataRepository
+    lateinit var favoritesRepository: FavoritesRepository
+    lateinit var addFavoriteRepository: AddFavoriteRepository
+    lateinit var removeFavoriteRepository: RemoveFavoriteRepository
+    lateinit var sendMessageRepository: SendMessageRepository
+    lateinit var messagesRepository: MessagesRepository
+    lateinit var addStoreRepository: AddStoreRepository
+    lateinit var advertsBySearchResult: AdvertsBySearchResult
+    lateinit var otherAdvertsRepository: OtherAdvertsRepository
+    lateinit var storePaymentInfoRepository: StorePaymentInfoRepository
+    lateinit var updateStoreDataRepository: UpdateStoreDataRepository
+    lateinit var getModulesForCategoriesRepository: GetModulesForCategoriesRepository
+    lateinit var getModulesRepository: GetModulesRepository
+    lateinit var getPropsRepository: GetPropsRepository
+    lateinit var getPropsAndModulesDataRepository: GetPropsAndModulesDataRepository
+    lateinit var getPropTitlesRepository: GetPropTitlesRepository
+    lateinit var getModuleContentsRepository: GetModuleContentsRepository
+    lateinit var getAdvertsByUserRepository: GetAdvertsByUserRepository
+    lateinit var addNewAdvertRepository: AddNewAdvertRepository
+    lateinit var addImageForAdvertRepository: AddImageForAdvertRepository
+    lateinit var getUserAdvertsRepository: GetUserAdvertsRepository
 
     lateinit var disposable: CompositeDisposable
     lateinit var categoryImageMap: HashMap<String, Int>
 
     lateinit var mUser: User
+    lateinit var moduleContentData: ModuleContent
+    lateinit var mProp: Prop
 
     fun getCategoryMap() : HashMap<String, Int> {
         categoryImageMap = HashMap()
@@ -72,5 +100,13 @@ object AppUtils {
         val formattedNumber = formatter.format(price)
 
         return formattedNumber
+    }
+
+    fun getColorValue(color: Int, context: Context) : Int {
+        val typedValue = TypedValue()
+        val theme = context.theme
+        theme.resolveAttribute(color, typedValue, true)
+
+        return typedValue.data
     }
 }

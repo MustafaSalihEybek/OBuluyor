@@ -41,8 +41,12 @@ class ProfileFragment : Fragment(), View.OnClickListener {
                 profileViewModel.getUserData(userId)
                 profileViewModel.getCountryList()
 
-                profile_fragment_imgUpdateProfile.setOnClickListener(this)
-                profile_fragment_imgSignOut.setOnClickListener(this)
+                profile_fragment_relativeUpdateProfile.setOnClickListener(this)
+                profile_fragment_relativeSignOut.setOnClickListener(this)
+                profile_fragment_relativeFavoriteAdverts.setOnClickListener(this)
+                profile_fragment_relativeAdvertMessages.setOnClickListener(this)
+                profile_fragment_relativeActiveAdverts.setOnClickListener(this)
+                profile_fragment_relativeDeActiveAdverts.setOnClickListener(this)
             }
         }
     }
@@ -65,10 +69,39 @@ class ProfileFragment : Fragment(), View.OnClickListener {
         p0?.let {
             when (it.id){
                 R.id.custom_toolbar_imgClose -> backToMainPage(userId)
-                R.id.profile_fragment_imgUpdateProfile -> showUserProfileUpdateDialog(v.context, userData, countryList)
-                R.id.profile_fragment_imgSignOut -> Singleton.showSignOutDialog(v, userId)
+                R.id.profile_fragment_relativeUpdateProfile -> showUserProfileUpdateDialog(v.context, userData, countryList)
+                R.id.profile_fragment_relativeSignOut -> Singleton.showSignOutDialog(v, userId)
+                R.id.profile_fragment_relativeFavoriteAdverts -> goToFavoritesPage(userId)
+                R.id.profile_fragment_relativeAdvertMessages -> goToMessagesPage(userId)
+                R.id.profile_fragment_relativeStoreCreateOrEdit -> goToAddStorePage(userId, userData!!)
+                R.id.profile_fragment_relativeActiveAdverts -> goToUserAdvertsPage(1, userId)
+                R.id.profile_fragment_relativeDeActiveAdverts -> goToUserAdvertsPage(0, userId)
             }
         }
+    }
+
+    private fun goToUserAdvertsPage(confirm: Int, userId: Int){
+        navDirections = ProfileFragmentDirections.actionProfileFragmentToUserAdvertsFragment(userId, confirm)
+        Navigation.findNavController(v).navigate(navDirections)
+    }
+
+    private fun goToAddStorePage(userId: Int, userData: User){
+        if (userData.store?.Id == null)
+            navDirections = ProfileFragmentDirections.actionProfileFragmentToAddStoreFragment(userId)
+        else
+            navDirections = ProfileFragmentDirections.actionProfileFragmentToUpdateStoreDataFragment(userId, userData.store)
+
+        Navigation.findNavController(v).navigate(navDirections)
+    }
+
+    private fun goToMessagesPage(userId: Int){
+        navDirections = ProfileFragmentDirections.actionProfileFragmentToMessagesFragment(userId)
+        Navigation.findNavController(v).navigate(navDirections)
+    }
+
+    private fun goToFavoritesPage(userId: Int){
+        navDirections = ProfileFragmentDirections.actionProfileFragmentToFavoritesFragment(userId)
+        Navigation.findNavController(v).navigate(navDirections)
     }
 
     private fun showUserProfileUpdateDialog(context: Context, userData: User?, countryList: List<Country>?){
@@ -86,12 +119,22 @@ class ProfileFragment : Fragment(), View.OnClickListener {
         profileViewModel.userData.observe(viewLifecycleOwner, Observer {
             it?.let {
                 userData = it
+                profile_fragment_relativeStoreCreateOrEdit.setOnClickListener(this)
             }
         })
 
         profileViewModel.countryList.observe(viewLifecycleOwner, Observer {
             it?.let {
                 countryList = it
+            }
+        })
+
+        profileViewModel.successMessage.observe(viewLifecycleOwner, Observer {
+            it?.let {
+                it.show(v, it)
+                Singleton.closeUpdateUserProfileDialog()
+                userData = null
+                profileViewModel.getUserData(userId)
             }
         })
     }

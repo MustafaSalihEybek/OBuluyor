@@ -11,7 +11,7 @@ android {
 
     defaultConfig {
         applicationId "com.nexis.obuluyor"
-        minSdk 17
+        minSdk 21
         targetSdk 32
         multiDexEnabled = true
         versionCode 1
@@ -51,6 +51,10 @@ dependencies {
     implementation 'com.google.android.material:material:1.6.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.google.android.gms:play-services-maps:18.0.2'
+    implementation 'org.sufficientlysecure:html-textview:4.0'
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+    implementation 'com.google.android.gms:play-services-location:20.0.0'
 
     //Okttp3
     implementation("com.squareup.okhttp3:logging-interceptor:4.10.0")

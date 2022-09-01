@@ -22,16 +22,20 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:id="@+id/advert_detail_item_txtTitle"
             android:fontFamily="@font/poppins_bold"
             android:text="@{advertdetail.detailTitle}"
-            android:textColor="@color/advertDetailsPageTxtTitleColor"
+            android:textColor="?attr/advertDetailsPageTxtTitleColor"
             android:textSize="15sp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:textSize="15sp"
-            android:textColor="@color/advertDetailsPageTxtColor"
+            android:textColor="?attr/advertDetailsPageTxtColor"
             android:layout_alignParentEnd="true"
+            android:layout_marginStart="25dp"
+            android:gravity="end"
+            android:layout_toEndOf="@+id/advert_detail_item_txtTitle"
             android:text="@{advertdetail.detailContent}"
             android:fontFamily="@font/poppins_medium"
             android:layout_height="wrap_content"/>
@@ -40,7 +44,7 @@
 
     <ImageView
         android:layout_width="match_parent"
-        android:background="@color/advertDetailsPageStickColor"
+        android:background="?attr/advertDetailsPageStickColor"
         android:layout_height="2dp"/>
 
 </LinearLayout>

@@ -2,7 +2,7 @@
 <androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:id="@+id/custom_advert_toolbar"
-    android:background="@color/toolBarBackgroundColor"
+    android:background="?attr/toolBarBackgroundColor"
     android:layout_height="wrap_content">
 
     <TextView
@@ -15,11 +15,11 @@
         android:layout_height="wrap_content"/>
 
     <ImageView
-        android:layout_width="21dp"
+        android:layout_width="34dp"
         android:layout_marginEnd="15dp"
         android:layout_gravity="end"
         android:id="@+id/custom_advert_toolbar_imgClose"
-        android:src="@drawable/close_icon"
-        android:layout_height="21dp"/>
+        android:src="@drawable/icon_back"
+        android:layout_height="34dp"/>
 
 </androidx.appcompat.widget.Toolbar>

@@ -6,69 +6,289 @@
 <androidx.drawerlayout.widget.DrawerLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    style="@style/CustomDrawerMenu"
     android:id="@+id/main_fragment_drawerLayout"
     tools:context=".view.MainFragment">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:background="@color/generalAppBackgroundColor"
-        android:focusable="true"
-        android:focusableInTouchMode="true"
-        android:clickable="true"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
-        <include
-            layout="@layout/custom_toolbar"
-            android:id="@+id/custom_toolbar_mainToolbar"/>
-
-        <RelativeLayout
+        <ScrollView
             android:layout_width="match_parent"
-            android:padding="20dp"
-            android:layout_below="@id/custom_toolbar_mainToolbar"
-            android:id="@+id/main_fragment_relativeSearch"
-            android:background="@color/generalCardBackgroundColor"
+            android:scrollbars="none"
             android:layout_height="wrap_content">
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:orientation="horizontal"
-                android:background="@drawable/edit_background_bg"
-                android:gravity="center"
+                android:background="?attr/generalAppBackgroundColor"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:clickable="true"
                 android:layout_height="wrap_content">
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:src="@drawable/search_icon"
-                    android:layout_marginStart="15dp"
-                    android:layout_height="wrap_content"/>
+                <include
+                    layout="@layout/custom_toolbar"
+                    android:id="@+id/custom_toolbar_mainToolbar"/>
 
-                <EditText
+                <RelativeLayout
+                    android:id="@+id/main_fragment_relativeSearch"
                     android:layout_width="match_parent"
-                    android:paddingStart="15dp"
-                    android:paddingEnd="15dp"
-                    android:id="@+id/main_fragment_editSearchValue"
-                    android:layout_marginTop="3dp"
-                    android:layout_marginEnd="3dp"
-                    android:layout_marginBottom="3dp"
-                    android:textSize="17sp"
-                    android:textColor="@color/editTxtColor"
-                    android:textColorHint="@color/editTxtColor"
-                    android:hint="Kelime veya ilan no ile ara"
-                    android:background="@color/editBackgroundColor"
-                    android:layout_height="50dp"/>
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/custom_toolbar_mainToolbar"
+                    android:background="?attr/generalCardBackgroundColor"
+                    android:padding="20dp">
 
-            </LinearLayout>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/edit_background_bg">
 
-        </RelativeLayout>
+                        <EditText
+                            android:id="@+id/main_fragment_editSearchValue"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginStart="3dp"
+                            android:layout_marginTop="3dp"
+                            android:layout_marginEnd="3dp"
+                            android:layout_marginBottom="3dp"
+                            android:layout_toStartOf="@+id/main_fragment_imgSearch"
+                            android:background="?attr/editBackgroundColor"
+                            android:hint="Kelime veya ilan no ile ara"
+                            android:paddingStart="15dp"
+                            android:paddingEnd="15dp"
+                            android:textColor="?attr/editSearchTxtColor"
+                            android:textColorHint="?attr/editSearchTxtColor"
+                            android:textSize="17sp" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/main_fragment_recyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/main_fragment_relativeSearch"
-            android:layout_marginTop="25dp"
-            android:scrollbars="none" />
+                        <ImageView
+                            android:id="@+id/main_fragment_imgSearch"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="15dp"
+                            android:src="@drawable/search_icon"
+                            app:tint="?attr/editBorderColor" />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/main_fragment_recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/main_fragment_relativeSearch"
+                    android:layout_marginTop="25dp"
+                    android:scrollbars="none" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:id="@+id/main_fragment_linearOtherCategories"
+                    android:layout_marginTop="25dp"
+                    android:layout_below="@+id/main_fragment_recyclerView"
+                    android:background="?attr/advertCategoryItemBgColor"
+                    android:layout_height="wrap_content">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginStart="15dp"
+                        android:id="@+id/main_fragment_relativeUrgent"
+                        android:background="?attr/generalCardBackgroundColor"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/main_fragment_imgUrgent"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/urgent_icon" />
+
+                        <TextView
+                            android:id="@+id/main_fragment_txtUrgent"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="15dp"
+                            android:layout_toStartOf="@+id/main_fragment_imgUrgentRight"
+                            android:layout_toEndOf="@+id/main_fragment_imgUrgent"
+                            android:fontFamily="@font/poppins_regular"
+                            android:text="Acil Acil İlanlar"
+                            android:textColor="?attr/itemTitleTxtColor"
+                            android:textSize="17sp"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:id="@+id/main_fragment_imgUrgentRight"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:paddingEnd="15dp"
+                            android:src="@drawable/right_arrow"
+                            app:tint="?attr/itemTitleTxtColor" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:layout_below="@id/main_fragment_imgUrgent"
+                            android:layout_alignStart="@+id/main_fragment_txtUrgent"
+                            android:layout_marginTop="5dp"
+                            android:background="?attr/stickColor" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginStart="15dp"
+                        android:id="@+id/main_fragment_relativeDropsPrice"
+                        android:background="?attr/generalCardBackgroundColor"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/main_fragment_imgDropsPrice"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/price_drop_icon" />
+
+                        <TextView
+                            android:id="@+id/main_fragment_txtDropsPrice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="15dp"
+                            android:layout_toStartOf="@+id/main_fragment_imgDropsPriceRight"
+                            android:layout_toEndOf="@+id/main_fragment_imgDropsPrice"
+                            android:fontFamily="@font/poppins_regular"
+                            android:text="Fiyatı Düşenler"
+                            android:textColor="?attr/itemTitleTxtColor"
+                            android:textSize="17sp"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:id="@+id/main_fragment_imgDropsPriceRight"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:paddingEnd="15dp"
+                            android:src="@drawable/right_arrow"
+                            app:tint="?attr/itemTitleTxtColor" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_marginTop="5dp"
+                            android:layout_alignStart="@+id/main_fragment_txtDropsPrice"
+                            android:layout_below="@id/main_fragment_imgDropsPrice"
+                            android:background="?attr/stickColor"
+                            android:layout_height="2dp"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:id="@+id/main_fragment_relative48Hour"
+                        android:layout_marginStart="15dp"
+                        android:background="?attr/generalCardBackgroundColor"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/main_fragment_img48Hour"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/time_icon"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginEnd="15dp"
+                            android:layout_marginTop="5dp"
+                            android:id="@+id/main_fragment_txt48Hour"
+                            android:layout_toStartOf="@+id/main_fragment_img48HourRight"
+                            android:layout_toEndOf="@+id/main_fragment_img48Hour"
+                            android:fontFamily="@font/poppins_regular"
+                            android:text="Son 48 Saat"
+                            android:textColor="?attr/itemTitleTxtColor"
+                            android:textSize="17sp"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:id="@+id/main_fragment_img48HourRight"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:paddingEnd="15dp"
+                            android:src="@drawable/right_arrow"
+                            app:tint="?attr/itemTitleTxtColor" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_marginTop="5dp"
+                            android:layout_alignStart="@+id/main_fragment_txt48Hour"
+                            android:layout_below="@id/main_fragment_img48Hour"
+                            android:background="?attr/stickColor"
+                            android:layout_height="2dp"/>
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/main_fragment_txtOtherAdverts"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/main_fragment_linearOtherCategories"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginEnd="10dp"
+                    android:fontFamily="@font/poppins_black"
+                    android:text="İlginizi Çekebilecek İlanlar"
+                    android:textColor="?attr/mainTxtColor"
+                    android:textSize="18sp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/main_fragment_recyclerViewOtherAdverts"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/main_fragment_txtOtherAdverts" />
+
+                <TextView
+                    android:id="@+id/main_fragment_txtStore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/main_fragment_recyclerViewOtherAdverts"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginEnd="10dp"
+                    android:fontFamily="@font/poppins_black"
+                    android:text="Mağazalar"
+                    android:textColor="?attr/mainTxtColor"
+                    android:textSize="18sp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/main_fragment_recyclerViewStore"
+                    android:layout_below="@+id/main_fragment_txtStore" />
+
+            </RelativeLayout>
+
+        </ScrollView>
 
         <ImageView
             android:layout_width="60dp"
@@ -77,8 +297,11 @@
             android:id="@+id/main_fragment_imgAddAdvert"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:src="@drawable/add_icon"
-            android:layout_height="60dp"/>
+            android:src="@drawable/ic_add"
+            android:padding="10dp"
+            android:background="@drawable/add_advert_btn_bg"
+            android:layout_height="60dp"
+            app:tint="?attr/addAdvertBtnTxtColor"/>
 
     </RelativeLayout>
 
@@ -90,19 +313,20 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:background="@color/navBgColor"
+            android:background="?attr/navBgColor"
             android:layout_height="match_parent">
 
             <include
                 android:id="@+id/custom_nav_header_linearHeader"
-                layout="@layout/custom_nav_header"/>
+                layout="@layout/custom_nav_header" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:layout_width="match_parent"
-                android:scrollbars="none"
-                android:layout_below="@+id/custom_nav_header_linearHeader"
                 android:id="@+id/main_fragment_navigation_recyclerView"
-                android:layout_height="wrap_content"/>
+                android:layout_width="match_parent"
+                android:background="?attr/navBgColor"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/custom_nav_header_linearHeader"
+                android:scrollbars="none" />
 
         </RelativeLayout>
 

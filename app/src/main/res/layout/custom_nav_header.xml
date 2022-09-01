@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:padding="20dp"
     android:id="@+id/custom_nav_header_linearHeader"
-    android:background="@color/navHeaderBgColor"
+    android:background="?attr/navHeaderBgColor"
     android:layout_height="wrap_content">
 
     <RelativeLayout
@@ -28,7 +29,7 @@
             android:layout_toEndOf="@+id/custom_nav_header_imgItem1"
             android:fontFamily="@font/poppins_medium"
             android:text="Ana sayfa"
-            android:textColor="@color/navHeaderTxtColor"
+            android:textColor="?attr/navHeaderTxtColor"
             android:textSize="19sp" />
 
         <ImageView
@@ -37,13 +38,15 @@
             android:layout_height="22dp"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
-            android:src="@drawable/right_icon_white" />
+            android:src="@drawable/right_icon_white"
+            app:tint="?attr/navHeaderTxtColor" />
 
     </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_marginTop="15dp"
+        android:visibility="gone"
         android:layout_height="wrap_content">
 
         <ImageView
@@ -63,7 +66,7 @@
             android:layout_toEndOf="@+id/custom_nav_header_imgItem2"
             android:fontFamily="@font/poppins_medium"
             android:text="Bana Özel"
-            android:textColor="@color/navHeaderTxtColor"
+            android:textColor="?attr/navHeaderTxtColor"
             android:textSize="19sp" />
 
         <ImageView
@@ -79,6 +82,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_marginTop="15dp"
+        android:id="@+id/custom_nav_header_relativeAddAdvert"
         android:layout_height="wrap_content">
 
         <ImageView
@@ -98,7 +102,7 @@
             android:layout_toEndOf="@+id/custom_nav_header_imgItem3"
             android:fontFamily="@font/poppins_medium"
             android:text="İlan Ver"
-            android:textColor="@color/navHeaderTxtColor"
+            android:textColor="?attr/navHeaderTxtColor"
             android:textSize="19sp" />
 
         <ImageView
@@ -107,13 +111,15 @@
             android:layout_height="22dp"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
-            android:src="@drawable/right_icon_white" />
+            android:src="@drawable/right_icon_white"
+            app:tint="?attr/navHeaderTxtColor" />
 
     </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_marginTop="15dp"
+        android:visibility="gone"
         android:layout_height="wrap_content">
 
         <ImageView
@@ -133,7 +139,7 @@
             android:layout_toEndOf="@+id/custom_nav_header_imgItem4"
             android:fontFamily="@font/poppins_medium"
             android:text="Servisler"
-            android:textColor="@color/navHeaderTxtColor"
+            android:textColor="?attr/navHeaderTxtColor"
             android:textSize="19sp" />
 
         <ImageView

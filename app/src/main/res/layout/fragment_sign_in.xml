@@ -3,18 +3,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="?attr/dialogBgColor"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".view.sign.SignInFragment">
 
-    <ImageView
-        android:layout_width="250dp"
-        android:scaleType="fitXY"
+    <TextView
+        android:layout_width="wrap_content"
+        android:textSize="29sp"
         android:layout_marginTop="25dp"
         android:layout_marginEnd="25dp"
         android:layout_marginStart="25dp"
-        android:src="@drawable/advert_title"
-        android:layout_height="80dp"/>
+        android:textColor="?attr/signTxtColor"
+        android:fontFamily="@font/poppins_bold"
+        android:text="İlan vermek için\nGiriş Yapın"
+        android:layout_height="wrap_content"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -30,7 +33,9 @@
             android:layout_width="26dp"
             android:src="@drawable/email_icon"
             android:layout_marginStart="15dp"
-            android:layout_height="26dp"/>
+            android:layout_marginEnd="10dp"
+            android:layout_height="26dp"
+            app:tint="?attr/editTxtColor"/>
 
         <EditText
             android:layout_width="match_parent"
@@ -42,10 +47,10 @@
             android:layout_marginEnd="3dp"
             android:layout_marginBottom="3dp"
             android:textSize="17sp"
-            android:textColor="@color/editTxtColor"
-            android:textColorHint="@color/editTxtColor"
+            android:textColor="?attr/editTxtColor"
+            android:textColorHint="?attr/editTxtColor"
             android:hint="E-posta Adresi"
-            android:background="@color/editBackgroundColor"
+            android:background="?attr/editBackgroundColor"
             android:layout_height="50dp"/>
 
     </LinearLayout>
@@ -64,7 +69,9 @@
             android:layout_width="26dp"
             android:src="@drawable/lock_icon"
             android:layout_marginStart="15dp"
-            android:layout_height="26dp"/>
+            android:layout_marginEnd="10dp"
+            android:layout_height="26dp"
+            app:tint="?attr/editTxtColor"/>
 
         <EditText
             android:layout_width="match_parent"
@@ -76,23 +83,24 @@
             android:layout_marginEnd="3dp"
             android:layout_marginBottom="3dp"
             android:textSize="17sp"
-            android:textColor="@color/editTxtColor"
-            android:textColorHint="@color/editTxtColor"
+            android:textColor="?attr/editTxtColor"
+            android:textColorHint="?attr/editTxtColor"
             android:hint="Şifre"
-            android:background="@color/editBackgroundColor"
+            android:background="?attr/editBackgroundColor"
             android:layout_height="50dp"/>
 
     </LinearLayout>
 
-    <ImageView
-        android:layout_width="135dp"
+    <TextView
+        android:layout_width="wrap_content"
+        android:text="Şifremi unuttum"
         android:layout_gravity="end"
         android:layout_marginTop="25dp"
+        android:textColor="?attr/signTxtColor"
         android:layout_marginEnd="25dp"
-        android:scaleType="fitXY"
-        android:id="@+id/sign_in_fragment_imgForgotPassword"
-        android:src="@drawable/forgot_password_title"
-        android:layout_height="25dp"/>
+        android:textSize="16sp"
+        android:fontFamily="@font/poppins_bold"
+        android:layout_height="wrap_content"/>
 
     <Button
         android:layout_width="match_parent"
@@ -100,8 +108,13 @@
         android:layout_marginTop="45dp"
         android:id="@+id/sign_in_fragment_btnSignIn"
         android:layout_marginStart="25dp"
-        android:background="@drawable/sign_in_btn"
-        android:layout_height="55dp"
+        android:text="Giriş Yap"
+        android:textSize="19sp"
+        android:textColor="?attr/orangeBtnTxtColor"
+        android:fontFamily="@font/poppins_bold"
+        android:textAllCaps="false"
+        android:background="@drawable/orange_btn_bg"
+        android:layout_height="wrap_content"
         app:backgroundTint="@null"/>
 
     <Button
@@ -110,8 +123,13 @@
         android:layout_marginTop="15dp"
         android:id="@+id/sign_in_fragment_btnSignUp"
         android:layout_marginStart="25dp"
-        android:background="@drawable/sign_up_btn"
-        android:layout_height="53dp"
+        android:text="Hemen Hesap Aç"
+        android:fontFamily="@font/poppins_bold"
+        android:textSize="19sp"
+        android:textAllCaps="false"
+        android:textColor="?attr/yellowBtnTxtColor"
+        android:background="@drawable/yellow_btn_bg"
+        android:layout_height="wrap_content"
         app:backgroundTint="@null"/>
 
 </LinearLayout>

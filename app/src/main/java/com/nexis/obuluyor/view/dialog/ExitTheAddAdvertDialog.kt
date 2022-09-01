@@ -6,7 +6,7 @@ import android.view.View
 import androidx.navigation.NavDirections
 import androidx.navigation.Navigation
 import com.nexis.obuluyor.R
-import com.nexis.obuluyor.view.AddAdvertCategoriesFragmentDirections
+import com.nexis.obuluyor.view.addadvert.AddAdvertCategoriesFragmentDirections
 import kotlinx.android.synthetic.main.exit_the_add_advert_dialog.*
 
 class ExitTheAddAdvertDialog(val v: View, val userId: Int) : Dialog(v.context), View.OnClickListener {
@@ -32,10 +32,10 @@ class ExitTheAddAdvertDialog(val v: View, val userId: Int) : Dialog(v.context), 
     }
 
     private fun backToPage(){
-        closeThisDialog()
-
         navDirections = AddAdvertCategoriesFragmentDirections.actionAdvertCategoriesFragmentToMainFragment(userId)
         Navigation.findNavController(v).navigate(navDirections)
+
+        closeThisDialog()
     }
 
     private fun closeThisDialog(){

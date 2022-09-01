@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    android:scrollbars="none"
+    tools:context=".view.addadvert.AddAdvertDetailsPage3Fragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:paddingEnd="15dp"
+        android:paddingStart="15dp"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:visibility="gone"
+            android:id="@+id/add_advert_details_page3_fragment_relativeViewPager"
+            android:layout_height="wrap_content">
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/add_advert_details_page3_fragment_viewPager"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scrollbars="none" />
+
+            <com.pixelcan.inkpageindicator.InkPageIndicator
+                android:layout_width="match_parent"
+                android:id="@+id/add_advert_details_page3_fragment_pageIndicator"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:layout_alignBottom="@+id/add_advert_details_page3_fragment_viewPager"
+                app:ipi_dotDiameter="8dp"
+                app:ipi_dotGap="8dp"
+                app:ipi_animationDuration="320"
+                app:ipi_pageIndicatorColor="?attr/indicatorColor"
+                app:ipi_currentPageIndicatorColor="?attr/indicatorCurrentColor"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:text="Düzenle"
+                android:background="@drawable/orange_btn_bg"
+                android:layout_below="@+id/add_advert_details_page3_fragment_pageIndicator"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:visibility="gone"
+                android:id="@+id/add_advert_details_page3_fragment_btnEditImages"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/poppins_bold"
+                app:backgroundTint="@null"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:id="@+id/add_advert_details_page3_fragment_relativeImages"
+            android:layout_height="200dp">
+
+            <ImageView
+                android:id="@+id/update_store_data_fragment_imgSlider"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="?attr/addStoreImageBgColor" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Resimleri Seç"
+                android:textColor="?attr/addStoreImageTxtColor"
+                android:textSize="18sp" />
+
+        </RelativeLayout>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_marginTop="15dp"
+            android:hint="İlan başlığını giriniz"
+            android:id="@+id/add_advert_details_page3_fragment_editAdvertTitle"
+            android:fontFamily="@font/poppins_bold"
+            android:textSize="16sp"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:textColorHint="?attr/editTxtColor"
+            android:textColor="?attr/editTxtColor"
+            android:background="@drawable/edit_background_bg"
+            android:layout_height="50dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_marginTop="15dp"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:maxLength="10"
+                android:layout_marginEnd="15dp"
+                android:hint="İlan fiyatını yazınız"
+                android:id="@+id/add_advert_details_page3_fragment_editAdvertPrice"
+                android:fontFamily="@font/poppins_bold"
+                android:textSize="16sp"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:inputType="number"
+                android:textColorHint="?attr/editTxtColor"
+                android:textColor="?attr/editTxtColor"
+                android:background="@drawable/edit_background_bg"
+                android:layout_height="50dp"/>
+
+            <Spinner
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_marginStart="15dp"
+                android:id="@+id/add_advert_details_page3_fragment_spinnerExchange"
+                android:background="@drawable/edit_background_bg"
+                android:layout_height="50dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_marginTop="15dp"
+            android:layout_height="wrap_content">
+
+            <Spinner
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="15dp"
+                android:id="@+id/add_advert_details_page3_fragment_spinnerCountry"
+                android:background="@drawable/edit_background_bg"
+                android:layout_height="50dp"/>
+
+            <Spinner
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_marginStart="15dp"
+                android:id="@+id/add_advert_details_page3_fragment_spinnerCity"
+                android:background="@drawable/edit_background_bg"
+                android:layout_height="50dp"/>
+
+        </LinearLayout>
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_marginTop="15dp"
+            android:id="@+id/add_advert_details_page3_fragment_spinnerAdvertTime"
+            android:background="@drawable/edit_background_bg"
+            android:layout_height="50dp"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_marginTop="15dp"
+            android:hint="İlan açıklaması giriniz"
+            android:id="@+id/add_advert_details_page3_fragment_editAdvertContent"
+            android:fontFamily="@font/poppins_bold"
+            android:textSize="16sp"
+            android:padding="10dp"
+            android:gravity="top|start"
+            android:inputType="textMultiLine"
+            android:minHeight="150dp"
+            android:textColorHint="?attr/editTxtColor"
+            android:textColor="?attr/editTxtColor"
+            android:background="@drawable/edit_background_bg"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+</ScrollView>

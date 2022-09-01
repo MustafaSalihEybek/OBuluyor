@@ -10,8 +10,8 @@
 <RelativeLayout
     android:layout_width="match_parent"
     android:paddingTop="10dp"
-    android:layout_marginStart="15dp"
-    android:background="@color/generalCardBackgroundColor"
+    android:paddingStart="10dp"
+    android:background="?attr/generalCardBackgroundColor"
     android:layout_height="wrap_content">
 
     <ImageView
@@ -36,7 +36,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_regular"
             android:text="@{category.kategori_adi}"
-            android:textColor="@color/itemTitleTxtColor"
+            android:textColor="?attr/itemTitleTxtColor"
             android:textSize="14sp"
             android:textStyle="bold" />
 
@@ -47,7 +47,7 @@
             android:fontFamily="@font/poppins_regular"
             android:lines="1"
             android:text="@{category.description}"
-            android:textColor="@color/itemSubTitleTxtColor"
+            android:textColor="?attr/itemSubTitleTxtColor"
             android:textSize="13sp" />
 
     </LinearLayout>
@@ -66,7 +66,7 @@
         android:layout_marginTop="5dp"
         android:layout_alignStart="@+id/nav_category_item_linearTitles"
         android:layout_below="@id/nav_category_item_linearTitles"
-        android:background="@color/stickColor"
+        android:background="?attr/stickColor"
         android:layout_height="2dp"/>
 
 </RelativeLayout>

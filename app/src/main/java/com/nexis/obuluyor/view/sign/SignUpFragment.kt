@@ -280,6 +280,7 @@ class SignUpFragment : Fragment(), View.OnClickListener {
                                                     cityList.get(selectedCityIn).id,
                                                     null,
                                                     0,
+                                                    null,
                                                     null
                                                 )
 

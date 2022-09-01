@@ -2,10 +2,38 @@
     <string name="app_name">OBuluyor</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
     <string-array name="GenderList">
         <item>Erkek</item>
         <item>Kadın</item>
     </string-array>
+
     <string name="nav_open">Open</string>
     <string name="nav_close">Close</string>
+
+    <string-array name="PaymentTypeList">
+        <item>Kredi Kartı</item>
+        <item>Eft/Havale</item>
+    </string-array>
+
+    <string-array name="StoreMonthOfDayList">
+        <item>3 Ay</item>
+        <item>6 Ay</item>
+        <item>12 Ay</item>
+    </string-array>
+
+    <string-array name="ExchangeList">
+        <item>TL</item>
+        <item>USD</item>
+        <item>EUR</item>
+        <item>GBP</item>
+    </string-array>
+
+    <string-array name="AdvertTimeList">
+        <item>15 Gün</item>
+        <item>30 Gün</item>
+        <item>60 Gün</item>
+        <item>90 Gün</item>
+        <item>1 Yıl</item>
+    </string-array>
 </resources>

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="dark_theme">
+        <attr name="appBgColor" format="color"/>
+        <attr name="statusBarBackgroundColor" format="color"/>
+        <attr name="toolBarBackgroundColor" format="color"/>
+        <attr name="toolBarTxtColor" format="color"/>
+        <attr name="toolBarExpandedTxtColor" format="color"/>
+        <attr name="toolBarCollapsedTxtColor" format="color"/>
+        <attr name="toolBarSelectedTxtColor" format="color"/>
+        <attr name="toolBarUnSelectedTxtColor" format="color"/>
+        <attr name="toolBarStickColor" format="color"/>
+
+        <attr name="mainTxtColor" format="color"/>
+        <attr name="signTxtColor" format="color"/>
+
+        <attr name="editBorderColor" format="color"/>
+        <attr name="editTxtColor" format="color"/>
+        <attr name="editBackgroundColor" format="color"/>
+        <attr name="editSearchTxtColor" format="color"/>
+
+        <attr name="generalCardBackgroundColor" format="color"/>
+        <attr name="generalAppBackgroundColor" format="color"/>
+        <attr name="storeBackgroundColor" format="color"/>
+        <attr name="storeTxtColor" format="color"/>
+
+        <attr name="itemTitleTxtColor" format="color"/>
+        <attr name="itemSubTitleTxtColor" format="color"/>
+
+        <attr name="stickColor" format="color"/>
+
+        <attr name="advertTitleTxtColor" format="color"/>
+        <attr name="advertTxtColor" format="color"/>
+        <attr name="advertCategoryTxtColor" format="color"/>
+        <attr name="advertStickColor" format="color"/>
+
+        <attr name="advertCategoryItemBgColor" format="color"/>
+        <attr name="advertCategoryItemTxtColor" format="color"/>
+        <attr name="advertCategoryItemStickColor" format="color"/>
+
+        <attr name="advertDetailsTitleTxtColor" format="color"/>
+        <attr name="advertDetailsTxtColor" format="color"/>
+        <attr name="advertDetailsTitleBlackTxtColor" format="color"/>
+
+        <attr name="dialogTopBgColor" format="color"/>
+        <attr name="dialogTopTxtColor" format="color"/>
+        <attr name="dialogTxtColor" format="color"/>
+        <attr name="dialogBgColor" format="color"/>
+
+        <attr name="yellowBtnBgColor" format="color"/>
+        <attr name="yellowBtnBorderColor" format="color"/>
+        <attr name="yellowBtnTxtColor" format="color"/>
+
+        <attr name="orangeBtnBgColor" format="color"/>
+        <attr name="orangeBtnTxtColor" format="color"/>
+
+        <attr name="navHeaderBgColor" format="color"/>
+        <attr name="navHeaderTxtColor" format="color"/>
+        <attr name="navBgColor" format="color"/>
+
+        <attr name="advertTitleColor" format="color"/>
+        <attr name="advertPriceTxtColor" format="color"/>
+
+        <attr name="profileItemBgColor" format="color"/>
+        <attr name="profileItemShadowColor" format="color"/>
+        <attr name="profileItemRippleColor" format="color"/>
+        <attr name="profileItemTitleTxtColor" format="color"/>
+        <attr name="profileItemTxtColor" format="color"/>
+        <attr name="profileItemPointsColor" format="color"/>
+
+        <attr name="indicatorColor" format="color"/>
+        <attr name="indicatorCurrentColor" format="color"/>
+
+        <attr name="advertDetailsPageTxtTitleColor" format="color"/>
+        <attr name="advertDetailsPageTxtColor" format="color"/>
+        <attr name="advertDetailsPageStickColor" format="color"/>
+        <attr name="advertDetailsSelectedBtnBgColor" format="color"/>
+        <attr name="advertDetailsSelectedBtnTxtColor" format="color"/>
+        <attr name="advertDetailsBtnBgColor" format="color"/>
+        <attr name="advertDetailsBtnTxtColor" format="color"/>
+        <attr name="advertDetailsButtonsStickColor" format="color"/>
+        <attr name="advertDetailsPageTitleBgColor" format="color"/>
+        <attr name="advertDetailsPageTitleShadowColor" format="color"/>
+        <attr name="advertDetailsBgColor" format="color"/>
+
+        <attr name="messagesWarningTxtColor" format="color"/>
+
+        <attr name="messageItemTxtColor" format="color"/>
+        <attr name="messageItemIconColor" format="color"/>
+        <attr name="messageItemBgColor" format="color"/>
+        <attr name="messageItemShadowColor" format="color"/>
+
+        <attr name="addStoreImageBgColor" format="color"/>
+        <attr name="addStoreImageTxtColor" format="color"/>
+
+        <attr name="advertItemBgColor" format="color"/>
+        <attr name="advertItemShadowColor" format="color"/>
+
+        <attr name="messageDetailsTxtColor" format="color"/>
+        <attr name="messageDetailsStickColor" format="color"/>
+
+        <attr name="randomAdvertItemBgColor" format="color"/>
+        <attr name="randomAdvertItemShadowColor" format="color"/>
+
+        <attr name="checkBgColor" format="color"/>
+        <attr name="unCheckBgColor" format="color"/>
+        <attr name="unCheckCloseColor" format="color"/>
+
+        <attr name="advertNoDataColor" format="color"/>
+
+        <attr name="userStoreCivBorderColor" format="color"/>
+        <attr name="userStoreTxtTitleColor" format="color"/>
+        <attr name="userStoreTxtColor" format="color"/>
+        <attr name="userStoreStickColor" format="color"/>
+
+        <attr name="progressBarColor" format="color"/>
+        <attr name="progressBarTxtColor" format="color"/>
+
+        <attr name="addAdvertBtnBgColor" format="color"/>
+        <attr name="addAdvertBtnTxtColor" format="color"/>
+
+        <attr name="checkBoxColor" format="color"/>
+        <attr name="progressTitleTxtColor" format="color"/>
+        <attr name="progressBgColor1" format="color"/>
+        <attr name="progressBgColor2" format="color"/>
+    </declare-styleable>
+</resources>

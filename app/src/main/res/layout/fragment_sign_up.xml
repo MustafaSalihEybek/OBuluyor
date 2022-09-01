@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="?attr/dialogBgColor"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:scrollbars="none"
     tools:context=".view.sign.SignUpFragment">
@@ -12,14 +13,16 @@
         android:orientation="vertical"
         android:layout_height="wrap_content">
 
-        <ImageView
-            android:layout_width="150dp"
-            android:scaleType="fitXY"
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="Kayıt Olun"
+            android:textSize="27sp"
             android:layout_marginTop="25dp"
             android:layout_marginEnd="25dp"
             android:layout_marginStart="25dp"
-            android:src="@drawable/sign_up_title"
-            android:layout_height="43dp"/>
+            android:textColor="?attr/signTxtColor"
+            android:fontFamily="@font/poppins_bold"
+            android:layout_height="wrap_content"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -44,7 +47,9 @@
                     android:layout_width="26dp"
                     android:src="@drawable/person_yellow_icon"
                     android:layout_marginStart="15dp"
-                    android:layout_height="26dp"/>
+                    android:layout_marginEnd="10dp"
+                    android:layout_height="26dp"
+                    app:tint="?attr/editTxtColor"/>
 
                 <EditText
                     android:layout_width="match_parent"
@@ -56,10 +61,10 @@
                     android:layout_marginEnd="3dp"
                     android:layout_marginBottom="3dp"
                     android:textSize="17sp"
-                    android:textColor="@color/editTxtColor"
-                    android:textColorHint="@color/editTxtColor"
+                    android:textColor="?attr/editTxtColor"
+                    android:textColorHint="?attr/editTxtColor"
                     android:hint="Ad"
-                    android:background="@color/editBackgroundColor"
+                    android:background="?attr/editBackgroundColor"
                     android:layout_height="50dp"/>
 
             </LinearLayout>
@@ -77,7 +82,9 @@
                     android:layout_width="26dp"
                     android:src="@drawable/person_yellow_icon"
                     android:layout_marginStart="15dp"
-                    android:layout_height="26dp"/>
+                    android:layout_marginEnd="10dp"
+                    android:layout_height="26dp"
+                    app:tint="?attr/editTxtColor"/>
 
                 <EditText
                     android:layout_width="match_parent"
@@ -89,10 +96,10 @@
                     android:layout_marginEnd="3dp"
                     android:layout_marginBottom="3dp"
                     android:textSize="17sp"
-                    android:textColor="@color/editTxtColor"
-                    android:textColorHint="@color/editTxtColor"
+                    android:textColor="?attr/editTxtColor"
+                    android:textColorHint="?attr/editTxtColor"
                     android:hint="Soyad"
-                    android:background="@color/editBackgroundColor"
+                    android:background="?attr/editBackgroundColor"
                     android:layout_height="50dp"/>
 
             </LinearLayout>
@@ -113,7 +120,9 @@
                 android:layout_width="26dp"
                 android:src="@drawable/birthday_icon"
                 android:layout_marginStart="15dp"
-                android:layout_height="26dp"/>
+                android:layout_marginEnd="10dp"
+                android:layout_height="26dp"
+                app:tint="?attr/editTxtColor"/>
 
             <EditText
                 android:layout_width="match_parent"
@@ -126,10 +135,10 @@
                 android:layout_marginEnd="3dp"
                 android:layout_marginBottom="3dp"
                 android:textSize="17sp"
-                android:textColor="@color/editTxtColor"
-                android:textColorHint="@color/editTxtColor"
+                android:textColor="?attr/editTxtColor"
+                android:textColorHint="?attr/editTxtColor"
                 android:hint="Doğum Tarihi"
-                android:background="@color/editBackgroundColor"
+                android:background="?attr/editBackgroundColor"
                 android:layout_height="50dp"/>
 
         </LinearLayout>
@@ -148,13 +157,15 @@
                 android:layout_width="26dp"
                 android:src="@drawable/gender_icon"
                 android:layout_marginStart="15dp"
-                android:layout_height="26dp"/>
+                android:layout_marginEnd="10dp"
+                android:layout_height="26dp"
+                app:tint="?attr/editTxtColor"/>
 
             <Spinner
                 android:layout_width="match_parent"
-                android:paddingStart="15dp"
-                android:background="@color/editBackgroundColor"
-                android:paddingEnd="15dp"
+                android:paddingStart="5dp"
+                android:background="?attr/editBackgroundColor"
+                android:paddingEnd="5dp"
                 android:id="@+id/sign_up_fragment_spinnerUserGender"
                 android:layout_marginTop="3dp"
                 android:layout_marginEnd="3dp"
@@ -177,7 +188,9 @@
                 android:layout_width="26dp"
                 android:src="@drawable/email_icon"
                 android:layout_marginStart="15dp"
-                android:layout_height="26dp"/>
+                android:layout_marginEnd="10dp"
+                android:layout_height="26dp"
+                app:tint="?attr/editTxtColor"/>
 
             <EditText
                 android:layout_width="match_parent"
@@ -189,10 +202,10 @@
                 android:layout_marginEnd="3dp"
                 android:layout_marginBottom="3dp"
                 android:textSize="17sp"
-                android:textColor="@color/editTxtColor"
-                android:textColorHint="@color/editTxtColor"
+                android:textColor="?attr/editTxtColor"
+                android:textColorHint="?attr/editTxtColor"
                 android:hint="E-posta Adresi"
-                android:background="@color/editBackgroundColor"
+                android:background="?attr/editBackgroundColor"
                 android:layout_height="50dp"/>
 
         </LinearLayout>
@@ -211,7 +224,9 @@
                 android:layout_width="26dp"
                 android:src="@drawable/lock_icon"
                 android:layout_marginStart="15dp"
-                android:layout_height="26dp"/>
+                android:layout_marginEnd="10dp"
+                android:layout_height="26dp"
+                app:tint="?attr/editTxtColor"/>
 
             <EditText
                 android:layout_width="match_parent"
@@ -223,10 +238,10 @@
                 android:layout_marginEnd="3dp"
                 android:layout_marginBottom="3dp"
                 android:textSize="17sp"
-                android:textColor="@color/editTxtColor"
-                android:textColorHint="@color/editTxtColor"
+                android:textColor="?attr/editTxtColor"
+                android:textColorHint="?attr/editTxtColor"
                 android:hint="Şifre"
-                android:background="@color/editBackgroundColor"
+                android:background="?attr/editBackgroundColor"
                 android:layout_height="50dp"/>
 
         </LinearLayout>
@@ -254,7 +269,9 @@
                     android:layout_width="26dp"
                     android:src="@drawable/phone_icon"
                     android:layout_marginStart="15dp"
-                    android:layout_height="26dp"/>
+                    android:layout_marginEnd="10dp"
+                    android:layout_height="26dp"
+                    app:tint="?attr/editTxtColor"/>
 
                 <EditText
                     android:layout_width="match_parent"
@@ -266,10 +283,10 @@
                     android:layout_marginEnd="3dp"
                     android:layout_marginBottom="3dp"
                     android:textSize="17sp"
-                    android:textColor="@color/editTxtColor"
-                    android:textColorHint="@color/editTxtColor"
+                    android:textColor="?attr/editTxtColor"
+                    android:textColorHint="?attr/editTxtColor"
                     android:hint="Telefon"
-                    android:background="@color/editBackgroundColor"
+                    android:background="?attr/editBackgroundColor"
                     android:layout_height="50dp"/>
 
             </LinearLayout>
@@ -287,7 +304,9 @@
                     android:layout_width="26dp"
                     android:src="@drawable/phone_icon"
                     android:layout_marginStart="15dp"
-                    android:layout_height="26dp"/>
+                    android:layout_marginEnd="10dp"
+                    android:layout_height="26dp"
+                    app:tint="?attr/editTxtColor"/>
 
                 <EditText
                     android:layout_width="match_parent"
@@ -299,10 +318,10 @@
                     android:layout_marginEnd="3dp"
                     android:layout_marginBottom="3dp"
                     android:textSize="17sp"
-                    android:textColor="@color/editTxtColor"
-                    android:textColorHint="@color/editTxtColor"
+                    android:textColor="?attr/editTxtColor"
+                    android:textColorHint="?attr/editTxtColor"
                     android:hint="Gsm"
-                    android:background="@color/editBackgroundColor"
+                    android:background="?attr/editBackgroundColor"
                     android:layout_height="50dp"/>
 
             </LinearLayout>
@@ -332,13 +351,15 @@
                     android:layout_width="26dp"
                     android:src="@drawable/country_icon"
                     android:layout_marginStart="15dp"
-                    android:layout_height="26dp"/>
+                    android:layout_marginEnd="10dp"
+                    android:layout_height="26dp"
+                    app:tint="?attr/editTxtColor"/>
 
                 <Spinner
                     android:layout_width="match_parent"
-                    android:paddingStart="15dp"
-                    android:background="@color/editBackgroundColor"
-                    android:paddingEnd="15dp"
+                    android:paddingStart="5dp"
+                    android:background="?attr/editBackgroundColor"
+                    android:paddingEnd="5dp"
                     android:spinnerMode="dialog"
                     android:id="@+id/sign_up_fragment_spinnerUserCountry"
                     android:layout_marginTop="3dp"
@@ -361,13 +382,15 @@
                     android:layout_width="26dp"
                     android:src="@drawable/country_icon"
                     android:layout_marginStart="15dp"
-                    android:layout_height="26dp"/>
+                    android:layout_marginEnd="10dp"
+                    android:layout_height="26dp"
+                    app:tint="?attr/editTxtColor"/>
 
                 <Spinner
                     android:layout_width="match_parent"
-                    android:paddingStart="15dp"
-                    android:background="@color/editBackgroundColor"
-                    android:paddingEnd="15dp"
+                    android:paddingStart="5dp"
+                    android:background="?attr/editBackgroundColor"
+                    android:paddingEnd="5dp"
                     android:spinnerMode="dialog"
                     android:id="@+id/sign_up_fragment_spinnerUserCity"
                     android:layout_marginTop="3dp"
@@ -385,8 +408,13 @@
             android:layout_marginTop="45dp"
             android:id="@+id/sign_up_fragment_btnSignUp"
             android:layout_marginStart="25dp"
-            android:background="@drawable/create_account_btn"
-            android:layout_height="55dp"
+            android:text="Hesap Oluştur"
+            android:textSize="19sp"
+            android:textAllCaps="false"
+            android:textColor="?attr/orangeBtnTxtColor"
+            android:fontFamily="@font/poppins_bold"
+            android:background="@drawable/orange_btn_bg"
+            android:layout_height="wrap_content"
             app:backgroundTint="@null"/>
 
         <Button
@@ -395,9 +423,14 @@
             android:layout_marginTop="15dp"
             android:id="@+id/sign_up_fragment_btnSignIn"
             android:layout_marginStart="25dp"
-            android:background="@drawable/login_btn"
+            android:text="Hemen Giriş Yap"
+            android:textAllCaps="false"
+            android:textSize="19sp"
+            android:textColor="?attr/yellowBtnTxtColor"
+            android:fontFamily="@font/poppins_bold"
+            android:background="@drawable/yellow_btn_bg"
             android:layout_marginBottom="25dp"
-            android:layout_height="53dp"
+            android:layout_height="wrap_content"
             app:backgroundTint="@null"/>
 
     </LinearLayout>

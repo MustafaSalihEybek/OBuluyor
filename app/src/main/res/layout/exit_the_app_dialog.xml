@@ -3,21 +3,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="340dp"
+    android:background="?attr/dialogBgColor"
     android:layout_height="wrap_content">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:background="@color/dialogTopBgColor"
+        android:background="?attr/dialogTopBgColor"
         android:layout_height="wrap_content">
 
         <TextView
             android:layout_width="wrap_content"
-            android:text="Çıkış"
-            android:textSize="27sp"
-            android:fontFamily="@font/poppins_bold"
-            android:textColor="@color/dialogTopTxtColor"
+            android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_height="wrap_content"/>
+            android:fontFamily="@font/poppins_bold"
+            android:text="Çıkış"
+            android:textColor="?attr/dialogTopTxtColor"
+            android:textSize="25sp" />
 
         <ImageView
             android:id="@+id/exit_the_app_dialog_imgClose"
@@ -26,7 +27,8 @@
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:layout_marginEnd="10dp"
-            android:src="@drawable/close_icon" />
+            android:src="@drawable/close_icon"
+            app:tint="?attr/dialogTopTxtColor"/>
 
     </RelativeLayout>
 
@@ -38,7 +40,7 @@
         android:layout_marginEnd="25dp"
         android:layout_marginTop="15dp"
         android:fontFamily="@font/poppins_bold"
-        android:textColor="@color/dialogTxtColor"
+        android:textColor="?attr/dialogTxtColor"
         android:text="Uygulamadan çıkmak istediğinize emin misiniz?"
         android:layout_height="wrap_content"/>
 
@@ -59,22 +61,22 @@
             android:id="@+id/exit_the_app_dialog_btnYes"
             android:text="Evet"
             android:textAllCaps="false"
-            android:textColor="@color/yellowBtnTxtColor"
+            android:textColor="?attr/yellowBtnTxtColor"
             android:textSize="17sp"
             app:backgroundTint="@null" />
 
         <Button
-            android:layout_width="115dp"
-            android:text="Hayır"
-            android:layout_alignParentEnd="true"
-            android:textAllCaps="false"
             android:id="@+id/exit_the_app_dialog_btnNo"
-            android:fontFamily="@font/poppins_bold"
-            android:textSize="17sp"
-            android:textColor="@color/orangeBtnTxtColor"
-            android:background="@drawable/orange_btn_bg"
+            android:layout_width="115dp"
             android:layout_height="wrap_content"
-            app:backgroundTint="@null"/>
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/orange_btn_bg"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Hayır"
+            android:textAllCaps="false"
+            android:textColor="?attr/orangeBtnTxtColor"
+            android:textSize="17sp"
+            app:backgroundTint="@null" />
 
     </RelativeLayout>
 

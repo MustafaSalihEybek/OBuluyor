@@ -2,12 +2,13 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
+    android:background="?attr/dialogBgColor"
     android:layout_width="340dp"
     android:layout_height="wrap_content">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:background="@color/dialogTopBgColor"
+        android:background="?attr/dialogTopBgColor"
         android:layout_height="wrap_content">
 
         <TextView
@@ -16,8 +17,8 @@
             android:layout_centerHorizontal="true"
             android:fontFamily="@font/poppins_bold"
             android:text="İlandan Çık"
-            android:textColor="@color/dialogTopTxtColor"
-            android:textSize="27sp" />
+            android:textColor="?attr/dialogTopTxtColor"
+            android:textSize="25sp" />
 
         <ImageView
             android:id="@+id/exit_the_add_advert_dialog_imgClose"
@@ -26,7 +27,8 @@
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:layout_marginEnd="10dp"
-            android:src="@drawable/close_icon" />
+            android:src="@drawable/close_icon"
+            app:tint="?attr/dialogTopTxtColor"/>
 
     </RelativeLayout>
 
@@ -38,7 +40,7 @@
         android:layout_marginEnd="25dp"
         android:layout_marginTop="15dp"
         android:fontFamily="@font/poppins_bold"
-        android:textColor="@color/dialogTxtColor"
+        android:textColor="?attr/dialogTxtColor"
         android:text="İlan verme adımından çıkmak istediğinize emin misiniz?"
         android:layout_height="wrap_content"/>
 
@@ -57,9 +59,9 @@
             android:layout_alignParentStart="true"
             android:background="@drawable/yellow_btn_bg"
             android:fontFamily="@font/poppins_bold"
-            android:text="Tanan"
+            android:text="Tamam"
             android:textAllCaps="false"
-            android:textColor="@color/yellowBtnTxtColor"
+            android:textColor="?attr/yellowBtnTxtColor"
             android:textSize="17sp"
             app:backgroundTint="@null" />
 
@@ -72,7 +74,7 @@
             android:fontFamily="@font/poppins_bold"
             android:text="Vazgeç"
             android:textAllCaps="false"
-            android:textColor="@color/orangeBtnTxtColor"
+            android:textColor="?attr/orangeBtnTxtColor"
             android:textSize="17sp"
             app:backgroundTint="@null" />
 

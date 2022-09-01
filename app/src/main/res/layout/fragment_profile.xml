@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:orientation="vertical"
+    android:background="?attr/appBgColor"
     android:layout_height="match_parent"
     tools:context=".view.ProfileFragment">
 
@@ -27,37 +28,66 @@
             android:text="HESAP"
             android:textSize="19sp"
             android:fontFamily="@font/poppins_bold"
-            android:textColor="@color/profileItemTitleTxtColor"
+            android:textColor="?attr/profileItemTitleTxtColor"
             android:layout_height="wrap_content"/>
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:orientation="horizontal"
+            android:background="@drawable/ripple_effect"
             android:layout_marginTop="5dp"
+            android:id="@+id/profile_fragment_relativeUpdateProfile"
             android:layout_height="wrap_content">
 
             <TextView
                 android:layout_width="wrap_content"
-                android:textSize="16sp"
+                android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_medium"
-                android:textColor="@color/profileItemTxtColor"
                 android:text="Hesap Bilgilerini Düzenle"
-                android:layout_height="wrap_content"/>
+                android:textColor="?attr/profileItemTxtColor"
+                android:textSize="16sp" />
 
             <ImageView
-                android:id="@+id/profile_fragment_imgUpdateProfile"
                 android:layout_width="20dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
                 android:src="@drawable/three_points_icon"
-                app:tint="@color/profileItemPointsColor" />
+                app:tint="?attr/profileItemPointsColor" />
 
         </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:orientation="horizontal"
+            android:layout_marginTop="5dp"
+            android:id="@+id/profile_fragment_relativeAdvertMessages"
+            android:background="@drawable/ripple_effect"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:textSize="16sp"
+                android:fontFamily="@font/poppins_medium"
+                android:textColor="?attr/profileItemTxtColor"
+                android:text="İlan Mesajları"
+                android:layout_height="wrap_content"/>
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/three_points_icon"
+                app:tint="?attr/profileItemPointsColor" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:background="@drawable/ripple_effect"
+            android:id="@+id/profile_fragment_relativeSignOut"
             android:layout_marginTop="5dp"
             android:layout_height="wrap_content">
 
@@ -66,17 +96,160 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_medium"
                 android:text="Oturumu Kapat"
-                android:textColor="@color/profileItemTxtColor"
+                android:textColor="?attr/profileItemTxtColor"
                 android:textSize="16sp" />
 
             <ImageView
                 android:layout_width="20dp"
-                android:id="@+id/profile_fragment_imgSignOut"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
                 android:src="@drawable/three_points_icon"
-                app:tint="@color/profileItemPointsColor" />
+                app:tint="?attr/profileItemPointsColor" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:padding="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="15dp"
+        android:background="@drawable/profile_item_bg"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="MAĞAZA"
+            android:textSize="19sp"
+            android:fontFamily="@font/poppins_bold"
+            android:textColor="?attr/profileItemTitleTxtColor"
+            android:layout_height="wrap_content"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:id="@+id/profile_fragment_relativeStoreCreateOrEdit"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/ripple_effect"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Mağaza Aç / Düzenle"
+                android:textColor="?attr/profileItemTxtColor"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/three_points_icon"
+                app:tint="?attr/profileItemPointsColor" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:padding="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="15dp"
+        android:background="@drawable/profile_item_bg"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="İLAN YÖNETİMİ"
+            android:textSize="19sp"
+            android:fontFamily="@font/poppins_bold"
+            android:textColor="?attr/profileItemTitleTxtColor"
+            android:layout_height="wrap_content"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:id="@+id/profile_fragment_relativeActiveAdverts"
+            android:background="@drawable/ripple_effect"
+            android:layout_marginTop="5dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Yayında Olanlar"
+                android:textColor="?attr/profileItemTxtColor"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/three_points_icon"
+                app:tint="?attr/profileItemPointsColor" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:id="@+id/profile_fragment_relativeDeActiveAdverts"
+            android:orientation="horizontal"
+            android:background="@drawable/ripple_effect"
+            android:layout_marginTop="5dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Yayında Olmayanlar"
+                android:textColor="?attr/profileItemTxtColor"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/three_points_icon"
+                app:tint="?attr/profileItemPointsColor" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp"
+            android:id="@+id/profile_fragment_relativeFavoriteAdverts"
+            android:background="@drawable/ripple_effect"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Favori İlanlar"
+                android:textColor="?attr/profileItemTxtColor"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/three_points_icon"
+                app:tint="?attr/profileItemPointsColor" />
 
         </RelativeLayout>
 

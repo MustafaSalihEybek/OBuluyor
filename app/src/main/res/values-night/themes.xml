@@ -1,11 +1,11 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.OBuluyor" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.Dark" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="android:windowActionBar">false</item>
         <item name="android:windowNoTitle">true</item>
         <item name="colorPrimary">@color/purple_200</item>
-        <item name="colorPrimaryVariant">@color/statusBarBackgroundColor</item>
+        <item name="colorPrimaryVariant">?attr/statusBarBackgroundColor</item>
         <item name="colorOnPrimary">@color/black</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
@@ -14,5 +14,145 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+        <item name="appBgColor">#1E1E1E</item>
+        <item name="statusBarBackgroundColor">#141414</item>
+        <item name="toolBarBackgroundColor">#141414</item>
+        <item name="toolBarTxtColor">#FFFFFF</item>
+        <item name="toolBarExpandedTxtColor">#141414</item>
+        <item name="toolBarCollapsedTxtColor">#FFFFFF</item>
+        <item name="toolBarSelectedTxtColor">#FFFFFF</item>
+        <item name="toolBarUnSelectedTxtColor">#E0E0E0</item>
+        <item name="toolBarStickColor">#FFFFFF</item>
+
+        <item name="mainTxtColor">#FFFFFF</item>
+        <item name="signTxtColor">#FFFFFF</item>
+
+        <item name="editBorderColor">#FFFFFF</item>
+        <item name="editTxtColor">#FFFFFF</item>
+        <item name="editBackgroundColor">#1E1E1E</item>
+        <item name="editSearchTxtColor">#FFFFFF</item>
+
+        <item name="generalCardBackgroundColor">#1E1E1E</item>
+        <item name="generalAppBackgroundColor">#333333</item>
+        <item name="storeBackgroundColor">#1E1E1E</item>
+        <item name="storeTxtColor">#FFFFFF</item>
+
+        <item name="itemTitleTxtColor">#FFFFFF</item>
+        <item name="itemSubTitleTxtColor">#EDEDED</item>
+
+        <item name="stickColor">#EDEDED</item>
+
+        <item name="advertTitleTxtColor">#FFFFFF</item>
+        <item name="advertTxtColor">#FAC213</item>
+        <item name="advertCategoryTxtColor">#000000</item>
+        <item name="advertStickColor">#EDEDED</item>
+
+        <item name="advertCategoryItemBgColor">#1E1E1E</item>
+        <item name="advertCategoryItemTxtColor">#FFFFFF</item>
+        <item name="advertCategoryItemStickColor">#E2E2E2</item>
+
+        <item name="advertDetailsTitleTxtColor">#FFFFFF</item>
+        <item name="advertDetailsTxtColor">#EDEDED</item>
+        <item name="advertDetailsTitleBlackTxtColor">#FFFFFF</item>
+
+        <item name="dialogTopBgColor">#1E1E1E</item>
+        <item name="dialogTopTxtColor">#FFFFFF</item>
+        <item name="dialogTxtColor">#FFFFFF</item>
+        <item name="dialogBgColor">#333333</item>
+
+        <item name="yellowBtnBgColor">#333333</item>
+        <item name="yellowBtnBorderColor">#EAEAEA</item>
+        <item name="yellowBtnTxtColor">#EAEAEA</item>
+
+        <item name="orangeBtnBgColor">#1E1E1E</item>
+        <item name="orangeBtnTxtColor">#FFFFFF</item>
+
+        <item name="navHeaderBgColor">#1B1B1B</item>
+        <item name="navHeaderTxtColor">#FFFFFF</item>
+        <item name="navBgColor">#F7F7F7</item>
+
+        <item name="advertTitleColor">#FFFFFF</item>
+        <item name="advertPriceTxtColor">#FFFFFF</item>
+
+        <item name="profileItemBgColor">#1E1E1E</item>
+        <item name="profileItemShadowColor">#EDEDED</item>
+        <item name="profileItemRippleColor">#EDEDED</item>
+        <item name="profileItemTitleTxtColor">#FFFFFF</item>
+        <item name="profileItemTxtColor">#EDEDED</item>
+        <item name="profileItemPointsColor">#FFFFFF</item>
+
+        <item name="indicatorColor">#FF8D41</item>
+        <item name="indicatorCurrentColor">#E87115</item>
+
+        <item name="advertDetailsPageTxtTitleColor">#FFFFFF</item>
+        <item name="advertDetailsPageTxtColor">#EDEDED</item>
+        <item name="advertDetailsPageStickColor">#EDEDED</item>
+        <item name="advertDetailsSelectedBtnBgColor">#1E1E1E</item>
+        <item name="advertDetailsSelectedBtnTxtColor">#FFFFFF</item>
+        <item name="advertDetailsBtnBgColor">#1E1E1E</item>
+        <item name="advertDetailsBtnTxtColor">#EAEAEA</item>
+        <item name="advertDetailsButtonsStickColor">#1E1E1E</item>
+        <item name="advertDetailsPageTitleBgColor">#FFFFFF</item>
+        <item name="advertDetailsPageTitleShadowColor">#C1C1C1</item>
+        <item name="advertDetailsBgColor">#EEEEEE</item>
+
+        <item name="messagesWarningTxtColor">#FFFFFF</item>
+
+        <item name="messageItemTxtColor">#FFFFFF</item>
+        <item name="messageItemIconColor">#FFFFFF</item>
+        <item name="messageItemBgColor">#1E1E1E</item>
+        <item name="messageItemShadowColor">#EDEDED</item>
+
+        <item name="addStoreImageBgColor">#C1C1C1</item>
+        <item name="addStoreImageTxtColor">#515151</item>
+
+        <item name="advertItemBgColor">#1E1E1E</item>
+        <item name="advertItemShadowColor">#EDEDED</item>
+
+        <item name="messageDetailsTxtColor">#FFFFFF</item>
+        <item name="messageDetailsStickColor">#EDEDED</item>
+
+        <item name="randomAdvertItemBgColor">#1E1E1E</item>
+        <item name="randomAdvertItemShadowColor">#EDEDED</item>
+
+        <item name="checkBgColor">#4CAF50</item>
+        <item name="unCheckBgColor">#F3F3F3</item>
+        <item name="unCheckCloseColor">#303030</item>
+
+        <item name="advertNoDataColor">#FFFFFF</item>
+
+        <item name="userStoreCivBorderColor">#FFFFFF</item>
+        <item name="userStoreTxtTitleColor">#FFFFFF</item>
+        <item name="userStoreTxtColor">#EDEDED</item>
+        <item name="userStoreStickColor">#EDEDED</item>
+
+        <item name="progressBarColor">#FFFFFF</item>
+        <item name="progressBarTxtColor">#FFFFFF</item>
+
+        <item name="addAdvertBtnBgColor">#2B2B2B</item>
+        <item name="addAdvertBtnTxtColor">#FFFFFF</item>
+
+        <item name="checkBoxColor">#FFFFFF</item>
+        <item name="progressTitleTxtColor">#FFFFFF</item>
+        <item name="progressBgColor1">#EDEDED</item>
+        <item name="progressBgColor2">#1E1E1E</item>
+    </style>
+
+    <style name="MessagesAppBar" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">?attr/toolBarTxtColor</item><!-- toolBarTxtColor -->
+        <item name="android:fontFamily">@font/poppins_black</item>
+    </style>
+
+    <style name="ExpandedAppBar" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textSize">21sp</item>
+        <item name="android:textColor">?attr/toolBarExpandedTxtColor</item><!-- toolBarExpandedTxtColor -->
+        <item name="android:fontFamily">@font/poppins_black</item>
+    </style>
+
+    <style name="CollapsedAppBar" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textSize">17sp</item>
+        <item name="android:textColor">?attr/toolBarCollapsedTxtColor</item><!-- toolBarCollapsedTxtColor -->
+        <item name="android:fontFamily">@font/poppins_bold</item>
     </style>
 </resources>

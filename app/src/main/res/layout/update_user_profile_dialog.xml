@@ -11,6 +11,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
+    android:background="?attr/dialogBgColor"
     android:scrollbars="none"
     android:layout_height="wrap_content">
 
@@ -21,7 +22,7 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:background="@color/dialogTopBgColor"
+            android:background="?attr/dialogTopBgColor"
             android:layout_height="wrap_content">
 
             <TextView
@@ -30,7 +31,7 @@
                 android:layout_centerHorizontal="true"
                 android:fontFamily="@font/poppins_bold"
                 android:text="Profil Güncelle"
-                android:textColor="@color/dialogTopTxtColor"
+                android:textColor="?attr/dialogTopTxtColor"
                 android:textSize="27sp" />
 
             <ImageView
@@ -40,7 +41,8 @@
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
                 android:layout_marginEnd="10dp"
-                android:src="@drawable/close_icon" />
+                android:src="@drawable/close_icon"
+                app:tint="?attr/dialogTopTxtColor"/>
 
         </RelativeLayout>
 
@@ -58,23 +60,25 @@
                 android:layout_width="26dp"
                 android:src="@drawable/person_yellow_icon"
                 android:layout_marginStart="15dp"
-                android:layout_height="26dp"/>
+                android:layout_marginEnd="10dp"
+                android:layout_height="26dp"
+                app:tint="?attr/editTxtColor"/>
 
             <EditText
                 android:layout_width="match_parent"
-                android:paddingStart="15dp"
                 android:paddingEnd="15dp"
+                android:paddingStart="15dp"
                 android:inputType="textPersonName"
-                android:id="@+id/update_user_profile_dialog_editUserName"
+                android:id="@+id/update_user_profile_dialog_editUserFullName"
                 android:layout_marginTop="3dp"
                 android:layout_marginEnd="3dp"
                 android:layout_marginBottom="3dp"
                 android:textSize="17sp"
                 android:text="@{user.ad_soyad}"
-                android:textColor="@color/editTxtColor"
-                android:textColorHint="@color/editTxtColor"
+                android:textColor="?attr/editTxtColor"
+                android:textColorHint="?attr/editTxtColor"
                 android:hint="Ad Ve Soyad"
-                android:background="@color/editBackgroundColor"
+                android:background="?attr/editBackgroundColor"
                 android:layout_height="50dp"/>
 
         </LinearLayout>
@@ -93,23 +97,25 @@
                 android:layout_width="26dp"
                 android:src="@drawable/birthday_icon"
                 android:layout_marginStart="15dp"
-                android:layout_height="26dp"/>
+                android:layout_height="26dp"
+                android:layout_marginEnd="10dp"
+                app:tint="?attr/editTxtColor"/>
 
             <EditText
                 android:layout_width="match_parent"
-                android:paddingStart="15dp"
                 android:paddingEnd="15dp"
                 android:focusableInTouchMode="false"
+                android:paddingStart="15dp"
                 android:inputType="text"
                 android:id="@+id/update_user_profile_dialog_editUserBirthday"
                 android:layout_marginTop="3dp"
                 android:layout_marginEnd="3dp"
                 android:layout_marginBottom="3dp"
                 android:textSize="17sp"
-                android:textColor="@color/editTxtColor"
-                android:textColorHint="@color/editTxtColor"
-                android:hint="@{user.dogum_tarihi}"
-                android:background="@color/editBackgroundColor"
+                android:textColor="?attr/editTxtColor"
+                android:textColorHint="?attr/editTxtColor"
+                android:text="@{user.dogum_tarihi}"
+                android:background="?attr/editBackgroundColor"
                 android:layout_height="50dp"/>
 
         </LinearLayout>
@@ -128,13 +134,15 @@
                 android:layout_width="26dp"
                 android:src="@drawable/gender_icon"
                 android:layout_marginStart="15dp"
-                android:layout_height="26dp"/>
+                android:layout_marginEnd="10dp"
+                android:layout_height="26dp"
+                app:tint="?attr/editTxtColor"/>
 
             <Spinner
                 android:layout_width="match_parent"
-                android:paddingStart="15dp"
-                android:background="@color/editBackgroundColor"
-                android:paddingEnd="15dp"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:background="?attr/editBackgroundColor"
                 android:id="@+id/update_user_profile_dialog_spinnerUserGender"
                 android:layout_marginTop="3dp"
                 android:layout_marginEnd="3dp"
@@ -157,12 +165,14 @@
                 android:layout_width="26dp"
                 android:src="@drawable/email_icon"
                 android:layout_marginStart="15dp"
-                android:layout_height="26dp"/>
+                android:layout_height="26dp"
+                android:layout_marginEnd="10dp"
+                app:tint="?attr/editTxtColor"/>
 
             <EditText
                 android:layout_width="match_parent"
-                android:paddingStart="15dp"
                 android:paddingEnd="15dp"
+                android:paddingStart="15dp"
                 android:inputType="textEmailAddress"
                 android:id="@+id/update_user_profile_dialog_editUserEmail"
                 android:layout_marginTop="3dp"
@@ -170,11 +180,11 @@
                 android:focusableInTouchMode="false"
                 android:layout_marginBottom="3dp"
                 android:textSize="17sp"
-                android:textColor="@color/editTxtColor"
+                android:textColor="?attr/editTxtColor"
                 android:text="@{user.eposta}"
-                android:textColorHint="@color/editTxtColor"
+                android:textColorHint="?attr/editTxtColor"
                 android:hint="E-posta Adresi"
-                android:background="@color/editBackgroundColor"
+                android:background="?attr/editBackgroundColor"
                 android:layout_height="50dp"/>
 
         </LinearLayout>
@@ -193,12 +203,14 @@
                 android:layout_width="26dp"
                 android:src="@drawable/lock_icon"
                 android:layout_marginStart="15dp"
-                android:layout_height="26dp"/>
+                android:layout_height="26dp"
+                android:layout_marginEnd="10dp"
+                app:tint="?attr/editTxtColor"/>
 
             <EditText
                 android:layout_width="match_parent"
-                android:paddingStart="15dp"
                 android:paddingEnd="15dp"
+                android:paddingStart="15dp"
                 android:inputType="textPassword"
                 android:id="@+id/update_user_profile_dialog_editUserPassword"
                 android:layout_marginTop="3dp"
@@ -206,10 +218,10 @@
                 android:layout_marginBottom="3dp"
                 android:textSize="17sp"
                 android:text="@{user.parola}"
-                android:textColor="@color/editTxtColor"
-                android:textColorHint="@color/editTxtColor"
+                android:textColor="?attr/editTxtColor"
+                android:textColorHint="?attr/editTxtColor"
                 android:hint="Şifre"
-                android:background="@color/editBackgroundColor"
+                android:background="?attr/editBackgroundColor"
                 android:layout_height="50dp"/>
 
         </LinearLayout>
@@ -237,23 +249,25 @@
                     android:layout_width="26dp"
                     android:src="@drawable/phone_icon"
                     android:layout_marginStart="15dp"
-                    android:layout_height="26dp"/>
+                    android:layout_height="26dp"
+                    android:layout_marginEnd="10dp"
+                    app:tint="?attr/editTxtColor"/>
 
                 <EditText
                     android:layout_width="match_parent"
-                    android:paddingStart="15dp"
                     android:paddingEnd="15dp"
+                    android:paddingStart="15dp"
                     android:inputType="phone"
                     android:id="@+id/update_user_profile_dialog_editUserPhone"
                     android:layout_marginTop="3dp"
                     android:layout_marginEnd="3dp"
                     android:layout_marginBottom="3dp"
                     android:textSize="17sp"
-                    android:textColor="@color/editTxtColor"
+                    android:textColor="?attr/editTxtColor"
                     android:text="@{user.telefon}"
-                    android:textColorHint="@color/editTxtColor"
+                    android:textColorHint="?attr/editTxtColor"
                     android:hint="Telefon"
-                    android:background="@color/editBackgroundColor"
+                    android:background="?attr/editBackgroundColor"
                     android:layout_height="50dp"/>
 
             </LinearLayout>
@@ -271,12 +285,14 @@
                     android:layout_width="26dp"
                     android:src="@drawable/phone_icon"
                     android:layout_marginStart="15dp"
-                    android:layout_height="26dp"/>
+                    android:layout_height="26dp"
+                    android:layout_marginEnd="10dp"
+                    app:tint="?attr/editTxtColor"/>
 
                 <EditText
                     android:layout_width="match_parent"
-                    android:paddingStart="15dp"
                     android:paddingEnd="15dp"
+                    android:paddingStart="15dp"
                     android:inputType="phone"
                     android:id="@+id/update_user_profile_dialog_editUserGsm"
                     android:layout_marginTop="3dp"
@@ -284,10 +300,10 @@
                     android:layout_marginBottom="3dp"
                     android:textSize="17sp"
                     android:text="@{user.gsm}"
-                    android:textColor="@color/editTxtColor"
-                    android:textColorHint="@color/editTxtColor"
+                    android:textColor="?attr/editTxtColor"
+                    android:textColorHint="?attr/editTxtColor"
                     android:hint="Gsm"
-                    android:background="@color/editBackgroundColor"
+                    android:background="?attr/editBackgroundColor"
                     android:layout_height="50dp"/>
 
             </LinearLayout>
@@ -317,13 +333,15 @@
                     android:layout_width="26dp"
                     android:src="@drawable/country_icon"
                     android:layout_marginStart="15dp"
-                    android:layout_height="26dp"/>
+                    android:layout_marginEnd="10dp"
+                    android:layout_height="26dp"
+                    app:tint="?attr/editTxtColor"/>
 
                 <Spinner
                     android:layout_width="match_parent"
-                    android:paddingStart="15dp"
-                    android:background="@color/editBackgroundColor"
-                    android:paddingEnd="15dp"
+                    android:background="?attr/editBackgroundColor"
+                    android:paddingEnd="5dp"
+                    android:paddingStart="5dp"
                     android:spinnerMode="dialog"
                     android:id="@+id/update_user_profile_dialog_spinnerUserCountry"
                     android:layout_marginTop="3dp"
@@ -346,13 +364,15 @@
                     android:layout_width="26dp"
                     android:src="@drawable/country_icon"
                     android:layout_marginStart="15dp"
-                    android:layout_height="26dp"/>
+                    android:layout_marginEnd="10dp"
+                    android:layout_height="26dp"
+                    app:tint="?attr/editTxtColor"/>
 
                 <Spinner
                     android:layout_width="match_parent"
-                    android:paddingStart="15dp"
-                    android:background="@color/editBackgroundColor"
-                    android:paddingEnd="15dp"
+                    android:background="?attr/editBackgroundColor"
+                    android:paddingEnd="5dp"
+                    android:paddingStart="5dp"
                     android:spinnerMode="dialog"
                     android:id="@+id/update_user_profile_dialog_spinnerUserCity"
                     android:layout_marginTop="3dp"
@@ -365,15 +385,20 @@
         </LinearLayout>
 
         <Button
-            android:layout_width="match_parent"
+            android:layout_width="210dp"
             android:layout_marginEnd="25dp"
             android:layout_marginTop="45dp"
             android:layout_marginBottom="15dp"
             android:id="@+id/update_user_profile_dialog_btnUpdate"
             android:layout_marginStart="25dp"
             android:text="Güncelle"
+            android:fontFamily="@font/poppins_bold"
+            android:textSize="18sp"
+            android:textColor="?attr/orangeBtnTxtColor"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/orange_btn_bg"
             android:textAllCaps="false"
-            android:layout_height="55dp"
+            android:layout_height="wrap_content"
             app:backgroundTint="@null"/>
 
     </LinearLayout>

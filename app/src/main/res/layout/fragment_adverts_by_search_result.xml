@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="?attr/appBgColor"
+    android:layout_height="match_parent"
+    tools:context=".view.AdvertsBySearchResultFragment">
+
+    <include
+        android:id="@+id/custom_toolbar_mainToolbar"
+        layout="@layout/custom_toolbar"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:scrollbars="none"
+        android:layout_below="@+id/custom_toolbar_mainToolbar"
+        android:id="@+id/adverts_by_search_result_fragment_recyclerView"
+        android:layout_height="match_parent"/>
+
+</RelativeLayout>
+
+</layout>

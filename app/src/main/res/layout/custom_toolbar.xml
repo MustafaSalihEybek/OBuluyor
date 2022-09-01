@@ -2,7 +2,7 @@
 <androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/toolBarBackgroundColor"
+    android:background="?attr/toolBarBackgroundColor"
     android:id="@+id/custom_toolbar_mainToolbar"
     android:layout_height="wrap_content"
     app:layout_collapseMode="pin">
@@ -10,17 +10,17 @@
     <ImageView
         android:layout_width="200dp"
         android:layout_gravity="center_horizontal"
+        android:id="@+id/custom_toolbar_imgLogo"
         android:src="@drawable/obuluyor_text_logo"
         android:layout_height="45dp"/>
 
     <ImageView
-        android:layout_width="21dp"
-        android:visibility="gone"
+        android:layout_width="34dp"
         android:id="@+id/custom_toolbar_imgClose"
         android:layout_marginEnd="15dp"
-        android:layout_gravity="end"
-        android:src="@drawable/close_icon"
-        android:layout_height="21dp"/>
+        android:visibility="gone"
+        android:src="@drawable/icon_back"
+        android:layout_height="34dp"/>
 
     <ImageView
         android:layout_width="21dp"

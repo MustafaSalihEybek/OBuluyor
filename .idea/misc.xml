@@ -3,38 +3,82 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Nexis/AndroidStudioProjects/OBuluyor/app/src/main/res/drawable-anydpi/icon_check.xml" value="0.1675" />
+        <entry key="..\:/Users/Nexis/AndroidStudioProjects/OBuluyor/app/src/main/res/drawable-anydpi/icon_close.xml" value="0.1675" />
+        <entry key="..\:/Users/Nexis/AndroidStudioProjects/OBuluyor/app/src/main/res/drawable/add_advert_btn_bg.xml" value="0.112" />
         <entry key="..\:/Users/Nexis/AndroidStudioProjects/OBuluyor/app/src/main/res/drawable/advert_detail_btn_bg.xml" value="0.17222222222222222" />
         <entry key="..\:/Users/Nexis/AndroidStudioProjects/OBuluyor/app/src/main/res/drawable/advert_detail_btn_selected.xml" value="0.17222222222222222" />
         <entry key="..\:/Users/Nexis/AndroidStudioProjects/OBuluyor/app/src/main/res/drawable/advert_details_advert_title_bg.xml" value="0.17222222222222222" />
+        <entry key="..\:/Users/Nexis/AndroidStudioProjects/OBuluyor/app/src/main/res/drawable/advert_item_bg.xml" value="0.1648148148148148" />
+        <entry key="..\:/Users/Nexis/AndroidStudioProjects/OBuluyor/app/src/main/res/drawable/check_bg.xml" value="0.168" />
         <entry key="..\:/Users/Nexis/AndroidStudioProjects/OBuluyor/app/src/main/res/drawable/edit_background_bg.xml" value="0.17222222222222222" />
+        <entry key="..\:/Users/Nexis/AndroidStudioProjects/OBuluyor/app/src/main/res/drawable/loading_dialog_bg.xml" value="0.112" />
+        <entry key="..\:/Users/Nexis/AndroidStudioProjects/OBuluyor/app/src/main/res/drawable/message_bg.xml" value="0.17222222222222222" />
+        <entry key="..\:/Users/Nexis/AndroidStudioProjects/OBuluyor/app/src/main/res/drawable/message_item_bg.xml" value="0.1648148148148148" />
         <entry key="..\:/Users/Nexis/AndroidStudioProjects/OBuluyor/app/src/main/res/drawable/orange_btn_bg.xml" value="0.17222222222222222" />
         <entry key="..\:/Users/Nexis/AndroidStudioProjects/OBuluyor/app/src/main/res/drawable/profile_item_bg.xml" value="0.17222222222222222" />
+        <entry key="..\:/Users/Nexis/AndroidStudioProjects/OBuluyor/app/src/main/res/drawable/progress_bg.xml" value="0.176" />
+        <entry key="..\:/Users/Nexis/AndroidStudioProjects/OBuluyor/app/src/main/res/drawable/random_advert_item_bg.xml" value="0.1165" />
+        <entry key="..\:/Users/Nexis/AndroidStudioProjects/OBuluyor/app/src/main/res/drawable/ripple_effect.xml" value="0.124" />
+        <entry key="..\:/Users/Nexis/AndroidStudioProjects/OBuluyor/app/src/main/res/drawable/textview_ripple_effect.xml" value="0.1" />
+        <entry key="..\:/Users/Nexis/AndroidStudioProjects/OBuluyor/app/src/main/res/drawable/uncheck_bg.xml" value="0.1115" />
         <entry key="..\:/Users/Nexis/AndroidStudioProjects/OBuluyor/app/src/main/res/drawable/yellow_btn_bg.xml" value="0.17222222222222222" />
         <entry key="..\:/Users/Nexis/AndroidStudioProjects/OBuluyor/app/src/main/res/layout/activity_main.xml" value="0.24010416666666667" />
+        <entry key="..\:/Users/Nexis/AndroidStudioProjects/OBuluyor/app/src/main/res/layout/add_module_content_dialog.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Nexis/AndroidStudioProjects/OBuluyor/app/src/main/res/layout/advert_category_item.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Nexis/AndroidStudioProjects/OBuluyor/app/src/main/res/layout/advert_detail_item.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Nexis/AndroidStudioProjects/OBuluyor/app/src/main/res/layout/advert_item.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Nexis/AndroidStudioProjects/OBuluyor/app/src/main/res/layout/advert_property_item.xml" value="0.253125" />
+        <entry key="..\:/Users/Nexis/AndroidStudioProjects/OBuluyor/app/src/main/res/layout/advert_property_with_checkbox_item.xml" value="0.253125" />
+        <entry key="..\:/Users/Nexis/AndroidStudioProjects/OBuluyor/app/src/main/res/layout/advert_select_sub_category_item.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Nexis/AndroidStudioProjects/OBuluyor/app/src/main/res/layout/advert_sub_category_item.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Nexis/AndroidStudioProjects/OBuluyor/app/src/main/res/layout/custom_advert_toolbar.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Nexis/AndroidStudioProjects/OBuluyor/app/src/main/res/layout/custom_nav_header.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Nexis/AndroidStudioProjects/OBuluyor/app/src/main/res/layout/custom_toolbar.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Nexis/AndroidStudioProjects/OBuluyor/app/src/main/res/layout/exit_the_add_advert_dialog.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Nexis/AndroidStudioProjects/OBuluyor/app/src/main/res/layout/exit_the_app_dialog.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Nexis/AndroidStudioProjects/OBuluyor/app/src/main/res/layout/favorite_item.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Nexis/AndroidStudioProjects/OBuluyor/app/src/main/res/layout/fragment_add_advert_details.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Nexis/AndroidStudioProjects/OBuluyor/app/src/main/res/layout/fragment_add_advert_details_page1.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Nexis/AndroidStudioProjects/OBuluyor/app/src/main/res/layout/fragment_add_advert_details_page2.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Nexis/AndroidStudioProjects/OBuluyor/app/src/main/res/layout/fragment_add_advert_details_page3.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Nexis/AndroidStudioProjects/OBuluyor/app/src/main/res/layout/fragment_add_advert_select_sub_categories.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Nexis/AndroidStudioProjects/OBuluyor/app/src/main/res/layout/fragment_add_advert_sub_categories.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Nexis/AndroidStudioProjects/OBuluyor/app/src/main/res/layout/fragment_add_store.xml" value="0.24010416666666667" />
         <entry key="..\:/Users/Nexis/AndroidStudioProjects/OBuluyor/app/src/main/res/layout/fragment_advert_categories.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Nexis/AndroidStudioProjects/OBuluyor/app/src/main/res/layout/fragment_advert_details.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Nexis/AndroidStudioProjects/OBuluyor/app/src/main/res/layout/fragment_adverts.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Nexis/AndroidStudioProjects/OBuluyor/app/src/main/res/layout/fragment_adverts_by_search_result.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Nexis/AndroidStudioProjects/OBuluyor/app/src/main/res/layout/fragment_adverts_select_categories.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Nexis/AndroidStudioProjects/OBuluyor/app/src/main/res/layout/fragment_adverts_sub_categories.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Nexis/AndroidStudioProjects/OBuluyor/app/src/main/res/layout/fragment_favorites.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Nexis/AndroidStudioProjects/OBuluyor/app/src/main/res/layout/fragment_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Nexis/AndroidStudioProjects/OBuluyor/app/src/main/res/layout/fragment_messages.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Nexis/AndroidStudioProjects/OBuluyor/app/src/main/res/layout/fragment_other_adverts.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Nexis/AndroidStudioProjects/OBuluyor/app/src/main/res/layout/fragment_profile.xml" value="0.24010416666666667" />
+        <entry key="..\:/Users/Nexis/AndroidStudioProjects/OBuluyor/app/src/main/res/layout/fragment_receiver_messages.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Nexis/AndroidStudioProjects/OBuluyor/app/src/main/res/layout/fragment_sender_messages.xml" value="0.24010416666666667" />
         <entry key="..\:/Users/Nexis/AndroidStudioProjects/OBuluyor/app/src/main/res/layout/fragment_sign.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Nexis/AndroidStudioProjects/OBuluyor/app/src/main/res/layout/fragment_sign_in.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/Nexis/AndroidStudioProjects/OBuluyor/app/src/main/res/layout/fragment_sign_up.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Nexis/AndroidStudioProjects/OBuluyor/app/src/main/res/layout/fragment_sign_up.xml" value="0.25" />
+        <entry key="..\:/Users/Nexis/AndroidStudioProjects/OBuluyor/app/src/main/res/layout/fragment_splash_screen.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Nexis/AndroidStudioProjects/OBuluyor/app/src/main/res/layout/fragment_update_store_data.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Nexis/AndroidStudioProjects/OBuluyor/app/src/main/res/layout/fragment_user_adverts.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Nexis/AndroidStudioProjects/OBuluyor/app/src/main/res/layout/fragment_user_store.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Nexis/AndroidStudioProjects/OBuluyor/app/src/main/res/layout/loading_dialog.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Nexis/AndroidStudioProjects/OBuluyor/app/src/main/res/layout/main_category_item.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Nexis/AndroidStudioProjects/OBuluyor/app/src/main/res/layout/message_detail_dialog.xml" value="0.253125" />
+        <entry key="..\:/Users/Nexis/AndroidStudioProjects/OBuluyor/app/src/main/res/layout/message_details_dialog.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Nexis/AndroidStudioProjects/OBuluyor/app/src/main/res/layout/message_item.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Nexis/AndroidStudioProjects/OBuluyor/app/src/main/res/layout/module_item.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Nexis/AndroidStudioProjects/OBuluyor/app/src/main/res/layout/nav_category_item.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Nexis/AndroidStudioProjects/OBuluyor/app/src/main/res/layout/random_advert_item.xml" value="0.253125" />
+        <entry key="..\:/Users/Nexis/AndroidStudioProjects/OBuluyor/app/src/main/res/layout/remove_favorite_dialog.xml" value="0.253125" />
+        <entry key="..\:/Users/Nexis/AndroidStudioProjects/OBuluyor/app/src/main/res/layout/send_message_dialog.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Nexis/AndroidStudioProjects/OBuluyor/app/src/main/res/layout/sign_out_dialog.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Nexis/AndroidStudioProjects/OBuluyor/app/src/main/res/layout/spinner_item.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Nexis/AndroidStudioProjects/OBuluyor/app/src/main/res/layout/splash_dialog.xml" value="0.253125" />
+        <entry key="..\:/Users/Nexis/AndroidStudioProjects/OBuluyor/app/src/main/res/layout/store_item.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Nexis/AndroidStudioProjects/OBuluyor/app/src/main/res/layout/update_user_profile_dialog.xml" value="0.25416666666666665" />
       </map>
     </option>

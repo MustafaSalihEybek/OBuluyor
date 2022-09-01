@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="?attr/appBgColor"
+    android:layout_height="match_parent"
+    tools:context=".view.OtherAdvertsFragment">
+
+    <include
+        android:id="@+id/custom_toolbar_mainToolbar"
+        layout="@layout/custom_toolbar"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:fontFamily="@font/poppins_bold"
+        android:textSize="17sp"
+        android:visibility="gone"
+        android:id="@+id/other_adverts_fragment_txtNoData"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:textColor="?attr/advertNoDataColor"
+        android:layout_below="@+id/custom_toolbar_mainToolbar"
+        android:text="Aramaya Uygun İlan Bulunamadı"
+        android:layout_height="wrap_content"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        android:scrollbars="none"
+        android:layout_below="@+id/custom_toolbar_mainToolbar"
+        android:id="@+id/other_adverts_fragment_recyclerView"
+        android:layout_height="match_parent"/>
+
+</RelativeLayout>
+
+</layout>

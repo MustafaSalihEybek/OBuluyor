@@ -1,6 +1,8 @@
-package com.nexis.obuluyor.view
+package com.nexis.obuluyor.view.addadvert
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -17,6 +19,7 @@ import com.nexis.obuluyor.util.Singleton
 import com.nexis.obuluyor.util.show
 import com.nexis.obuluyor.viewmodel.AddAdvertCategoriesViewModel
 import kotlinx.android.synthetic.main.custom_advert_toolbar.*
+import kotlinx.android.synthetic.main.custom_toolbar.*
 import kotlinx.android.synthetic.main.fragment_advert_categories.*
 
 class AddAdvertCategoriesFragment : Fragment(), View.OnClickListener {
@@ -27,6 +30,9 @@ class AddAdvertCategoriesFragment : Fragment(), View.OnClickListener {
 
     private lateinit var categoryList: List<Category>
     private lateinit var addAdvertCategoriesAdapter: AddAdvertCategoriesAdapter
+    private lateinit var txtSearch: String
+    private lateinit var searchedCategoryList: List<Category>
+    private var isDataReceived: Boolean = false
 
     private fun init(){
         arguments?.let {
@@ -42,6 +48,7 @@ class AddAdvertCategoriesFragment : Fragment(), View.OnClickListener {
             addAdvertCategoriesViewModel.getCategories()
 
             custom_advert_toolbar_imgClose.setOnClickListener(this)
+            custom_toolbar_imgLogo.setOnClickListener(this)
         }
     }
 
@@ -57,6 +64,27 @@ class AddAdvertCategoriesFragment : Fragment(), View.OnClickListener {
         super.onViewCreated(view, savedInstanceState)
         v = view
         init()
+
+        advert_categories_fragment_editSearch.addTextChangedListener(object : TextWatcher{
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                if (isDataReceived){
+                    if (p0 != null){
+                        if (p0.isNotEmpty()){
+                            txtSearch = p0.toString()
+
+                            searchedCategoryList = getFilteredData(categoryList, txtSearch)
+                            fillDataFromAdapter(searchedCategoryList)
+                        } else
+                            fillDataFromAdapter(categoryList)
+                    } else
+                        fillDataFromAdapter(categoryList)
+                }
+            }
+
+            override fun afterTextChanged(p0: Editable?) {}
+        })
     }
 
     private fun observeLiveData(){
@@ -69,13 +97,9 @@ class AddAdvertCategoriesFragment : Fragment(), View.OnClickListener {
         addAdvertCategoriesViewModel.subCategoryList.observe(viewLifecycleOwner, Observer {
             it?.let {
                 categoryList = it
-                addAdvertCategoriesAdapter.loadData(categoryList)
+                isDataReceived = true
 
-                addAdvertCategoriesAdapter.setAdvertCategoryOnItemClickListener(object : AddAdvertCategoriesAdapter.AdvertCategoryOnItemClickListener{
-                    override fun onItemClick(category: Category) {
-                        goToAddAdvertSubCategoriesFragmentPage(category, userId)
-                    }
-                })
+                fillDataFromAdapter(categoryList)
             }
         })
     }
@@ -84,6 +108,7 @@ class AddAdvertCategoriesFragment : Fragment(), View.OnClickListener {
         p0?.let {
             when (it.id){
                 R.id.custom_advert_toolbar_imgClose -> Singleton.showExitTheAddAdvertDialog(v, userId)
+                R.id.custom_toolbar_imgLogo -> Singleton.showExitTheAddAdvertDialog(v, userId)
             }
         }
     }
@@ -91,5 +116,27 @@ class AddAdvertCategoriesFragment : Fragment(), View.OnClickListener {
     private fun goToAddAdvertSubCategoriesFragmentPage(category: Category, userId: Int){
         navDirections = AddAdvertCategoriesFragmentDirections.actionAdvertCategoriesFragmentToAddAdvertSubCategoriesFragment(userId, category)
         Navigation.findNavController(v).navigate(navDirections)
+    }
+
+    private fun fillDataFromAdapter(categoryList: List<Category>){
+        addAdvertCategoriesAdapter.loadData(categoryList)
+        addAdvertCategoriesAdapter.setAdvertCategoryOnItemClickListener(object : AddAdvertCategoriesAdapter.AdvertCategoryOnItemClickListener{
+            override fun onItemClick(category: Category) {
+                goToAddAdvertSubCategoriesFragmentPage(category, userId)
+            }
+        })
+    }
+
+    private fun getFilteredData(categoryList: List<Category>, searchText: String) : ArrayList<Category> {
+        var categories: ArrayList<Category> = ArrayList()
+
+        for (category in categoryList){
+            category.kategori_adi?.let {
+                if (it.lowercase().contains(searchText.lowercase()))
+                    categories.add(category)
+            }
+        }
+
+        return categories
     }
 }

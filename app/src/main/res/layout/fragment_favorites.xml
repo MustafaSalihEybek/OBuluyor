@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/appBgColor"
+    tools:context=".view.FavoritesFragment">
+
+    <include
+        android:id="@+id/custom_toolbar_mainToolbar"
+        layout="@layout/custom_toolbar"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:fontFamily="@font/poppins_bold"
+        android:textSize="17sp"
+        android:visibility="gone"
+        android:id="@+id/favorites_fragment_txtNoData"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:textColor="?attr/advertNoDataColor"
+        android:layout_below="@+id/custom_toolbar_mainToolbar"
+        android:text="Favoriye Ekli Bir İlan Bulunamadı"
+        android:layout_height="wrap_content"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:scrollbars="none"
+        android:visibility="gone"
+        android:layout_below="@+id/custom_toolbar_mainToolbar"
+        android:id="@+id/favorites_fragment_recyclerView"
+        android:layout_height="match_parent"/>
+
+</RelativeLayout>
+
+</layout>

@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <variable
+            name="message"
+            type="com.nexis.obuluyor.model.Message" />
+
+        <variable
+            name="user"
+            type="com.nexis.obuluyor.model.User" />
+    </data>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="340dp"
+    android:background="?attr/dialogBgColor"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="?attr/dialogTopBgColor"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Mesaj Detayı"
+            android:textColor="?attr/dialogTopTxtColor"
+            android:textSize="25sp" />
+
+        <ImageView
+            android:id="@+id/message_details_dialog_imgClose"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="10dp"
+            android:src="@drawable/close_icon"
+            app:tint="?attr/dialogTopTxtColor"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:padding="5dp"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="0.7"
+            android:downloadAdvertImage="@{message.advert}"
+            android:id="@+id/message_details_dialog_imgAdvert"
+            android:minHeight="85dp"
+            android:scaleType="centerCrop"
+            android:layout_height="match_parent"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1.3"
+            android:layout_marginStart="5dp"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:setMessageDetailAdvertName="@{message.advert.title}"
+                    android:fontFamily="@font/poppins_bold"
+                    android:textSize="16sp"
+                    android:textColor="?attr/messageDetailsTxtColor"
+                    android:layout_height="wrap_content"/>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:background="?attr/stickColor"
+                    android:layout_height="2dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:setMessageDetailAdvertSenderName="@{user.ad_soyad}"
+                    android:id="@+id/message_details_dialog_txtSenderOrReceiver"
+                    android:textSize="16sp"
+                    android:textColor="?attr/messageDetailsTxtColor"
+                    android:layout_height="wrap_content"/>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:background="?attr/stickColor"
+                    android:layout_height="2dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:setMessageDetailAdvertDate="@{message.tarih}"
+                    android:fontFamily="@font/poppins_bold"
+                    android:textSize="16sp"
+                    android:textColor="?attr/messageDetailsTxtColor"
+                    android:layout_height="wrap_content"/>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:background="?attr/stickColor"
+                    android:layout_height="2dp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:text="Mesaj"
+        android:id="@+id/message_details_dialog_txtMessageType"
+        android:textSize="17sp"
+        android:layout_marginStart="5dp"
+        android:textColor="?attr/messageDetailsTxtColor"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/poppins_bold"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:minHeight="50dp"
+        android:hint="@{message.mesaj}"
+        android:focusableInTouchMode="false"
+        android:inputType="textMultiLine"
+        android:layout_marginTop="3dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:textSize="15sp"
+        android:padding="10dp"
+        android:gravity="top|start"
+        android:fontFamily="@font/poppins_bold"
+        android:background="@drawable/edit_background_bg"
+        android:maxHeight="150dp"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:text="Mesaj"
+        android:id="@+id/message_details_dialog_txtSendMessageType"
+        android:textSize="17sp"
+        android:layout_marginStart="5dp"
+        android:textColor="?attr/messageDetailsTxtColor"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/poppins_bold"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:minHeight="50dp"
+        android:hint="Mesaj içeriği giriniz"
+        android:layout_marginTop="3dp"
+        android:layout_marginStart="5dp"
+        android:inputType="textMultiLine"
+        android:layout_marginEnd="5dp"
+        android:id="@+id/message_details_dialog_editMessage"
+        android:textSize="15sp"
+        android:padding="10dp"
+        android:gravity="top|start"
+        android:fontFamily="@font/poppins_bold"
+        android:background="@drawable/edit_background_bg"
+        android:maxHeight="150dp"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:layout_width="115dp"
+        android:text="Kapat"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="35dp"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/message_details_dialog_btnClose1"
+        android:textSize="19sp"
+        android:textColor="?orangeBtnTxtColor"
+        android:textAllCaps="false"
+        android:fontFamily="@font/poppins_bold"
+        android:background="@drawable/orange_btn_bg"
+        android:layout_height="50dp"
+        app:backgroundTint="@null"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="35dp"
+        android:id="@+id/message_details_dialog_linearBottom"
+        android:gravity="center_horizontal"
+        android:layout_marginBottom="10dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_width="115dp"
+            android:text="Kapat"
+            android:layout_marginEnd="15dp"
+            android:id="@+id/message_details_dialog_btnClose2"
+            android:textSize="19sp"
+            android:textAllCaps="false"
+            android:fontFamily="@font/poppins_bold"
+            android:background="@drawable/orange_btn_bg"
+            android:layout_height="50dp"
+            app:backgroundTint="@null"/>
+
+        <Button
+            android:layout_width="115dp"
+            android:text="Gönder"
+            android:id="@+id/message_details_dialog_btnSend"
+            android:textSize="19sp"
+            android:textAllCaps="false"
+            android:layout_marginStart="15dp"
+            android:fontFamily="@font/poppins_bold"
+            android:background="@drawable/orange_btn_bg"
+            android:layout_height="50dp"
+            app:backgroundTint="@null"/>
+
+    </LinearLayout>
+
+</LinearLayout>
+
+</layout>

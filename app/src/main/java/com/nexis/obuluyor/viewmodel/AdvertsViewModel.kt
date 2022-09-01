@@ -15,12 +15,22 @@ class AdvertsViewModel(application: Application) : BaseViewModel(application) {
     val advertList = MutableLiveData<List<Advert>>()
     val errorMessage = MutableLiveData<String>()
 
-    fun getAdverts(confirm: Int, activeAdverts: Int){
+    fun getAdverts(
+        confirm: Int,
+        activeAdverts: Int,
+        categoriesData: String
+    ){
         AppUtils.advertsRepository = AdvertsRepository()
         AppUtils.disposable = CompositeDisposable()
 
         AppUtils.disposable.add(
-            AppUtils.advertsRepository.getAdverts(confirm, activeAdverts)
+            AppUtils.advertsRepository.getAdverts(
+                confirm,
+                activeAdverts,
+                categoriesData,
+                0,
+                0
+            )
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeWith(object : DisposableSingleObserver<List<Advert>>(){

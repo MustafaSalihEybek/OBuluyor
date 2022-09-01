@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/appBgColor"
+    tools:context=".view.message.MessagesFragment">
+
+    <include
+        android:id="@+id/custom_toolbar_mainToolbar"
+        layout="@layout/custom_toolbar"/>
+
+    <com.google.android.material.tabs.TabLayout
+        android:layout_width="match_parent"
+        android:background="?attr/toolBarBackgroundColor"
+        android:layout_below="@+id/custom_toolbar_mainToolbar"
+        android:id="@+id/messages_fragment_tabLayout"
+        android:layout_height="wrap_content"
+        app:tabTextAppearance="@style/MessagesAppBar"
+        app:tabTextColor="?attr/toolBarUnSelectedTxtColor"
+        app:tabSelectedTextColor="?attr/toolBarSelectedTxtColor"
+        app:tabIndicatorColor="?attr/toolBarStickColor"/>
+
+    <androidx.viewpager.widget.ViewPager
+        android:layout_width="match_parent"
+        android:scrollbars="none"
+        android:layout_below="@id/messages_fragment_tabLayout"
+        android:id="@+id/messages_fragment_viewPager"
+        android:layout_height="match_parent"/>
+
+</RelativeLayout>
+
+</layout>

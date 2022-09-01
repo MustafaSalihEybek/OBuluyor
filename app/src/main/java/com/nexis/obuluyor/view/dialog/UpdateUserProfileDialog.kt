@@ -44,6 +44,7 @@ class UpdateUserProfileDialog(val mContext: Context, val mUser: User, val countr
     private lateinit var txtUserPassword: String
     private lateinit var txtUserPhoneNumber: String
     private lateinit var txtUserGsmNumber: String
+    private lateinit var txtUserBirthday: String
 
     private lateinit var datePickerDialog: DatePickerDialog
     private lateinit var dataSetListener: DatePickerDialog.OnDateSetListener
@@ -58,6 +59,7 @@ class UpdateUserProfileDialog(val mContext: Context, val mUser: User, val countr
         genderArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         update_user_profile_dialog_spinnerUserGender.adapter = genderArrayAdapter
         update_user_profile_dialog_spinnerUserGender.setSelection(getGenderSelectedIndex(mUser.cinsiyet!!), true)
+        txtSelectedGender = mUser.cinsiyet
 
         update_user_profile_dialog_spinnerUserGender.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
@@ -83,6 +85,7 @@ class UpdateUserProfileDialog(val mContext: Context, val mUser: User, val countr
         update_user_profile_dialog_spinnerUserCountry.adapter = countryArrayAdapter
         update_user_profile_dialog_spinnerUserCountry.setSelection(getCountrySelectedIndex(mUser.il!!), true)
         pV.getCityList(countryList.get(getCountrySelectedIndex(mUser.il)).id)
+        selectedCountryIn = getCountrySelectedIndex(mUser.il)
 
         update_user_profile_dialog_spinnerUserCountry.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
@@ -145,7 +148,47 @@ class UpdateUserProfileDialog(val mContext: Context, val mUser: User, val countr
     }
 
     private fun updateUserData(){
+        txtUserFullName = update_user_profile_dialog_editUserFullName.text.toString().trim()
+        txtUserBirthday = update_user_profile_dialog_editUserBirthday.text.toString().trim()
+        txtUserPassword = update_user_profile_dialog_editUserPassword.text.toString().trim()
+        txtUserPhoneNumber = update_user_profile_dialog_editUserPhone.text.toString().trim()
+        txtUserGsmNumber = update_user_profile_dialog_editUserGsm.text.toString().trim()
 
+        if (!txtUserFullName.isEmpty()){
+            if (!txtUserBirthday.isEmpty()){
+                if (!txtSelectedGender.isEmpty()){
+                    if (!txtUserPassword.isEmpty()){
+                        if (!txtUserPhoneNumber.isEmpty()){
+                            if (!txtUserGsmNumber.isEmpty()){
+                                if (selectedCountryIn != -1){
+                                    if (selectedCityIn != -1){
+                                        pV.updateUserData(
+                                            mUser.Id,
+                                            txtUserFullName,
+                                            txtUserBirthday,
+                                            txtSelectedGender,
+                                            txtUserPassword,
+                                            txtUserPhoneNumber,
+                                            txtUserGsmNumber,
+                                            countryList.get(selectedCountryIn).id,
+                                            cityList.get(selectedCityIn).id
+                                        )
+                                    } else
+                                        "message".show(v.root, "Lütfen listeden ilçenizi seçiniz")
+                                } else
+                                    "message".show(v.root, "Lütfen listeden şehrinizi seçiniz")
+                            } else
+                                txtUserGsmNumber.show(v.root, "Lütfen gsm numaranızı yazınız")
+                        } else
+                            txtUserPhoneNumber.show(v.root, "Lütfen telefon numaranızı yazınız")
+                    } else
+                        txtUserPassword.show(v.root, "Lütfen bir şifre belirleyiniz")
+                } else
+                    txtSelectedGender.show(v.root, "Lütfen listeden cinsiyetinizi seçiniz")
+            } else
+                txtUserBirthday.show(v.root, "Lütfen doğum gününüzü seçiniz")
+        } else
+            txtUserFullName.show(v.root, "Lütfen adınızı ve soyadınızı yazınız")
     }
 
     private fun closeThisDialog(){

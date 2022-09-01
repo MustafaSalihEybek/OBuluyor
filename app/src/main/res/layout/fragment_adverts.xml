@@ -5,18 +5,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="?attr/appBgColor"
     tools:context=".view.AdvertsFragment">
 
     <include
         android:id="@+id/custom_toolbar_mainToolbar"
         layout="@layout/custom_toolbar"/>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:scrollbars="none"
+    <TextView
+        android:layout_width="wrap_content"
+        android:fontFamily="@font/poppins_bold"
+        android:textSize="17sp"
+        android:id="@+id/adverts_fragment_txtNoData"
+        android:layout_marginTop="10dp"
+        android:visibility="gone"
+        android:layout_centerHorizontal="true"
+        android:textColor="?attr/advertNoDataColor"
         android:layout_below="@+id/custom_toolbar_mainToolbar"
+        android:text="Bu Kategorilerle İlgili Bir İlan Bulunamadı"
+        android:layout_height="wrap_content"/>
+
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/adverts_fragment_recyclerView"
-        android:layout_height="match_parent"/>
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/custom_toolbar_mainToolbar"
+        android:scrollbars="none" />
 
 </RelativeLayout>
 

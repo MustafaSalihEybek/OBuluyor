@@ -1,4 +1,4 @@
-package com.nexis.obuluyor.view
+package com.nexis.obuluyor.view.addadvert
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -19,6 +19,7 @@ import com.nexis.obuluyor.model.SubCategory
 import com.nexis.obuluyor.util.show
 import com.nexis.obuluyor.viewmodel.AddAdvertSubCategoriesViewModel
 import kotlinx.android.synthetic.main.custom_advert_toolbar.*
+import kotlinx.android.synthetic.main.custom_toolbar.*
 import kotlinx.android.synthetic.main.fragment_add_advert_sub_categories.*
 
 class AddAdvertSubCategoriesFragment : Fragment(), View.OnClickListener {
@@ -48,6 +49,7 @@ class AddAdvertSubCategoriesFragment : Fragment(), View.OnClickListener {
             addAdvertSubCategoriesViewModel.getSubCategories(categoryData.Id)
 
             custom_advert_toolbar_imgClose.setOnClickListener(this)
+            custom_toolbar_imgLogo.setOnClickListener(this)
         }
     }
 
@@ -93,8 +95,14 @@ class AddAdvertSubCategoriesFragment : Fragment(), View.OnClickListener {
         p0?.let {
             when (it.id){
                 R.id.custom_advert_toolbar_imgClose -> backToPage(userId)
+                R.id.custom_toolbar_imgLogo -> backToMainPage(userId)
             }
         }
+    }
+
+    private fun backToMainPage(userId: Int){
+        navDirections = AddAdvertSubCategoriesFragmentDirections.actionAddAdvertSubCategoriesFragmentToMainFragment(userId)
+        Navigation.findNavController(v).navigate(navDirections)
     }
 
     private fun backToPage(userId: Int){
@@ -103,7 +111,9 @@ class AddAdvertSubCategoriesFragment : Fragment(), View.OnClickListener {
     }
 
     private fun goToAdvertDetailsPage(userId: Int, category: Category, subCategory: SubCategory){
-        navDirections = AddAdvertSubCategoriesFragmentDirections.actionAddAdvertSubCategoriesFragmentToAddAdvertDetailsFragment(userId, category, subCategory)
+        navDirections = AddAdvertSubCategoriesFragmentDirections.actionAddAdvertSubCategoriesFragmentToAddAdvertSelectSubCategoriesFragment(
+            userId, arrayOf(subCategory), category
+        )
         Navigation.findNavController(v).navigate(navDirections)
     }
 }
