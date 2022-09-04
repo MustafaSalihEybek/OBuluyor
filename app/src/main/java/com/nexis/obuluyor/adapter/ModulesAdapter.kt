@@ -28,7 +28,7 @@ class ModulesAdapter(var moduleList: List<Module>, var moduleNameList: ArrayList
         else
             holder.subTitle.text = "${moduleList.get(position).name} bilgisini giriniz"
 
-        holder.imgThreePoints.setOnClickListener {
+        holder.itemView.setOnClickListener {
             aPos = holder.adapterPosition
 
             if (aPos != RecyclerView.NO_POSITION)
@@ -39,7 +39,6 @@ class ModulesAdapter(var moduleList: List<Module>, var moduleNameList: ArrayList
     override fun getItemCount() = moduleList.size
 
     inner class ModulesHolder(var mI: ModuleItemBinding) : RecyclerView.ViewHolder(mI.root) {
-        val imgThreePoints: ImageView = mI.root.findViewById(R.id.module_item_imgThreePoints)
         val subTitle: TextView = mI.root.findViewById(R.id.module_item_txtSubTitle)
     }
 

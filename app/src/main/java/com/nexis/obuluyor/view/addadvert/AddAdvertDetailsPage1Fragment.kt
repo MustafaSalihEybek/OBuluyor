@@ -64,8 +64,17 @@ class AddAdvertDetailsPage1Fragment(val userId: Int, val categoryData: Category,
         addAdvertDetailsPage1ViewModel = ViewModelProvider(this).get(AddAdvertDetailsPage1ViewModel::class.java)
         observeLiveData()
 
-        if (!isCreated)
+        if (!isCreated){
             addAdvertDetailsPage1ViewModel.getModulesForCategories(categoriesData)
+
+            page1ModuleList = null
+            page1ModuleContentList = null
+
+            Singleton.moduleIdList = null
+            Singleton.moduleIdData = null
+            Singleton.moduleList = null
+            Singleton.moduleNameList = null
+        }
 
         add_advert_details_page1_fragment_recyclerView.setHasFixedSize(true)
         add_advert_details_page1_fragment_recyclerView.layoutManager = LinearLayoutManager(v.context, LinearLayoutManager.VERTICAL, false)
@@ -87,14 +96,30 @@ class AddAdvertDetailsPage1Fragment(val userId: Int, val categoryData: Category,
         init()
 
         if (isCreated){
-            moduleIdList = Singleton.moduleIdList
-            moduleIdData = Singleton.moduleIdData
-            moduleList = Singleton.moduleList
-            selectedModuleList = page1ModuleList
-            selectedModuleContentList = page1ModuleContentList
-            moduleNameList = Singleton.moduleNameList
+            Singleton.moduleIdList?.let {
+                moduleIdList = it
+            }
 
-            setModule(moduleList)
+            Singleton.moduleIdData?.let {
+                moduleIdData = it
+            }
+
+            page1ModuleList?.let {
+                selectedModuleList = it
+            }
+
+            page1ModuleContentList?.let {
+                selectedModuleContentList = it
+            }
+
+            Singleton.moduleNameList?.let {
+                moduleNameList = it
+            }
+
+            Singleton.moduleList?.let {
+                moduleList = it
+                setModule(moduleList)
+            }
         }
     }
 
@@ -254,7 +279,7 @@ class AddAdvertDetailsPage1Fragment(val userId: Int, val categoryData: Category,
     }
 
     companion object{
-        var page1ModuleList: ArrayList<Module> = arrayListOf()
-        var page1ModuleContentList: ArrayList<ModuleContent> = arrayListOf()
+        var page1ModuleList: ArrayList<Module>? = null
+        var page1ModuleContentList: ArrayList<ModuleContent>? = null
     }
 }

@@ -2,6 +2,7 @@ package com.nexis.obuluyor.util
 
 import android.content.ClipData
 import android.content.Context
+import android.net.Uri
 import android.view.View
 import androidx.lifecycle.LifecycleOwner
 import androidx.viewpager.widget.ViewPager
@@ -20,20 +21,21 @@ class Singleton {
         var themeMode: String = ""
 
         //Page 2
-        lateinit var moduleIdList: List<ModuleId>
-        lateinit var moduleIdData: String
-        lateinit var moduleList: List<Module>
-        lateinit var moduleNameList: ArrayList<String>
+        var moduleIdList: List<ModuleId>? = null
+        var moduleIdData: String? = null
+        var moduleList: List<Module>? = null
+        var moduleNameList: ArrayList<String>? = null
 
         //Page 3
-        var exchangeIn: Int = 0
-        var advertTimeIn: Int = 0
-        var clipData: ClipData? = null
+        var exchangeIn: Int? = null
+        var advertTimeIn: Int? = null
+        var imageUriList: ArrayList<Uri>? = null
         var advertTitle: String? = null
-        var advertPrice: Int = 0
+        var advertPrice: Int? = null
         var advertContent: String? = null
-        lateinit var countryList: List<Country>
-        lateinit var cityList: List<City>
+        var countryList: List<Country>? = null
+        var cityList: List<City>? = null
+        var districtList: List<District>? = null
 
         var categoryList: List<Category> = arrayListOf()
         var randomAdvertList: List<Advert> = arrayListOf()

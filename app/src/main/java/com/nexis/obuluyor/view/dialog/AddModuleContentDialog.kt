@@ -38,6 +38,9 @@ class AddModuleContentDialog(val mContext: Context, val moduleData: Module, val 
             it.setLayout(ActionBar.LayoutParams.MATCH_PARENT, ActionBar.LayoutParams.WRAP_CONTENT)
         }
 
+        add_module_content_dialog_editModuleContent.visibility = View.GONE
+        add_module_content_dialog_spinnerModuleContent.visibility = View.GONE
+
         observeLiveData()
         adV.getModuleContents(moduleData.Id!!)
 
@@ -51,9 +54,6 @@ class AddModuleContentDialog(val mContext: Context, val moduleData: Module, val 
                 moduleContentList = it
 
                 if (moduleContentList.get(0).name != null){
-                    add_module_content_dialog_spinnerModuleContent.visibility = View.VISIBLE
-                    add_module_content_dialog_editModuleContent.visibility = View.GONE
-
                     moduleContentNameList = ArrayList()
 
                     for (name in moduleContentList)
@@ -62,6 +62,9 @@ class AddModuleContentDialog(val mContext: Context, val moduleData: Module, val 
                     moduleContentAdapter = ArrayAdapter(mContext, R.layout.spinner_item, moduleContentNameList)
                     moduleContentAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
                     add_module_content_dialog_spinnerModuleContent.adapter = moduleContentAdapter
+
+                    add_module_content_dialog_spinnerModuleContent.visibility = View.VISIBLE
+                    add_module_content_dialog_editModuleContent.visibility = View.GONE
 
                     add_module_content_dialog_spinnerModuleContent.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
                         override fun onItemSelected(

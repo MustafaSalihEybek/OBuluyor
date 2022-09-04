@@ -4,8 +4,10 @@ import android.app.Application
 import androidx.lifecycle.MutableLiveData
 import com.nexis.obuluyor.model.City
 import com.nexis.obuluyor.model.Country
+import com.nexis.obuluyor.model.District
 import com.nexis.obuluyor.repository.CitiesRepository
 import com.nexis.obuluyor.repository.CountriesRepository
+import com.nexis.obuluyor.repository.GetDistrictsRepository
 import com.nexis.obuluyor.util.AppUtils
 import com.nexis.obuluyor.viewmodel.base.BaseViewModel
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -17,6 +19,7 @@ class AddAdvertDetailsPage3ViewModel(application: Application) : BaseViewModel(a
     val countryList = MutableLiveData<List<Country>>()
     val cityList = MutableLiveData<List<City>>()
     val errorMessage = MutableLiveData<String>()
+    val districtList = MutableLiveData<List<District>>()
 
     fun getCountryList(){
         AppUtils.countriesRepository = CountriesRepository()
@@ -49,6 +52,26 @@ class AddAdvertDetailsPage3ViewModel(application: Application) : BaseViewModel(a
                 .subscribeWith(object : DisposableSingleObserver<List<City>>(){
                     override fun onSuccess(t: List<City>) {
                         cityList.value = t
+                    }
+
+                    override fun onError(e: Throwable) {
+                        errorMessage.value = e.localizedMessage
+                    }
+                })
+        )
+    }
+
+    fun getDistrictList(cityIn: Int){
+        AppUtils.getDistrictsRepository = GetDistrictsRepository()
+        AppUtils.disposable = CompositeDisposable()
+
+        AppUtils.disposable.add(
+            AppUtils.getDistrictsRepository.getDistricts(cityIn)
+                .subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeWith(object : DisposableSingleObserver<List<District>>(){
+                    override fun onSuccess(t: List<District>) {
+                        districtList.value = t
                     }
 
                     override fun onError(e: Throwable) {

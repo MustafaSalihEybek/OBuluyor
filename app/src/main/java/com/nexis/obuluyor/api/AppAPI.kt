@@ -23,6 +23,10 @@ interface AppAPI {
     @FormUrlEncoded
     fun getCities(@Field("il") countryId: Int) : Single<List<City>>
 
+    @POST("mahaleler.php")
+    @FormUrlEncoded
+    fun getDistricts(@Field("ilce") cityIn: Int) : Single<List<District>>
+
     @POST("uye_ol.php")
     @FormUrlEncoded
     fun signUpUser(

@@ -2,14 +2,8 @@ package com.nexis.obuluyor.viewmodel
 
 import android.app.Application
 import androidx.lifecycle.MutableLiveData
-import com.nexis.obuluyor.model.AddAdvertImage
-import com.nexis.obuluyor.model.Advert
-import com.nexis.obuluyor.model.Module
-import com.nexis.obuluyor.model.ModuleId
-import com.nexis.obuluyor.repository.AddImageForAdvertRepository
-import com.nexis.obuluyor.repository.AddNewAdvertRepository
-import com.nexis.obuluyor.repository.GetModulesForCategoriesRepository
-import com.nexis.obuluyor.repository.GetModulesRepository
+import com.nexis.obuluyor.model.*
+import com.nexis.obuluyor.repository.*
 import com.nexis.obuluyor.util.AppUtils
 import com.nexis.obuluyor.viewmodel.base.BaseViewModel
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -24,6 +18,9 @@ class AddAdvertDetailsViewModel(application: Application) : BaseViewModel(applic
     val advertData = MutableLiveData<Advert>()
     val errorMessage = MutableLiveData<String>()
     val addAdvertImage = MutableLiveData<AddAdvertImage>()
+    val countryList = MutableLiveData<List<Country>>()
+    val cityList = MutableLiveData<List<City>>()
+    val districtList = MutableLiveData<List<District>>()
 
     fun addNewAdvert(
         userId: Int,
@@ -154,6 +151,66 @@ class AddAdvertDetailsViewModel(application: Application) : BaseViewModel(applic
                 .subscribeWith(object : DisposableSingleObserver<AddAdvertImage>(){
                     override fun onSuccess(t: AddAdvertImage) {
                         addAdvertImage.value = t
+                    }
+
+                    override fun onError(e: Throwable) {
+                        errorMessage.value = e.localizedMessage
+                    }
+                })
+        )
+    }
+
+    fun getCountryList(){
+        AppUtils.countriesRepository = CountriesRepository()
+        AppUtils.disposable = CompositeDisposable()
+
+        AppUtils.disposable.add(
+            AppUtils.countriesRepository.getCountries()
+                .subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeWith(object : DisposableSingleObserver<List<Country>>(){
+                    override fun onSuccess(t: List<Country>) {
+                        countryList.value = t
+                    }
+
+                    override fun onError(e: Throwable) {
+                        errorMessage.value = e.localizedMessage
+                    }
+                })
+        )
+    }
+
+    fun getCityList(countryId: Int){
+        AppUtils.citiesRepository = CitiesRepository()
+        AppUtils.disposable = CompositeDisposable()
+
+        AppUtils.disposable.add(
+            AppUtils.citiesRepository.getCities(countryId)
+                .subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeWith(object : DisposableSingleObserver<List<City>>(){
+                    override fun onSuccess(t: List<City>) {
+                        cityList.value = t
+                    }
+
+                    override fun onError(e: Throwable) {
+                        errorMessage.value = e.localizedMessage
+                    }
+                })
+        )
+    }
+
+    fun getDistrictList(cityIn: Int){
+        AppUtils.getDistrictsRepository = GetDistrictsRepository()
+        AppUtils.disposable = CompositeDisposable()
+
+        AppUtils.disposable.add(
+            AppUtils.getDistrictsRepository.getDistricts(cityIn)
+                .subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeWith(object : DisposableSingleObserver<List<District>>(){
+                    override fun onSuccess(t: List<District>) {
+                        districtList.value = t
                     }
 
                     override fun onError(e: Throwable) {

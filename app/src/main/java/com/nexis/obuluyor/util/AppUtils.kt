@@ -49,6 +49,7 @@ object AppUtils {
     lateinit var addNewAdvertRepository: AddNewAdvertRepository
     lateinit var addImageForAdvertRepository: AddImageForAdvertRepository
     lateinit var getUserAdvertsRepository: GetUserAdvertsRepository
+    lateinit var getDistrictsRepository: GetDistrictsRepository
 
     lateinit var disposable: CompositeDisposable
     lateinit var categoryImageMap: HashMap<String, Int>

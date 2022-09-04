@@ -26,6 +26,7 @@ import com.nexis.obuluyor.R
 import com.nexis.obuluyor.adapter.AdvertImagesByGalleryPagerAdapter
 import com.nexis.obuluyor.model.City
 import com.nexis.obuluyor.model.Country
+import com.nexis.obuluyor.model.District
 import com.nexis.obuluyor.util.RealPathUtil
 import com.nexis.obuluyor.util.Singleton
 import com.nexis.obuluyor.util.show
@@ -73,6 +74,11 @@ class AddAdvertDetailsPage3Fragment : Fragment(), View.OnClickListener {
     private lateinit var cityList: List<City>
     private var selectedCityIn: Int = -1
 
+    private lateinit var districtArrayAdapter: ArrayAdapter<*>
+    private lateinit var districtNameList: ArrayList<String>
+    private lateinit var districtList: List<District>
+    private var selectedDistrictIn: Int = -1
+
     private lateinit var advertPartList: ArrayList<MultipartBody.Part>
     private lateinit var imageFile: File
     private lateinit var imageBody: RequestBody
@@ -80,22 +86,47 @@ class AddAdvertDetailsPage3Fragment : Fragment(), View.OnClickListener {
 
     private lateinit var addAdvertDetailsPage3ViewModel: AddAdvertDetailsPage3ViewModel
     private var isCreated: Boolean = false
-    private var oneTimeSelect: Boolean = false
+    private var userManuelSelected: Boolean = false
+    private lateinit var imageUriList: ArrayList<Uri>
 
     private fun init(){
         addAdvertDetailsPage3ViewModel = ViewModelProvider(this).get(AddAdvertDetailsPage3ViewModel::class.java)
         observeLiveData()
 
-        if (!isCreated)
+        if (!isCreated){
             addAdvertDetailsPage3ViewModel.getCountryList()
+
+            Singleton.imageUriList = null
+            Singleton.advertTitle = null
+            Singleton.advertPrice = 0
+            Singleton.advertContent = null
+            Singleton.countryList = null
+            Singleton.cityList = null
+            Singleton.districtList = null
+
+            advertTitle = null
+            advertContent = null
+            advertPrice = -1
+            advertIncreaseDate = null
+            advertExchange = null
+            advertDate = null
+            advertFullDateWithTime = null
+            advertStream = null
+            imagePartList = null
+        }
 
         exchangeAdapter = ArrayAdapter.createFromResource(v.context, R.array.ExchangeList, R.layout.spinner_item)
         exchangeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         add_advert_details_page3_fragment_spinnerExchange.adapter = exchangeAdapter
 
         if (isCreated){
-            add_advert_details_page3_fragment_spinnerExchange.setSelection(Singleton.exchangeIn, true)
-            selectedExchange = advertExchange
+            Singleton.exchangeIn?.let {
+                add_advert_details_page3_fragment_spinnerExchange.setSelection(it, true)
+            }
+
+            advertExchange?.let {
+                selectedExchange = it
+            }
         }
 
         add_advert_details_page3_fragment_spinnerExchange.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
@@ -123,9 +154,11 @@ class AddAdvertDetailsPage3Fragment : Fragment(), View.OnClickListener {
         add_advert_details_page3_fragment_spinnerAdvertTime.adapter = advertTimeAdapter
 
         if (isCreated){
-            add_advert_details_page3_fragment_spinnerAdvertTime.setSelection(Singleton.advertTimeIn, true)
-            selectedAdvertTime = advertTimeList.get(Singleton.advertTimeIn)
-            setAdvertTime()
+            Singleton.advertTimeIn?.let {
+                add_advert_details_page3_fragment_spinnerAdvertTime.setSelection(it, true)
+                selectedAdvertTime = advertTimeList.get(it)
+                setAdvertTime()
+            }
         }
 
         add_advert_details_page3_fragment_spinnerAdvertTime.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
@@ -151,12 +184,23 @@ class AddAdvertDetailsPage3Fragment : Fragment(), View.OnClickListener {
         resultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
             if (result.resultCode == Activity.RESULT_OK){
                 result?.data?.let {
-                    it.clipData?.let {
-                        clipData = it
-                        setAdvertImages(it)
+                    if (it.clipData != null){
+                        imageUriList = ArrayList()
 
-                        Singleton.clipData = it
+                        for (u in 0 until it.clipData!!.itemCount)
+                            imageUriList.add(it.clipData!!.getItemAt(u).uri)
+
+                        setAdvertImages(imageUriList)
+                    } else {
+                        if (it.data != null){
+                            imageUriList = ArrayList()
+                            imageUriList.add(it.data!!)
+
+                            setAdvertImages(imageUriList)
+                        }
                     }
+
+                    Singleton.imageUriList = imageUriList
                 }
             }
         }
@@ -178,7 +222,7 @@ class AddAdvertDetailsPage3Fragment : Fragment(), View.OnClickListener {
         init()
 
         if (isCreated){
-            Singleton.clipData?.let {
+            Singleton.imageUriList?.let {
                 setAdvertImages(it)
             }
 
@@ -194,8 +238,10 @@ class AddAdvertDetailsPage3Fragment : Fragment(), View.OnClickListener {
                 add_advert_details_page3_fragment_editAdvertContent.setText(it)
             }
 
-            countryList = Singleton.countryList
-            setCountry()
+            Singleton.countryList?.let {
+                countryList = it
+                setCountry()
+            }
         }
 
         add_advert_details_page3_fragment_editAdvertTitle.addTextChangedListener {
@@ -231,7 +277,7 @@ class AddAdvertDetailsPage3Fragment : Fragment(), View.OnClickListener {
         advertFullDateWithTime = fullDateWithTime
     }
 
-    private fun setAdvertImages(clipData: ClipData){
+    private fun setAdvertImages(imageUriList: ArrayList<Uri>){
         bitmapList = ArrayList()
         filePathList = ArrayList()
         advertPartList = ArrayList()
@@ -239,8 +285,8 @@ class AddAdvertDetailsPage3Fragment : Fragment(), View.OnClickListener {
         add_advert_details_page3_fragment_relativeImages.visibility = View.GONE
         add_advert_details_page3_fragment_relativeViewPager.visibility = View.VISIBLE
 
-        for (iIn in 0 until clipData.itemCount){
-            filePath = RealPathUtil.getRealPath(v.context, clipData.getItemAt(iIn).uri)
+        for (iIn in imageUriList.indices){
+            filePath = RealPathUtil.getRealPath(v.context, imageUriList.get(iIn))
             filePathList.add(filePath)
 
             imageBitmap = BitmapFactory.decodeFile(filePath)
@@ -272,8 +318,16 @@ class AddAdvertDetailsPage3Fragment : Fragment(), View.OnClickListener {
         countryArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         add_advert_details_page3_fragment_spinnerCountry.adapter = countryArrayAdapter
 
-        if (isCreated)
-            add_advert_details_page3_fragment_spinnerCountry.setSelection(advertCountryIn, true)
+        if (isCreated){
+            AddAdvertDetailsFragment.countryIn?.let {
+                add_advert_details_page3_fragment_spinnerCountry.setSelection(it, true)
+            }
+        } else if (AddAdvertDetailsFragment.countryIn != null){
+            add_advert_details_page3_fragment_spinnerCountry.setSelection(AddAdvertDetailsFragment.countryIn!!, true)
+
+            selectedCountryIn = AddAdvertDetailsFragment.countryIn!!
+            addAdvertDetailsPage3ViewModel.getCityList(countryList.get(selectedCountryIn).id)
+        }
 
         add_advert_details_page3_fragment_spinnerCountry.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
@@ -281,7 +335,7 @@ class AddAdvertDetailsPage3Fragment : Fragment(), View.OnClickListener {
                     selectedCountryIn = p2
                     addAdvertDetailsPage3ViewModel.getCityList(countryList.get(selectedCountryIn).id)
 
-                    advertCountryIn = selectedCountryIn
+                    AddAdvertDetailsFragment.countryIn = selectedCountryIn
                 }
             }
 
@@ -290,7 +344,7 @@ class AddAdvertDetailsPage3Fragment : Fragment(), View.OnClickListener {
                     selectedCountryIn = 0
                     addAdvertDetailsPage3ViewModel.getCityList(countryList.get(selectedCountryIn).id)
 
-                    advertCountryIn = selectedCountryIn
+                    AddAdvertDetailsFragment.countryIn = selectedCountryIn
                 }
             }
         }
@@ -323,6 +377,15 @@ class AddAdvertDetailsPage3Fragment : Fragment(), View.OnClickListener {
                 fillCityDataFromListAndSpinner(cityList)
 
                 Singleton.cityList = it
+            }
+        })
+
+        addAdvertDetailsPage3ViewModel.districtList.observe(viewLifecycleOwner, Observer {
+            it?.let {
+                districtList = it
+                fillDistrictDataFromListAndSpinner(districtList)
+
+                Singleton.districtList = it
             }
         })
     }
@@ -377,21 +440,70 @@ class AddAdvertDetailsPage3Fragment : Fragment(), View.OnClickListener {
         add_advert_details_page3_fragment_spinnerCity.adapter = cityArrayAdapter
 
         if (isCreated){
-            add_advert_details_page3_fragment_spinnerCity.setSelection(advertCityIn, true)
+            AddAdvertDetailsFragment.cityIn?.let {
+                if (it < (cityNameList.size - 1))
+                    add_advert_details_page3_fragment_spinnerCity.setSelection(it, true)
+            }
+        } else if (AddAdvertDetailsFragment.cityIn != null){
+            if (AddAdvertDetailsFragment.cityIn!! < (cityNameList.size - 1)){
+                add_advert_details_page3_fragment_spinnerCity.setSelection(AddAdvertDetailsFragment.cityIn!!, true)
+                selectedCityIn = AddAdvertDetailsFragment.cityIn!!
+                addAdvertDetailsPage3ViewModel.getDistrictList(cityList.get(selectedCityIn).id)
+            }
         }
 
         add_advert_details_page3_fragment_spinnerCity.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
                 p0?.let {
                     selectedCityIn = p2
-                    advertCityIn = selectedCityIn
+                    addAdvertDetailsPage3ViewModel.getDistrictList(cityList.get(selectedCityIn).id)
+
+                    AddAdvertDetailsFragment.cityIn = selectedCityIn
                 }
             }
 
             override fun onNothingSelected(p0: AdapterView<*>?) {
                 p0?.let {
                     selectedCityIn = 0
-                    advertCityIn = selectedCityIn
+                    addAdvertDetailsPage3ViewModel.getDistrictList(cityList.get(selectedCityIn).id)
+                }
+            }
+        }
+    }
+
+    private fun fillDistrictDataFromListAndSpinner(districtList: List<District>){
+        districtNameList = ArrayList()
+
+        for (disctrict in districtList)
+            districtNameList.add(disctrict.districtname!!)
+
+        districtArrayAdapter = ArrayAdapter(v.context, R.layout.spinner_item, districtNameList)
+        districtArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        add_advert_details_page3_fragment_spinnerDistrict.adapter = districtArrayAdapter
+
+        if (isCreated){
+            AddAdvertDetailsFragment.districtIn?.let {
+                if (it < (districtNameList.size - 1))
+                    add_advert_details_page3_fragment_spinnerDistrict.setSelection(it, true)
+            }
+        } else if (AddAdvertDetailsFragment.districtIn != null){
+            if (AddAdvertDetailsFragment.districtIn!! < (districtNameList.size - 1)){
+                add_advert_details_page3_fragment_spinnerDistrict.setSelection(AddAdvertDetailsFragment.districtIn!!, true)
+                selectedDistrictIn = AddAdvertDetailsFragment.districtIn!!
+            }
+        }
+
+        add_advert_details_page3_fragment_spinnerDistrict.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
+            override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
+                p0?.let {
+                    selectedDistrictIn = p2
+                    AddAdvertDetailsFragment.districtIn = selectedDistrictIn
+                }
+            }
+
+            override fun onNothingSelected(p0: AdapterView<*>?) {
+                p0?.let {
+                    selectedDistrictIn = 0
                 }
             }
         }
@@ -412,16 +524,14 @@ class AddAdvertDetailsPage3Fragment : Fragment(), View.OnClickListener {
     }
 
     companion object{
-        var advertTitle: String = ""
-        var advertContent: String = ""
-        var advertPrice: Int = -1
-        var advertIncreaseDate: String = ""
-        var advertExchange: String = ""
-        var advertDate: String = ""
-        var advertFullDateWithTime: String = ""
-        var advertCountryIn: Int = -1
-        var advertCityIn: Int = -1
-        var advertStream: Int = -1
-        var imagePartList: ArrayList<MultipartBody.Part> = arrayListOf()
+        var advertTitle: String? = null
+        var advertContent: String? = null
+        var advertPrice: Int? = null
+        var advertIncreaseDate: String? = null
+        var advertExchange: String? = null
+        var advertDate: String? = null
+        var advertFullDateWithTime: String? = null
+        var advertStream: Int? = null
+        var imagePartList: ArrayList<MultipartBody.Part>? = null
     }
 }
