@@ -9,6 +9,7 @@ import androidx.navigation.NavDirections
 import androidx.navigation.Navigation
 import com.nexis.obuluyor.R
 import com.nexis.obuluyor.adapter.CustomFragmentPagerAdapter
+import com.nexis.obuluyor.util.AppUtils
 import kotlinx.android.synthetic.main.custom_toolbar.*
 import kotlinx.android.synthetic.main.fragment_messages.*
 
@@ -32,6 +33,8 @@ class MessagesFragment : Fragment(), View.OnClickListener {
 
             custom_toolbar_imgClose.visibility = View.VISIBLE
             custom_toolbar_imgClose.setOnClickListener(this)
+
+            AppUtils.setLogoTint(custom_toolbar_imgLogo)
         }
     }
 

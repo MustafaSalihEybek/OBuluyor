@@ -14,6 +14,7 @@ import com.nexis.obuluyor.R
 import com.nexis.obuluyor.adapter.AdvertsAdapter
 import com.nexis.obuluyor.adapter.FavoritesAdapter
 import com.nexis.obuluyor.model.Favorite
+import com.nexis.obuluyor.util.AppUtils
 import com.nexis.obuluyor.util.Singleton
 import com.nexis.obuluyor.util.show
 import com.nexis.obuluyor.viewmodel.FavoritesViewModel
@@ -44,6 +45,8 @@ class FavoritesFragment : Fragment(), View.OnClickListener {
 
             custom_toolbar_imgClose.visibility = View.VISIBLE
             custom_toolbar_imgClose.setOnClickListener(this)
+
+            AppUtils.setLogoTint(custom_toolbar_imgLogo)
         }
     }
 

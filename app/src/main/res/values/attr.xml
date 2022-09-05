@@ -2,6 +2,7 @@
 <resources>
     <declare-styleable name="dark_theme">
         <attr name="appBgColor" format="color"/>
+        <attr name="splashBgColor" format="color"/>
         <attr name="statusBarBackgroundColor" format="color"/>
         <attr name="toolBarBackgroundColor" format="color"/>
         <attr name="toolBarTxtColor" format="color"/>

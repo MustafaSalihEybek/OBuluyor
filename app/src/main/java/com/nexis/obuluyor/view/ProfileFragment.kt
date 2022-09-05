@@ -13,6 +13,7 @@ import androidx.navigation.Navigation
 import com.nexis.obuluyor.R
 import com.nexis.obuluyor.model.Country
 import com.nexis.obuluyor.model.User
+import com.nexis.obuluyor.util.AppUtils
 import com.nexis.obuluyor.util.Singleton
 import com.nexis.obuluyor.util.show
 import com.nexis.obuluyor.viewmodel.ProfileViewModel
@@ -34,6 +35,8 @@ class ProfileFragment : Fragment(), View.OnClickListener {
 
             custom_toolbar_imgClose.visibility = View.VISIBLE
             custom_toolbar_imgClose.setOnClickListener(this)
+
+            AppUtils.setLogoTint(custom_toolbar_imgLogo)
 
             if (userId != -1){
                 profileViewModel = ViewModelProvider(this).get(ProfileViewModel::class.java)

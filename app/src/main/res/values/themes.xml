@@ -15,6 +15,7 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
         <item name="appBgColor">#FFFFFF</item>
+        <item name="splashBgColor">#FF903B</item>
         <item name="statusBarBackgroundColor">#E87115</item>
         <item name="toolBarBackgroundColor">#F77E21</item>
         <item name="toolBarTxtColor">#FFFFFF</item>

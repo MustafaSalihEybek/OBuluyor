@@ -16,6 +16,7 @@ import com.nexis.obuluyor.adapter.AdvertsAdapter
 import com.nexis.obuluyor.model.Advert
 import com.nexis.obuluyor.model.Category
 import com.nexis.obuluyor.model.SubCategory
+import com.nexis.obuluyor.util.AppUtils
 import com.nexis.obuluyor.util.show
 import com.nexis.obuluyor.viewmodel.AdvertsViewModel
 import kotlinx.android.synthetic.main.custom_toolbar.*
@@ -75,6 +76,8 @@ class AdvertsFragment : Fragment(), View.OnClickListener {
 
             custom_toolbar_imgPerson.setOnClickListener(this)
             custom_toolbar_imgClose.setOnClickListener(this)
+
+            AppUtils.setLogoTint(custom_toolbar_imgLogo)
         }
     }
 

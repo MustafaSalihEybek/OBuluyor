@@ -26,6 +26,7 @@ import androidx.navigation.Navigation
 import com.nexis.obuluyor.R
 import com.nexis.obuluyor.databinding.FragmentUpdateStoreDataBinding
 import com.nexis.obuluyor.model.Store
+import com.nexis.obuluyor.util.AppUtils
 import com.nexis.obuluyor.util.RealPathUtil
 import com.nexis.obuluyor.util.show
 import com.nexis.obuluyor.viewmodel.UpdateStoreDataViewModel
@@ -108,6 +109,9 @@ class UpdateStoreDataFragment : Fragment(), View.OnClickListener {
 
             custom_toolbar_imgClose.visibility = View.VISIBLE
             custom_toolbar_imgClose.setOnClickListener(this)
+
+            AppUtils.setLogoTint(custom_toolbar_imgLogo)
+
             update_store_data_fragment_btnClose.setOnClickListener(this)
             update_store_data_fragment_btnUpdate.setOnClickListener(this)
             update_store_data_fragment_imgLogo.setOnClickListener(this)

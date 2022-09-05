@@ -1,13 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:background="?attr/appBgColor"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="?attr/splashBgColor"
     android:layout_height="match_parent">
 
     <ImageView
         android:layout_width="175dp"
+        android:layout_height="175dp"
+        android:visibility="gone"
+        android:id="@+id/splash_dialog_imgSplashLogo"
         android:layout_centerInParent="true"
-        android:src="@drawable/tutorial_2"
-        android:layout_height="175dp"/>
+        android:src="@drawable/splash_logo" />
+
+    <ImageView
+        android:layout_width="125dp"
+        android:layout_height="125dp"
+        android:visibility="gone"
+        android:id="@+id/splash_dialog_imgAppLogo"
+        android:layout_centerInParent="true"
+        android:src="@drawable/obuluyor_text_logo"/>
 
 </RelativeLayout>

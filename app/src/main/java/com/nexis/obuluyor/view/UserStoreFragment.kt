@@ -17,6 +17,7 @@ import com.nexis.obuluyor.adapter.decoration.GridManagerDecoration
 import com.nexis.obuluyor.databinding.FragmentUserStoreBinding
 import com.nexis.obuluyor.model.Advert
 import com.nexis.obuluyor.model.Store
+import com.nexis.obuluyor.util.AppUtils
 import com.nexis.obuluyor.util.Singleton
 import com.nexis.obuluyor.util.show
 import com.nexis.obuluyor.viewmodel.UserStoreViewModel
@@ -53,6 +54,8 @@ class UserStoreFragment : Fragment(), View.OnClickListener {
 
             custom_toolbar_imgClose.visibility = View.VISIBLE
             custom_toolbar_imgClose.setOnClickListener(this)
+
+            AppUtils.setLogoTint(custom_toolbar_imgLogo)
         }
     }
 

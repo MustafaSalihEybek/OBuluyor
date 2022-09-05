@@ -29,6 +29,7 @@ import com.nexis.obuluyor.adapter.decoration.GridManagerDecoration
 import com.nexis.obuluyor.model.Advert
 import com.nexis.obuluyor.model.Category
 import com.nexis.obuluyor.model.Store
+import com.nexis.obuluyor.util.AppUtils
 import com.nexis.obuluyor.util.SharedPreferences
 import com.nexis.obuluyor.util.Singleton
 import com.nexis.obuluyor.util.show
@@ -69,6 +70,8 @@ class MainFragment : Fragment(), View.OnClickListener {
                 custom_toolbar_imgPerson.visibility = View.VISIBLE
                 custom_toolbar_imgPerson.setOnClickListener(this)
             }
+
+            AppUtils.setLogoTint(custom_toolbar_imgLogo)
 
             main_fragment_recyclerView.setHasFixedSize(true)
             main_fragment_recyclerView.layoutManager = LinearLayoutManager(v.context, LinearLayoutManager.VERTICAL, false)

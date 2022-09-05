@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.nexis.obuluyor.R
 import com.nexis.obuluyor.adapter.AdvertsAdapter
 import com.nexis.obuluyor.model.Advert
+import com.nexis.obuluyor.util.AppUtils
 import com.nexis.obuluyor.util.show
 import com.nexis.obuluyor.viewmodel.UserAdvertsViewModel
 import kotlinx.android.synthetic.main.custom_toolbar.*
@@ -45,6 +46,8 @@ class UserAdvertsFragment : Fragment(), View.OnClickListener {
 
             custom_toolbar_imgClose.visibility = View.VISIBLE
             custom_toolbar_imgClose.setOnClickListener(this)
+
+            AppUtils.setLogoTint(custom_toolbar_imgLogo)
         }
     }
 

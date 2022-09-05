@@ -24,6 +24,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavDirections
 import androidx.navigation.Navigation
 import com.nexis.obuluyor.R
+import com.nexis.obuluyor.util.AppUtils
 import com.nexis.obuluyor.util.RealPathUtil
 import com.nexis.obuluyor.util.show
 import com.nexis.obuluyor.viewmodel.AddStoreViewModel
@@ -166,6 +167,9 @@ class AddStoreFragment : Fragment(), View.OnClickListener {
 
             custom_toolbar_imgClose.visibility = View.VISIBLE
             custom_toolbar_imgClose.setOnClickListener(this)
+
+            AppUtils.setLogoTint(custom_toolbar_imgLogo)
+
             add_store_fragment_imgLogo.setOnClickListener(this)
             add_store_fragment_imgSlider.setOnClickListener(this)
             add_store_fragment_btnAdd.setOnClickListener(this)

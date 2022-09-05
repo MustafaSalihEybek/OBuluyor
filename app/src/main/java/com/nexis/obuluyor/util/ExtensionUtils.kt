@@ -1,8 +1,10 @@
 package com.nexis.obuluyor.util
 
 import android.content.Context
+import android.content.res.ColorStateList
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
+import android.graphics.Color
 import android.view.View
 import android.widget.EditText
 import android.widget.ImageView

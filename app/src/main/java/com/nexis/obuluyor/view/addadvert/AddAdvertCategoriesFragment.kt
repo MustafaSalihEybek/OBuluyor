@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.nexis.obuluyor.R
 import com.nexis.obuluyor.adapter.AddAdvertCategoriesAdapter
 import com.nexis.obuluyor.model.Category
+import com.nexis.obuluyor.util.AppUtils
 import com.nexis.obuluyor.util.Singleton
 import com.nexis.obuluyor.util.show
 import com.nexis.obuluyor.viewmodel.AddAdvertCategoriesViewModel
@@ -49,6 +50,8 @@ class AddAdvertCategoriesFragment : Fragment(), View.OnClickListener {
 
             custom_advert_toolbar_imgClose.setOnClickListener(this)
             custom_toolbar_imgLogo.setOnClickListener(this)
+
+            AppUtils.setLogoTint(custom_toolbar_imgLogo)
         }
     }
 

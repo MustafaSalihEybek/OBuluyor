@@ -9,6 +9,7 @@ import androidx.navigation.NavDirections
 import androidx.navigation.Navigation
 import com.nexis.obuluyor.R
 import com.nexis.obuluyor.adapter.SignPagerAdapter
+import com.nexis.obuluyor.util.AppUtils
 import com.nexis.obuluyor.util.Singleton
 import kotlinx.android.synthetic.main.custom_toolbar.*
 import kotlinx.android.synthetic.main.fragment_sign.*
@@ -33,6 +34,8 @@ class SignFragment : Fragment(), View.OnClickListener {
 
             custom_toolbar_imgClose.visibility = View.VISIBLE
             custom_toolbar_imgClose.setOnClickListener(this)
+
+            AppUtils.setLogoTint(custom_toolbar_imgLogo)
         }
     }
 

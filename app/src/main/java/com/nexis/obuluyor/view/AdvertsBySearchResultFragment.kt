@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.nexis.obuluyor.R
 import com.nexis.obuluyor.adapter.AdvertsAdapter
 import com.nexis.obuluyor.model.Advert
+import com.nexis.obuluyor.util.AppUtils
 import kotlinx.android.synthetic.main.custom_toolbar.*
 import kotlinx.android.synthetic.main.fragment_adverts_by_search_result.*
 
@@ -29,6 +30,8 @@ class AdvertsBySearchResultFragment : Fragment(), View.OnClickListener {
 
             custom_toolbar_imgClose.visibility = View.VISIBLE
             custom_toolbar_imgClose.setOnClickListener(this)
+
+            AppUtils.setLogoTint(custom_toolbar_imgLogo)
 
             adverts_by_search_result_fragment_recyclerView.setHasFixedSize(true)
             adverts_by_search_result_fragment_recyclerView.layoutManager = LinearLayoutManager(v.context, LinearLayoutManager.VERTICAL, false)

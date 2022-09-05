@@ -1,7 +1,10 @@
 package com.nexis.obuluyor.util
 
 import android.content.Context
+import android.content.res.ColorStateList
+import android.graphics.Color
 import android.util.TypedValue
+import android.widget.ImageView
 import com.nexis.obuluyor.R
 import com.nexis.obuluyor.api.AppAPI
 import com.nexis.obuluyor.model.ModuleContent
@@ -109,5 +112,10 @@ object AppUtils {
         theme.resolveAttribute(color, typedValue, true)
 
         return typedValue.data
+    }
+
+    fun setLogoTint(view: ImageView){
+        if (Singleton.themeMode.equals("Dark"))
+            view.imageTintList = ColorStateList.valueOf(Color.WHITE)
     }
 }

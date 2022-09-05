@@ -17,6 +17,7 @@ import com.nexis.obuluyor.adapter.AdvertSubCategoriesAdapter
 import com.nexis.obuluyor.adapter.decoration.GridManagerDecoration
 import com.nexis.obuluyor.model.Category
 import com.nexis.obuluyor.model.SubCategory
+import com.nexis.obuluyor.util.AppUtils
 import com.nexis.obuluyor.util.Singleton
 import com.nexis.obuluyor.util.show
 import com.nexis.obuluyor.viewmodel.AdvertsSubCategoriesViewModel
@@ -97,6 +98,8 @@ class AdvertsSubCategoriesFragment() : Fragment(), View.OnClickListener {
 
             custom_advert_toolbar_imgClose.setOnClickListener(this)
             custom_toolbar_imgLogo.setOnClickListener(this)
+
+            AppUtils.setLogoTint(custom_toolbar_imgLogo)
         }
     }
 
